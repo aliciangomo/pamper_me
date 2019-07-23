@@ -10,9 +10,15 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-    <%= render 'shared/navbar' %>
-    <%= render 'shared/flashes' %>
-    <%= yield %>
+    <%= render "pages/navbar" %>
+    <div style="min-height: calc(100vh - 164px)">
+      <%= yield %>
+      <% if notice %>
+        <span class="notice"><%= notice %></span>
+      <% elsif alert %>
+        <span class="alert"><%= alert %></span>
+      <% end %>
+    </div>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>

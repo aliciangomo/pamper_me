@@ -2,9 +2,9 @@ class ProvidersController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    puts "Hello There.  This is the index controller"
-    byebug
-    # @providers = Provider.all
+
+    # byebug
+    @providers = Provider.all
     # if params[:query].present?
     #   # Place holder for search
     #   @providers = Provider.all

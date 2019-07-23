@@ -1,1 +1,12 @@
 // Specific CSS for your home-page
+.search {
+  display: flex;
+  justify-content: space-around;
+  align-content: space-between;
+
+}
+
+.search form {
+  width: 334px;
+
+}

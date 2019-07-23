@@ -1,2 +1,37 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner">
+  <div class="container">
+    <h1>Look and feel the best you,</h1><h1 class="banner-blue">anywhere</h1>
+  </div>
+</div>
+
+<div class="search">
+
+<%= form_tag providers_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "input_field",
+    placeholder: "Select treatment or stylist"
+  %>
+  <%= text_field_tag :second_query,
+    params[:location],
+    class: "input_field",
+    placeholder: "Enter your location"
+  %>
+
+  <div class="input_field">
+    <p>Any date</p>
+  </div>
+
+  <%= submit_tag "Search", class: "btn button-primary btn-block" %>
+<% end %>
+
+
+
+
+
+
+
+
+
+</div>
+

@@ -2,20 +2,38 @@
   <% if params[:query].present? %>
     <h1 class="index-title" id="search-index-heading">Your Search Results for: <%= params[:query] %></h1>
   <% else %>
-    <h1 class="index-title" id="search-index-heading">Explore our paintings:</h1>
+    <h1 class="index-title" id="search-index-heading">Explore our providers:</h1>
   <% end %>
-  <div class="provider-cards">
+  <div class="index-cards">
     <% @providers.each do |provider| %>
       <%= link_to provider_path(provider) do %>
-        <div class="provider-card">
-          <%= cl_image_tag provider.photos.first.data %>
-          <!-- <img src="<%#=provider.photos.first%>" > -->
-          <div class="provider-card-infos">
-            <div>
-              <h3><%=provider.name%></h3>
-              <p><%=provider.year%></p>
+        <div class="provider-cards">
+          <div class="provider-card-images">
+            <%= image_tag("https://images.unsplash.com/photo-1481152508843-1ec796b30a8b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80") %>
+            <%#= cl_image_tag url=() %>
+          </div>
+          <div class="provider-card-title-line">
+            <div class="provider-card-name">
+              <h1><%= provider.user.first_name %> <%= provider.user.last_name %></h1>
             </div>
-             <h2 class="provider-pricing">$<%=provider.price %></h2>
+            <div class="provider-card-favorite">
+              <% if current_user=provider.user_id %>
+                <i class="fas fa-heart"></i>
+              <% else %>
+                <i class="far fa-heart"></i>
+              <% end %>
+            </div>
+            <div class="provider-card-motto">
+              <h5><%= provider.statement %></h5>
+            </div>
+            <div class="provider-card-btm-line">
+              <div class="provider-card-rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+              </div>
+              <div class="provider-card-location">
+                <i class="fas fa-walking"></i>
+              </div>
+            </div>
           </div>
         </div>
       <% end %>

@@ -7,7 +7,7 @@ class ProvidersController < ApplicationController
     @providers = Provider.all
     # if params[:query].present?
     #   # Place holder for search
-    #   @providers = Provider.all
+      # @providers = Provider.all
     #   # @paintings = Painting.where(location: params[:query])
     #   # @providers = Provider.where(sql_query, query: "%#{params[:query]}%")
     # else

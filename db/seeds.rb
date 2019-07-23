@@ -22,6 +22,15 @@ puts "User 4 - Seeded ✅"
 user5 = User.create!(first_name: "Sam", last_name: "Barrett", email: "Sam@gmail.com", password: "123456", avatar: "")
 # user5.save!
 puts "User 5 - Seeded ✅"
+user6 = User.create!(first_name: "Kyle", last_name: "Aaron", email: "Kyle@gmail.com", password: "123456", avatar: "")
+user6.save!
+puts "User 6 - Seeded ✅"
+user7 = User.create!(first_name: "Kate", last_name: "Roberts", email: "Kate@gmail.com", password: "123456", avatar: "")
+user7.save!
+puts "User 7 - Seeded ✅"
+user8 = User.create!(first_name: "Kathy", last_name: "Crow", email: "Kathy@gmail.com", password: "123456", avatar: "")
+user8.save!
+puts "User 8 - Seeded ✅"
 puts "All Users seeded ✅"
 
 
@@ -56,7 +65,27 @@ provider3 = Provider.create!(location: "Calle de Valverde, 44, 28004 Madrid",
 # provider3.save!
 puts "Provider 3 Seeded ✅"
 
+provider4 = Provider.create!(location: "Calle San Gregorio, 5, 28004 Madrid",
+  photo: "",
+  description: "Perfect looking natural makeup!",
+  statement: "I will help you look your BEST :)",
+  rating: 5,
+  user: user8)
+provider4.save!
+puts "Provider 4 Seeded ✅"
+
+provider5 = Provider.create!(location: "Junto al hotel Me de la, Plaza del Ángel, Plaza de Sta. Ana, 6, 28012 Madrid",
+  photo: "",
+  description: "Studied physical training at oxford, I'm the best.!",
+  statement: "Get the body you DESERVE!",
+  rating: 2,
+  user: user6)
+provider5.save!
+puts "Provider 5 Seeded ✅"
+
+
 puts "All Providers Seeded ✅"
+
 
 
 puts "Creating Treatments"
@@ -137,7 +166,29 @@ treatment11 = Treatment.create!(name: "Cut",
   category: "Hair")
 puts "Treatment 11 Seeded! ✅"
 
+treatment12 = Treatment.create!(name: "Natural Look Makeup",
+  description: "Achieve that flawless natural look!",
+  provider: provider4,
+  price: 150,
+  category: "Makeup")
+puts "Treatment 12 Seeded! ✅"
+
+treatment13 = Treatment.create!(name: "Red Carpet Makeup",
+  description: "Red Carpet Ready!!",
+  provider: provider4,
+  price: 250,
+  category: "Makeup")
+puts "Treatment 13 Seeded! ✅"
+
+treatment14 = Treatment.create!(name: "1 hour full-body",
+  description: "A full-body workout you're sure to see results from!",
+  provider: provider5,
+  price: 80,
+  category: "Fitness")
+puts "Treatment 14 Seeded! ✅"
 puts "All Treatments Seeded ✅"
+
+
 
 
 puts "Creating Bookings"
@@ -221,10 +272,51 @@ puts "Booking 11 Seeded ✅"
 booking12 = Booking.create!(user: user4,
   treatment: treatment9,
   price: 50,
-  date: "2019-08-15",
+  date: "2019-09-15",
   status: 0)
 puts "Booking 12 Seeded ✅"
 
+booking13 = Booking.create!(user: user5,
+  treatment: treatment12,
+  price: 150,
+  date: "2019-08-15",
+  status: 1)
+puts "Booking 13 Seeded ✅"
+
+booking14 = Booking.create!(user: user2,
+  treatment: treatment13,
+  price: 250,
+  date: "2019-08-03",
+  status: 1)
+puts "Booking 13 Seeded ✅"
+
+booking15 = Booking.create!(user: user1,
+  treatment: treatment14,
+  price: 80,
+  date: "2019-08-02",
+  status: 1)
+puts "Booking 15 Seeded ✅"
+
+booking16 = Booking.create!(user: user5,
+  treatment: treatment14,
+  price: 80,
+  date: "2019-08-01",
+  status: 1)
+puts "Booking 16 Seeded ✅"
+
+booking17 = Booking.create!(user: user2,
+  treatment: treatment14,
+  price: 80,
+  date: "2019-08-03",
+  status: 3)
+puts "Booking 17 Seeded ✅"
+
+booking18 = Booking.create!(user: user4,
+  treatment: treatment14,
+  price: 80,
+  date: "2019-07-28",
+  status: 1)
+puts "Booking 18 Seeded ✅"
 puts "All Bookings Seeded ✅"
 
 puts "🎊 🎉 Congratulations, database succesfully seeded! 🎉 🎊"

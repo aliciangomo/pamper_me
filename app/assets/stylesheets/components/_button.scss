@@ -9,4 +9,16 @@
   font-style: $body-font;
 }
 
+.button-secondary {
+  border-radius: 5px;
+  border: 1px, $green, solid;
+  height: 50px;
+  weight: 334px;
+  background-color: $green;
+  color: $green;
+  font-weight: bold;
+  font-size: 18px;
+  font-style: $body-font;
+}
+
 

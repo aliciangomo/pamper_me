@@ -8,19 +8,19 @@ puts "database clean, starting seed!"
 
 puts "Creating Users"
 user1 = User.create!(first_name: "Jacob", last_name: "Morton", email: "Jacob@gmail.com", password: "123456", avatar: "")
-user1.save!
+# user1.save!
 puts "User 1 - Seeded ✅"
 user2 = User.create!(first_name: "Adam", last_name: "McCallister", email: "Adam@gmail.com", password: "123456", avatar: "")
-user2.save!
+# user2.save!
 puts "User 2 - Seeded ✅"
 user3 = User.create!(first_name: "Alicia", last_name: "Ngomo", email: "Alicia@gmail.com", password: "123456", avatar: "")
-user3.save!
+# user3.save!
 puts "User 3 - Seeded ✅"
 user4 = User.create!(first_name: "Jon", last_name: "Doe", email: "Jon@gmail.com", password: "123456", avatar: "")
 user4.save!
 puts "User 4 - Seeded ✅"
 user5 = User.create!(first_name: "Sam", last_name: "Barrett", email: "Sam@gmail.com", password: "123456", avatar: "")
-user5.save!
+# user5.save!
 puts "User 5 - Seeded ✅"
 user6 = User.create!(first_name: "Kyle", last_name: "Aaron", email: "Kyle@gmail.com", password: "123456", avatar: "")
 user6.save!
@@ -36,6 +36,7 @@ puts "All Users seeded ✅"
 
 
 
+
 puts "Creating Providers"
 provider1 = Provider.create!(location: " Calle de las Infantas, 8, 28004 Madrid",
   photo: "",
@@ -43,7 +44,7 @@ provider1 = Provider.create!(location: " Calle de las Infantas, 8, 28004 Madrid"
   statement: "100 percent satisfaction, guaranteed!",
   rating: 5,
   user: user1)
-provider1.save!
+# provider1.save!
 puts "Provider 1 Seeded ✅"
 
 provider2 = Provider.create!(location: "Calle del Barquillo, 39, 28004 Madrid",
@@ -52,7 +53,7 @@ provider2 = Provider.create!(location: "Calle del Barquillo, 39, 28004 Madrid",
   statement: "True art, right on your nails!",
   rating: 4,
   user: user2)
-provider2.save!
+# provider2.save!
 puts "Provider 2 Seeded ✅"
 
 provider3 = Provider.create!(location: "Calle de Valverde, 44, 28004 Madrid",
@@ -61,7 +62,7 @@ provider3 = Provider.create!(location: "Calle de Valverde, 44, 28004 Madrid",
   statement: "I do hair, with love and care!",
   rating: 3,
   user: user3)
-provider3.save!
+# provider3.save!
 puts "Provider 3 Seeded ✅"
 
 provider4 = Provider.create!(location: "Calle San Gregorio, 5, 28004 Madrid",

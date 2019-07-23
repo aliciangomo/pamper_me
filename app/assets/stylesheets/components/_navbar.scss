@@ -1,6 +1,20 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 70;
+}
+
 .navbar-lewagon {
+  display: flex;
   justify-content: space-between;
   background: white;
+  align-content: center;
+
+  .navbar-brand {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +23,12 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+#navbarSupportedContent li {
+  color: #800000;
+}
+
+.navbar .nav-link:hover {
+  background-color: transparent;
 }

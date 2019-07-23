@@ -1,16 +1,18 @@
-class ProviderController < ApplicationController
+class ProvidersController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @providers = Provider.all
-    if params[:query].present?
-      # Place holder for search
-      @providers = Provider.all
-      # @paintings = Painting.where(location: params[:query])
-      # @providers = Provider.where(sql_query, query: "%#{params[:query]}%")
-    else
-      @providers = Provider.all
-    end
+    puts "Hello There.  This is the index controller"
+    byebug
+    # @providers = Provider.all
+    # if params[:query].present?
+    #   # Place holder for search
+    #   @providers = Provider.all
+    #   # @paintings = Painting.where(location: params[:query])
+    #   # @providers = Provider.where(sql_query, query: "%#{params[:query]}%")
+    # else
+    #   @providers = Provider.all
+    # end
   end
 
   def show

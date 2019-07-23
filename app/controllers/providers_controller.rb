@@ -13,13 +13,13 @@ class ProvidersController < ApplicationController
       @providers = Provider.joins(:treatments).joins(:user).where(sql_query, query: "%#{params[:query]}%")
     end
 
-  #   if params[:location].present?
-  #     if nearby_providers == @providers.near('params[:location]', 10).empty?
-  #       @providers
-  #     else
-  #       @providers = nearby_providers
-  #     end
-  #   end
+    if params[:location].present?
+      if nearby_providers = @providers.near('params[:location]', 10).empty?
+        @providers
+      else
+        @providers = nearby_providers
+      end
+    end
   end
 
 

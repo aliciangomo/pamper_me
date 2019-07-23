@@ -13,7 +13,7 @@ class ProvidersController < ApplicationController
       if @nearby_providers == @providers.near('params[:location]', 10).empty?
         @providers
       else
-        @nearby_providers
+        @providers = @nearby_providers
       end
     elsif params[:query].present? && params[:location].blank?
       sql_query = " \
@@ -23,7 +23,7 @@ class ProvidersController < ApplicationController
       "
       @providers = Provider.where(sql_query, query: "%#{params[:query]}%")
     elsif params[:query].blank? && params[:location].present?
-      @nearby_providers == @providers.near('params[:location]', 10).empty?
+      @providers == @providers.near('params[:location]', 10).empty?
     else
       @providers = Provider.all
     end

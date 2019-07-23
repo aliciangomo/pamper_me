@@ -8,7 +8,9 @@
 
 .search form {
   width: 334px;
-  margin-top: 50px;
+  margin-top: 2.5rem;
+  margin-bottom: 0px;
+  bottom: 30px;
 }
 
 .search p {
@@ -18,7 +20,7 @@
   font-family: $body-font;
 }
 
-.search span i {
-  color: $gray;
-  opacity: 0.7;
-}
+// .search span i {
+//   color: $gray;
+//   opacity: 0.7;
+// }

@@ -8,21 +8,22 @@ puts "database clean, starting seed!"
 
 puts "Creating Users"
 user1 = User.create!(first_name: "Jacob", last_name: "Morton", email: "Jacob@gmail.com", password: "123456", avatar: "")
-user1.save!
+# user1.save!
 puts "User 1 - Seeded ✅"
 user2 = User.create!(first_name: "Adam", last_name: "McCallister", email: "Adam@gmail.com", password: "123456", avatar: "")
-user2.save!
+# user2.save!
 puts "User 2 - Seeded ✅"
 user3 = User.create!(first_name: "Alicia", last_name: "Ngomo", email: "Alicia@gmail.com", password: "123456", avatar: "")
-user3.save!
+# user3.save!
 puts "User 3 - Seeded ✅"
 user4 = User.create!(first_name: "Jon", last_name: "Doe", email: "Jon@gmail.com", password: "123456", avatar: "")
 user4.save!
 puts "User 4 - Seeded ✅"
 user5 = User.create!(first_name: "Sam", last_name: "Barrett", email: "Sam@gmail.com", password: "123456", avatar: "")
-user5.save!
+# user5.save!
 puts "User 5 - Seeded ✅"
 puts "All Users seeded ✅"
+
 
 
 
@@ -34,7 +35,7 @@ provider1 = Provider.create!(location: " Calle de las Infantas, 8, 28004 Madrid"
   statement: "100 percent satisfaction, guaranteed!",
   rating: 5,
   user: user1)
-provider1.save!
+# provider1.save!
 puts "Provider 1 Seeded ✅"
 
 provider2 = Provider.create!(location: "Calle del Barquillo, 39, 28004 Madrid",
@@ -43,7 +44,7 @@ provider2 = Provider.create!(location: "Calle del Barquillo, 39, 28004 Madrid",
   statement: "True art, right on your nails!",
   rating: 4,
   user: user2)
-provider2.save!
+# provider2.save!
 puts "Provider 2 Seeded ✅"
 
 provider3 = Provider.create!(location: "Calle de Valverde, 44, 28004 Madrid",
@@ -52,7 +53,7 @@ provider3 = Provider.create!(location: "Calle de Valverde, 44, 28004 Madrid",
   statement: "I do hair, with love and care!",
   rating: 3,
   user: user3)
-provider3.save!
+# provider3.save!
 puts "Provider 3 Seeded ✅"
 
 puts "All Providers Seeded ✅"
@@ -88,53 +89,53 @@ treatment4 = Treatment.create!(name: "Gel Mani",
 puts "Treatment 4 Seeded! ✅"
 
 treatment5 = Treatment.create!(name: "Gel Pedi",
-  description: "Keep those piggies on fleek!"
+  description: "Keep those piggies on fleek!",
   provider: provider2,
   price: 50,
   category: "Nails")
-puts "Treatment 5 Seeded! ✅")
+puts "Treatment 5 Seeded! ✅"
 
 treatment6 = Treatment.create!(name: "Nail art Mani",
   description: "Any custom design for your hands!",
   provider: provider2,
   price: 40,
   category: "Nails")
-puts "Treatment 6 Seeded! ✅")
+puts "Treatment 6 Seeded! ✅"
 
 treatment7 = Treatment.create!(name: "Nail art Pedi",
   description: "any custom design for your toes!",
   provider: provider2,
   price: 60,
   category: "Nails")
-puts "Treatment 7 Seeded! ✅")
+puts "Treatment 7 Seeded! ✅"
 
 treatment8 = Treatment.create!(name: "French tip Mani",
   description: "Beautiful, classic, and CHIC!",
   provider: provider2,
   price: 55,
   category: "Nails")
-puts "Treatment 8 Seeded! ✅")
+puts "Treatment 8 Seeded! ✅"
 
 treatment9 = Treatment.create!(name: "Blowout",
   description: "Beautiful, classic",
   provider: provider3,
   price: 50,
   category: "Hair")
-puts "Treatment 9 Seeded! ✅")
+puts "Treatment 9 Seeded! ✅"
 
 treatment10 = Treatment.create!(name: "Color",
   description: "Achieve the beautiful color you want!",
   provider: provider3,
   price: 300,
   category: "Hair")
-puts "Treatment 10 Seeded! ✅")
+puts "Treatment 10 Seeded! ✅"
 
 treatment11 = Treatment.create!(name: "Cut",
   description: "Change things up with a nice new cut!",
   provider: provider3,
   price: 100,
   category: "Hair")
-puts "Treatment 11 Seeded! ✅")
+puts "Treatment 11 Seeded! ✅"
 
 puts "All Treatments Seeded ✅"
 

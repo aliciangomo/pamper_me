@@ -1,0 +1,51 @@
+.index-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.provider-cards {
+  min-height: 40vh;
+  width: 90vw;
+  min-width: 337.5px;
+  box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+
+  .provider-card-images {
+    height: 30vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    // background-image: linear-gradient(rgba(0,0,0,1),rgba(0,0,0,0.4));
+  }
+
+  .provider-card-info {
+    padding: 15px 10px 0px;
+    min-height: 5vh;
+    // display: flex;
+    align-content: flex-end;
+  }
+
+  .provider-card-title-line {
+    display: flex;
+    justify-content: space-between;
+    // align-items: baseline;
+
+  }
+  .provider-card-favorite {
+    color: $blue;
+  }
+
+  .provider-card-btm-line {
+    display: flex;
+    // flex-direction: row;
+    justify-content: space-between;
+
+  }
+
+  .provider-card-rating {
+    color: $green;
+  }
+
+}

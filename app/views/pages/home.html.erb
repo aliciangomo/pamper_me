@@ -1,17 +1,28 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1553344518-c44926bebaa7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2253&q=80);">
+<div class="banner">
   <div class="container">
-    <h1>Look and feel the best you,</h1><h1>anywhere</h1>
+    <h1>Look and feel the best you,</h1><h1 class="banner-blue">anywhere</h1>
   </div>
 </div>
 
 <div class="search">
-<%= form_tag movies_path, method: :get do %>
+
+<%= form_tag providers_path, method: :get do %>
   <%= text_field_tag :query,
     params[:query],
-    class: "form-control",
+    class: "input_field",
     placeholder: "Select treatment or stylist"
   %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
+  <%= text_field_tag :second_query,
+    params[:location],
+    class: "input_field",
+    placeholder: "Enter your location"
+  %>
+
+  <div class="input_field">
+    <p>Any date</p>
+  </div>
+
+  <%= submit_tag "Search", class: "btn button-primary btn-block" %>
 <% end %>
 
 

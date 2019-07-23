@@ -10,3 +10,15 @@
   width: 334px;
   margin-top: 50px;
 }
+
+.search p {
+  color: $gray;
+  opacity: 0.7;
+  margin: 0px;
+  font-family: $body-font;
+}
+
+.search span i {
+  color: $gray;
+  opacity: 0.7;
+}

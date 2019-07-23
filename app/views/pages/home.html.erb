@@ -12,15 +12,18 @@
     class: "input_field",
     placeholder: "Select treatment or stylist"
   %>
-  <%= text_field_tag :second_query,
+<!--   <span> <i class="fas fa-search"></i></span> -->
+  <%= text_field_tag :location,
     params[:location],
     class: "input_field",
     placeholder: "Enter your location"
   %>
+<!--   <span><i class="far fa-map-marker-alt"></i></span> -->
 
   <div class="input_field">
     <p>Any date</p>
   </div>
+<!--   <span><i class="far fa-clock"></i></span> -->
 
   <%= submit_tag "Search", class: "btn button-primary btn-block" %>
 <% end %>

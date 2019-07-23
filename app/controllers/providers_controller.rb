@@ -3,29 +3,22 @@ class ProvidersController < ApplicationController
 
   def index
     @providers = Provider.all
-    if params[:query].present? && params[:location].present?
+    if params[:query].present?
       sql_query = " \
-        providers.name @@ :query \
-        OR providers.treatments.name @@ :query \
-        OR providers.treatments.category @@ :query \
+        users.first_name @@ :query \
+        OR users.last_name @@ :query \
+        OR treatments.name @@ :query \
+        OR treatments.category @@ :query \
       "
-      @providers = Provider.where(sql_query, query: "%#{params[:query]}%")
-      if @nearby_providers == @providers.near('params[:location]', 10).empty?
+      @providers = Provider.joins(:treatments).joins(:user).where(sql_query, query: "%#{params[:query]}%")
+    end
+
+    if params[:location].present?
+      if nearby_providers = @providers.near('params[:location]', 10).empty?
         @providers
       else
-        @nearby_providers
+        @providers = nearby_providers
       end
-    elsif params[:query].present? && params[:location].blank?
-      sql_query = " \
-        providers.name @@ :query \
-        OR providers.treatments.name @@ :query \
-        OR providers.treatments.category @@ :query \
-      "
-      @providers = Provider.where(sql_query, query: "%#{params[:query]}%")
-    elsif params[:query].blank? && params[:location].present?
-      @nearby_providers == @providers.near('params[:location]', 10).empty?
-    else
-      @providers = Provider.all
     end
   end
 

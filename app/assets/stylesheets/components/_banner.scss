@@ -1,20 +1,36 @@
 .banner {
-  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url("https://source.unsplash.com/collection/7871467");
+  background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("https://source.unsplash.com/collection/7871467");
   background-size: cover;
   background-position: center;
-  padding: auto auto;
-  height: 40vh;
+  padding-top: 100px;
+  height: 50vh;
+  position: relative;
+}
+
+.banner-container {
+  position: absolute;
+  bottom: 30px;
+  text-align: right;
+  padding: 0px;
+  right: 20px
 }
 
 .banner h1 {
-  margin: 0;
+  margin: 0px;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size:40px;
+  font-size: 40px;
   font-weight: bold;
-  font-style: $body-font;
+  font-family: $body-font;
+  @include media-breakpoint-up(md) {
+    font-size: 80px;
+  }
 }
 
-.banner-blue {
-  font-color: $green;
+#banner-green {
+  color: $green;
+  font-size: 40px;
+  font-weight: bold;
+  font-family: $body-font;
+  text-align: right;
 }

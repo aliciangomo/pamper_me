@@ -1,15 +1,15 @@
-<i class="fas fa-chevron-left"></i><h1>Booking details</h1>
+<div class="booking-title"><i class="fas fa-chevron-left"></i><h2>Booking details</h2></div>
 
 <p>Your booking details are as follows: </p>
 
 
 <ul>
 
-  <li>You have a booking with <strong><%= booking.provider %></strong></li>
-  <li><strong><%= booking.treatment.category %>:<strong><%= booking.treatment.name %></li>
-  <li>On <%= booking.date %></li>
-  <li>The total for your booking is <strong><%= booking.price %></strong></li>
-  <li><%= booking.provider %> awaits you at <strong>booking.address</strong></li>
+  <li>You have a booking with <strong><%= @booking.user.first_name %> <%= @booking.user.last_name %></strong></li>
+  <li>For: <strong><%= @booking.treatment.name %></strong></li>
+  <li>On: <strong><%= @booking.date %></strong></li>
+  <li>The total for your booking is <strong><%= @booking.price %></strong></li>
+  <li><%= @booking.user.first_name %> awaits you at <strong><%= @treatment.provider.location %></strong></li>
 
 </ul>
 

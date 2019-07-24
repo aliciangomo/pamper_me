@@ -19,7 +19,7 @@
 
     <div class="user-dashboard-card-links">
       <i class="fab fa-whatsapp"></i>
-      <%= link_to '<i class="fas fa-chevron-right"></i>'.html_safe, treatment_booking_path()%>
+      <%= link_to '<i class="fas fa-chevron-right"></i>'.html_safe, treatment_booking_path(booking.treatment, booking)%>
     </div>
   </div>
     <% end %>

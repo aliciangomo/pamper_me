@@ -2,10 +2,7 @@
   <div class="container">
     <h1>Ugh Oh!  Looks like you need to be logged in for that!</h1>
     <p>Unlock all the great features of Pamper Me with a Free Account! </p>
-    <!-- <form action="<%= paintings_path %>" method="get" class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="  Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Discover</button>
-    </form> -->
+
     <div class="ugh-oh-buttons-div">
       <%= link_to 'Log in', new_user_session_path, { :class => "button-secondary my-2 my-sm-", :id => "ugh-oh-buttons", 'data-toggle' => 'modal', 'data-target' => '#sign-in-modal' } %>
       <%= link_to 'Sign up', new_user_registration_path, { :class => "button-secondary my-2 my-sm-", :id => "ugh-oh-buttons", 'data-toggle' => 'modal', 'data-target' => '#sign-up-modal' } %>

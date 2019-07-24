@@ -22,7 +22,6 @@ class ProvidersController < ApplicationController
     end
   end
 
-
   def show
     set_provider
     @booking = Booking.new

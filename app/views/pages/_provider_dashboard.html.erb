@@ -1,0 +1,30 @@
+<% date = Time.new %>
+<div class="dashboardbanner">
+  <div class="container">
+    <h2><%= current_user.first_name %>'s Dashboard</h2>
+    <p>Hey there, happy <%= date.strftime("%A") %>!</p>
+  </div>
+</div>
+
+<div class="user-dashboard-cards">
+
+<% if @bookings %>
+<% @bookings.each do |booking| %>
+  <div class="user-dashboard-card">
+    <div class="user-dashboard-card-infos">
+      <p id="treatment-booked"><strong><%= booking.treatment.name %></strong></p>
+      <p><%= booking.date %> </p>
+      <p id="booking-status"><%= booking.status%></p>
+    </div>
+
+    <div class="user-dashboard-card-links">
+      <i class="fab fa-whatsapp"></i>
+      <%= link_to '<i class="fas fa-chevron-right"></i>'.html_safe, treatment_booking_path(booking.treatment, booking)%>
+    </div>
+  </div>
+    <% end %>
+<% else %>
+  <p>You have no bookings yet.</p>
+<% end %>
+</div>
+

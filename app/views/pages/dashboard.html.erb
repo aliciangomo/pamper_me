@@ -1,1 +1,5 @@
-
+<% if current_user.provider.nil? %>
+<%= render "user_dashboard", bookings: @bookings %>
+<% else %>
+<%= render "provider_dashboard", bookings: @bookings %>
+<% end %>

@@ -11,7 +11,7 @@
     <%= favicon_link_tag asset_path('favicon.ico') %>
   </head>
   <body>
-    <%= render "pages/navbar" %>
+    <%= render "shared/navbar" %>
     <div style="min-height: calc(100vh - 164px)">
       <%= yield %>
       <% if notice %>
@@ -20,6 +20,7 @@
         <span class="alert"><%= alert %></span>
       <% end %>
     </div>
+    <%= render "shared/footer" %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>

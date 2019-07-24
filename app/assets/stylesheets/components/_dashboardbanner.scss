@@ -1,0 +1,15 @@
+.dashboardbanner {
+  background-image: linear-gradient(to bottom, $blue, $blue, $green);
+  height: 30vw;
+  padding: 20px 10px 10px 10px;
+}
+
+.dashboardbanner h2 {
+  color: $white;
+  opacity: 0.95;
+}
+
+.dashboardbanner p {
+  color: $white;
+  opacity: 0.95;
+}

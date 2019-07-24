@@ -4,6 +4,7 @@
   <% else %>
     <h1 class="index-title" id="search-index-heading">Explore our providers:</h1>
   <% end %>
+  <%= render "shared/map" %>
   <div class="index-cards">
     <% @providers.each do |provider| %>
       <%= link_to provider_path(provider) do %>
@@ -36,6 +37,8 @@
               <div class="provider-card-rating">
                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
               </div>
+
+
               <div class="provider-card-location">
                 <p>
                   <i class="fas fa-walking"></i> <%= rand(0...31) %> minutes

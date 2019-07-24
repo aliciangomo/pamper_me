@@ -24,13 +24,15 @@
   <hr class="small">
   <div class="provider-show-icons">
     <div class="provider-show-rating">
-      <div class="provider-show-stars">
+      <div>
+        <p><%= @provider.rating %></p>
+      </div>
+      <div>
         <i class="fas fa-star"></i>
       </div>
-      <i class="fas fa-star"></i>
     </div>
     <div class="provider-show-contact">
-      <i class="fab fa-whatsapp"></i>
+      <a href="<%= @phone_number %>"><i class="fab fa-whatsapp"></i></a>
     </div>
     <div class="provider-show-location-tag">
       <i class="fas fa-map-marker-alt"></i>

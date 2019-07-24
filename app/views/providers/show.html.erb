@@ -12,6 +12,7 @@
       <%= image_tag( @provider.user.avatar, class: "provider-show-avatar-img") %>
     </div>
   </div>
+  <hr>
     <!-- <div class="provider-show-rating">
       <h5>4</h5><i class="fas fa-star"></i>
     </div> -->
@@ -19,6 +20,23 @@
   <div class="provider-show-description">
     <p><%= @provider.description %></p>
   </div>
+
+  <hr class="small">
+  <div class="provider-show-icons">
+    <div class="provider-show-rating">
+      <div class="provider-show-stars">
+        <i class="fas fa-star"></i>
+      </div>
+      <i class="fas fa-star"></i>
+    </div>
+    <div class="provider-show-contact">
+      <i class="fab fa-whatsapp"></i>
+    </div>
+    <div class="provider-show-location-tag">
+      <i class="fas fa-map-marker-alt"></i>
+    </div>
+  </div>
+  <hr class="small">
   <div class="provider-show-services">
     <% @provider.treatments.each do |treatment| %>
     <div class="provider-show-treatments">

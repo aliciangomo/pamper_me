@@ -35,10 +35,51 @@
   }
 }
 
+// line for the top if we decide to make the first line under the name and photo
+// hr {
+//     display: block;
+//     height: 1px;
+//     // width: 80vw;
+//     border: 0;
+//     border-top: 1px solid #ccc;
+//     margin: 0 auto;
+//     padding: 0;
+// }
+
+hr {
+    display: block;
+    height: 1px;
+    width: 87vw;
+    // width: 80vw;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 0 auto;
+    padding: 0;
+}
+
 .provider-show-rating {
   display: flex;
 }
 
 .provider-show-description {
+  padding: 5vw 7vw;
+  p {
+    margin: 0px;
+    letter-spacing: 1;
+    opacity: .70;
+  }
+}
+
+.provider-show-icons {
+  display: flex;
+  justify-content: space-around;
+  padding: 5vw 7vw;
+  i {
+    font-size: 24px;
+    opacity: .70;
+  }
+}
+
+.provider-show-services {
 
 }

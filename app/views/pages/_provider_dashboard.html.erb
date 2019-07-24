@@ -1,0 +1,7 @@
+<% date = Time.new %>
+<div class="dashboardbanner">
+  <div class="container">
+    <h2><%= current_user.first_name %>'s Dashboard</h2>
+    <p>Hey there, happy <%= date.strftime("%A") %>!</p>
+  </div>
+

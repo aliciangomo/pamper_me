@@ -1,0 +1,48 @@
+.user-dahsboard-cards {
+  display: block;
+  width: 95vw;
+  margin: 0 auto;
+}
+
+.user-dashboard-card {
+  position: relative;
+  width: 100%;
+  min-width: 337.5px;
+  // box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.1);
+  margin-top: 20px;
+  border-bottom: 1px solid $gray;
+  border-opacity: 0.7;
+  padding-left: 20px;
+}
+
+.user-dashboard-card-infos {
+}
+
+.user-dashboard-card-infos p {
+  color: $black;
+  // opacity: 0.7;
+  line-height: 50%;
+  font-size: 1rem;
+  font-weight: lighter;
+}
+
+#treatment-booked {
+  font-weight: bold;
+}
+
+
+.user-dashboard-card-links {
+  position: absolute;
+  top: 50%;
+  margin-top: -1rem;
+  right: 5vw;
+}
+
+.user-dashboard-card-links i {
+  font-size: 1.5rem;
+  color: $black;
+  opacity: 0.5;
+  padding-left: 30px;
+}
+
+

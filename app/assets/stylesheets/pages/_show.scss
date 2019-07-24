@@ -1,9 +1,53 @@
+.booking-title {
+  display: flex;
+  justify-content: space-between;
+  margin: auto 10px;
+}
+
+.link-to-dashboard {
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+}
+
 .fa-chevron-left {
   font-size: 1.5rem;
   color: $black;
   opacity: 0.5;
+  margin-right: 20px;
+  margin-left: 10px;
 }
 
-.booking-title {
+.link-to-actions {
   display: flex;
+  justify-content: flex-start;
 }
+
+.show-icon i {
+  margin-left: 20px;
+  color: $blue;
+  font-size: 16px;
+}
+
+.booking-title p {
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.show-container {
+  width: 85%;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.show-container p {
+  font-size: 16;
+  font-weight: 300;
+}
+
+.show-container ul {
+  font-size: 16;
+  font-weight: 300;
+  line-height: 2.5rem;
+}
+

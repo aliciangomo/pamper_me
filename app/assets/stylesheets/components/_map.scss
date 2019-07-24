@@ -1,0 +1,24 @@
+#map {
+  height: 90vh;
+  widows: 100%;
+}
+
+.mapboxgl-popup {
+  max-width: 200px;
+  color: $blue;
+  font-family: $body-font;
+  text-align: right;
+  .name {
+    font-size: 24px;
+    font-weight: 500px;
+  }
+  .statement {
+    font-size: 20px;
+    font-weight: 100;
+  }
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+}
+

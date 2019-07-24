@@ -3,8 +3,11 @@ Treatment.destroy_all
 Provider.destroy_all
 User.destroy_all
 
-puts "cleaning the database..."
-puts "database clean, starting seed!"
+puts "✏️ creating description lorem ✏️"
+description_lorem = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam facilis dolore quibusdam! Consectetur nam distinctio, tenetur cupiditate quas quasi tempora odit explicabo architecto officia cumque dolores, dicta tempore, eligendi voluptatum ab deleniti corrupti reiciendis ex fugit modi. Porro, quas architecto."
+puts "📝✅ lorem created ✅📝"
+puts "🧼 cleaning the database... 🧼"
+puts "✨ database clean ✨, 🌱 starting seed! 🌱"
 
 puts "Creating Users"
 user1 = User.create!(first_name: "Jacob", last_name: "Morton", email: "Jacob@gmail.com", password: "123456", avatar: "https://i.imgur.com/hTnKsgG.png")
@@ -31,6 +34,9 @@ puts "User 7 - Seeded ✅"
 user8 = User.create!(first_name: "Kathy", last_name: "Crow", email: "Kathy@gmail.com", password: "123456", avatar: "https://i.imgur.com/Uo9rgPO.jpg")
 user8.save!
 puts "User 8 - Seeded ✅"
+user9 = User.create!(first_name: "Ashley", last_name: "Green", email: "Ashley@gmail.com", password: "123456", avatar: "https://i.imgur.com/Uo9rgPO.jpg")
+user9.save!
+puts "User 9 - Seeded ✅"
 puts "All Users seeded ✅"
 
 
@@ -40,7 +46,7 @@ puts "All Users seeded ✅"
 puts "Creating Providers"
 provider1 = Provider.create!(location: " Calle de las Infantas, 8, 28004 Madrid",
   photo: "",
-  description: "Great tattoos in Madrid",
+  description: "Great tattoos in Madrid. #{description_lorem}",
   statement: "100 percent satisfaction, guaranteed!",
   rating: 5,
   user: user1)
@@ -49,7 +55,7 @@ puts "Provider 1 Seeded ✅"
 
 provider2 = Provider.create!(location: "Calle del Barquillo, 39, 28004 Madrid",
   photo: "",
-  description: "Great nail tech in Madrid",
+  description: "Great nail tech in Madrid. #{description_lorem}",
   statement: "True art, right on your nails!",
   rating: 4,
   user: user2)
@@ -58,7 +64,7 @@ puts "Provider 2 Seeded ✅"
 
 provider3 = Provider.create!(location: "Calle de Valverde, 44, 28004 Madrid",
   photo: "",
-  description: "Great hair stylist in Madrid",
+  description: "Great hair stylist in Madrid. #{description_lorem}",
   statement: "I do hair, with love and care!",
   rating: 3,
   user: user3)
@@ -67,7 +73,7 @@ puts "Provider 3 Seeded ✅"
 
 provider4 = Provider.create!(location: "Calle San Gregorio, 5, 28004 Madrid",
   photo: "",
-  description: "Perfect looking natural makeup!",
+  description: "Perfect looking natural makeup! #{description_lorem}",
   statement: "I will help you look your BEST :)",
   rating: 5,
   user: user8)
@@ -76,15 +82,24 @@ puts "Provider 4 Seeded ✅"
 
 provider5 = Provider.create!(location: "Junto al hotel Me de la, Plaza del Ángel, Plaza de Sta. Ana, 6, 28012 Madrid",
   photo: "",
-  description: "Studied physical training at oxford, I'm the best.!",
+  description: "Studied physical training at oxford, I'm the best! #{description_lorem}",
   statement: "Get the body you DESERVE!",
   rating: 2,
   user: user6)
 provider5.save!
 puts "Provider 5 Seeded ✅"
 
-
+provider6 = Provider.create!(location: "Calle Barquillo 39, 28004, Madrid",
+  photo: "",
+  description: "Hair is my passion! #{description_lorem}",
+  statement: "Youre in great hands with me!!",
+  rating: 2,
+  user: user9)
+provider6.save!
+puts "Provider 6 Seeded ✅"
 puts "All Providers Seeded ✅"
+
+
 
 
 
@@ -186,6 +201,13 @@ treatment14 = Treatment.create!(name: "1 hour full-body",
   price: 80,
   category: "Fitness")
 puts "Treatment 14 Seeded! ✅"
+
+treatment15 = Treatment.create!(name: "Up-do",
+  description: "Impress with my famous up-do hair style",
+  provider: provider6,
+  price: 100,
+  category: "Hair")
+puts "Treatment 15 Seeded! ✅"
 puts "All Treatments Seeded ✅"
 
 
@@ -320,8 +342,6 @@ puts "Booking 18 Seeded ✅"
 puts "All Bookings Seeded ✅"
 
 puts "🎊 🎉 Congratulations, database succesfully seeded! 🎉 🎊"
-
-
 
 
 

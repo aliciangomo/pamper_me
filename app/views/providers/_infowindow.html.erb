@@ -1,0 +1,8 @@
+<p class="name"><%= provider.user.first_name %> <%= provider.user.last_name %></p>
+
+<p class="statement"><%= provider.statement %></p>
+
+<% provider.rating.times do  %>
+<i class="fa fa-star " ></i>
+<% end %>
+<p><%= provider.location %></p>

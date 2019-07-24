@@ -31,6 +31,9 @@ puts "User 7 - Seeded ✅"
 user8 = User.create!(first_name: "Kathy", last_name: "Crow", email: "Kathy@gmail.com", password: "123456", avatar: "https://i.imgur.com/Uo9rgPO.jpg")
 user8.save!
 puts "User 8 - Seeded ✅"
+user9 = User.create!(first_name: "Ashley", last_name: "Green", email: "Ashley@gmail.com", password: "123456", avatar: "https://i.imgur.com/Uo9rgPO.jpg")
+user9.save!
+puts "User 9 - Seeded ✅"
 puts "All Users seeded ✅"
 
 
@@ -83,8 +86,17 @@ provider5 = Provider.create!(location: "Junto al hotel Me de la, Plaza del Ánge
 provider5.save!
 puts "Provider 5 Seeded ✅"
 
-
+provider6 = Provider.create!(location: "Calle Barquillo 39, 28004, Madrid",
+  photo: "",
+  description: "Hair is my passion!",
+  statement: "Youre in great hands with me!!",
+  rating: 2,
+  user: user9)
+provider6.save!
+puts "Provider 6 Seeded ✅"
 puts "All Providers Seeded ✅"
+
+
 
 
 
@@ -186,6 +198,13 @@ treatment14 = Treatment.create!(name: "1 hour full-body",
   price: 80,
   category: "Fitness")
 puts "Treatment 14 Seeded! ✅"
+
+treatment15 = Treatment.create!(name: "Up-do",
+  description: "Impress with my famous up-do hair style",
+  provider: provider6,
+  price: 100,
+  category: "Hair")
+puts "Treatment 15 Seeded! ✅"
 puts "All Treatments Seeded ✅"
 
 

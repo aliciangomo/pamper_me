@@ -1,4 +1,4 @@
-<% if @providers.length != 0 %>
+<% if @providers.present?%>
   <% if params[:query].present? %>
     <h1 class="index-title" id="search-index-heading">Your Search Results for: <%= params[:query] %></h1>
   <% else %>
@@ -8,20 +8,26 @@
     <% @providers.each do |provider| %>
       <%= link_to provider_path(provider) do %>
         <div class="provider-cards">
-          <div class="provider-card-images">
-            <%= image_tag("https://images.unsplash.com/photo-1481152508843-1ec796b30a8b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80") %>
+          <div class="provider-card-images" style="background-image: url('<%= image_path("https://images.unsplash.com/photo-1481152508843-1ec796b30a8b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80") %>');">
+            <%#= image_tag("https://images.unsplash.com/photo-1481152508843-1ec796b30a8b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80") %>
             <%#= cl_image_tag url=() %>
           </div>
-          <div class="provider-card-title-line">
-            <div class="provider-card-name">
-              <h1><%= provider.user.first_name %> <%= provider.user.last_name %></h1>
-            </div>
-            <div class="provider-card-favorite">
-              <% if current_user=provider.user_id %>
-                <i class="fas fa-heart"></i>
-              <% else %>
-                <i class="far fa-heart"></i>
-              <% end %>
+          <div class="provider-card-info">
+            <div class="provider-card-title-line">
+              <div class="provider-card-name">
+                <h2><%= provider.user.first_name %> <%= provider.user.last_name %></h2>
+              </div>
+              <div class="provider-card-favorite">
+                <% if current_user != provider.user.id %>
+                  <h3>
+                    <i class="fas fa-heart"></i>
+                  </h3>
+                <% else %>
+                  <h3>
+                    <i class="far fa-heart"></i>
+                  </h3>
+                <% end %>
+              </div>
             </div>
             <div class="provider-card-motto">
               <h5><%= provider.statement %></h5>
@@ -31,7 +37,9 @@
                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
               </div>
               <div class="provider-card-location">
-                <i class="fas fa-walking"></i>
+                <p>
+                  <i class="fas fa-walking"></i> <%= rand(0...31) %> minutes
+                </p>
               </div>
             </div>
           </div>

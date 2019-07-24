@@ -1,9 +1,10 @@
 <div class="banner">
-  <div class="container">
-    <h1>Look and feel the best you,</h1><h1 class="banner-blue">anywhere</h1>
+  <div class="banner-container">
+    <h1>Look and feel</h1>
+    <h1>the best you,</h1>
+    <h1 id="banner-green">anywhere</h1>
   </div>
 </div>
-
 <div class="search">
 
 <%= form_tag providers_path, method: :get do %>
@@ -12,26 +13,20 @@
     class: "input_field",
     placeholder: "Select treatment or stylist"
   %>
-  <%= text_field_tag :second_query,
+<!--   <span> <i class="fas fa-search"></i></span> -->
+  <%= text_field_tag :location,
     params[:location],
     class: "input_field",
     placeholder: "Enter your location"
   %>
+<!--   <span><i class="far fa-map-marker-alt"></i></span> -->
 
   <div class="input_field">
     <p>Any date</p>
   </div>
+<!--   <span><i class="far fa-clock"></i></span> -->
 
   <%= submit_tag "Search", class: "btn button-primary btn-block" %>
 <% end %>
 
-
-
-
-
-
-
-
-
 </div>
-

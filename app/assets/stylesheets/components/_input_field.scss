@@ -1,22 +1,23 @@
 .input_field {
   display: flex;
   align-items: center;
-  background-color: $white;
+  background-color: $gray;
   border: 1px solid $gray;
   border-opacity: 0.35;
   border-radius: 3px;
   width: 334px;
-  height: 50px;
-  margin: 0px;
+  height: 40px;
+  margin-top: 10px;
+  padding: 5px 10px 5px 20px
 }
 
 .input_field p {
   color: $gray;
-  opacity: 0.35;
+  opacity: 0.7;
   margin: 0px;
+  font-family: $body-font;
 }
 
-.input_field i {
-  color: $gray;
-  opacity: 0.35;
+.search .button-primary {
+  margin-top: 20px;
 }

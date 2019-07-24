@@ -2,7 +2,7 @@ class ProvidersController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @providers = Provider.all
+    @providers = Provider.geocoded
     if params[:query].present?
       sql_query = " \
         users.first_name @@ :query \
@@ -19,6 +19,14 @@ class ProvidersController < ApplicationController
       else
         @providers = nearby_providers
       end
+    end
+
+    @markers = @providers.map do |provider|
+      {
+        lat: provider.latitude,
+        lng: provider.longitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { provider: provider })
+      }
     end
   end
 

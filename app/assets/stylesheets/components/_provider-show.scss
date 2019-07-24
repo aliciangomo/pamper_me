@@ -1,0 +1,44 @@
+.provider-show-images {
+  width: 100vw;
+  height: 40vh;
+  background-image: url(https://images.unsplash.com/photo-1478070531059-3db579c041d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80);
+  background-position: center;
+  background-size: cover;
+}
+
+.provider-show-intro {
+  width: 100vw;
+  min-height: 5vh;
+  padding: 5vw 7vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.provider-show-avatar .provider-show-avatar-img {
+  width: 8vh;
+  height: 8vh;
+  // image: cover;
+  border-radius: 50%;
+}
+
+.provider-show-name-description {
+  // margin-right: 10vw;
+  .name {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0px;
+  }
+  .statement {
+    font-size: 16px;
+    font-weight: 100;
+    margin: 0px;
+  }
+}
+
+.provider-show-rating {
+  display: flex;
+}
+
+.provider-show-description {
+
+}

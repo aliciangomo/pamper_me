@@ -1,4 +1,37 @@
-<div class="container">
-  <p>This is where the <%= @provider.user.first_name %>'s uploaded pictures will go</p>
-  <h1><%= @provider.user.first_name %> <%= @provider.user.last_name %></h1>
+<div>
+  <div class="provider-show-images">
+    <p>This is where <%= @provider.user.first_name %>'s uploaded pictures will go</p>
+  </div>
+
+  <div class="provider-show-intro">
+    <div class="provider-show-name-description">
+      <p class="name" >Hi! I'm <%= @provider.user.first_name %> <%= @provider.user.last_name %>!</p>
+      <p class="statement"><%= @provider.statement %></p>
+    </div>
+    <div class="provider-show-avatar">
+      <%= image_tag( @provider.user.avatar, class: "provider-show-avatar-img") %>
+    </div>
+  </div>
+    <!-- <div class="provider-show-rating">
+      <h5>4</h5><i class="fas fa-star"></i>
+    </div> -->
+
+  <div class="provider-show-description">
+    <p><%= @provider.description %></p>
+  </div>
+  <div class="provider-show-services">
+    <% @provider.treatments.each do |treatment| %>
+    <div class="provider-show-treatments">
+      <%#= simple_form_for(treatment) do |f| %>
+      <%#= f.association :@provider.treatments, as: :check_boxes %>
+      <%# end %>
+      <p>
+        <%= treatment.name %>
+        <%= treatment.price %>
+      </p>
+    </div>
+    <% end %>
+    <%#= raise %>
+  </div>
+
 </div>

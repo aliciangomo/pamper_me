@@ -1,30 +1,123 @@
 <% date = Time.new %>
-<div class="dashboardbanner">
+<div class="dashboardbanner" style="background-image: linear-gradient(to right, #193CE2 5%, transparent 55%),url(<%= current_user.avatar %>)">
+
   <div class="container">
-    <h2><%= current_user.first_name %>'s Dashboard</h2>
-    <p>Hey there, happy <%= date.strftime("%A") %>!</p>
+    <h2>Hi <%= current_user.first_name %>!</h2>
+    <p>Happy <%= date.strftime("%A") %>!</p>
   </div>
 </div>
 
-<div class="user-dashboard-cards">
+<div class="dashboard_container">
 
-<% if @bookings %>
-<% @bookings.each do |booking| %>
-  <div class="user-dashboard-card">
-    <div class="user-dashboard-card-infos">
-      <p id="treatment-booked"><strong><%= booking.treatment.name %></strong></p>
-      <p><%= booking.date %> </p>
-      <p id="booking-status"><%= booking.status%></p>
-    </div>
+<p class="provider-dashboard-intro">Review and manage your recent bookings:</p>
 
-    <div class="user-dashboard-card-links">
-      <i class="fab fa-whatsapp"></i>
-      <%= link_to '<i class="fas fa-chevron-right"></i>'.html_safe, treatment_booking_path(booking.treatment, booking)%>
-    </div>
+<% if @provider_bookings %>
+  <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent"> -->
+  <div class="collapsible">
+  <div class="title">
+  <i class="fas fa-chevron-down"></i><p id="confirmed-bookings">Confirmed</p><p class="counter">(<%= @provider_bookings.where(status: 1).order(date: :desc).count %>)</p>
   </div>
+    <div class="provider-dashboard-cards content confirmed">
+    <% @provider_bookings.where(status: 1).order(date: :desc).each do |booking| %>
+   <!--  <ul class="navbar-nav ml-auto">
+        <li class="nav-item"> -->
+            <div class="provider-dashboard-card">
+              <div class="provider-dashboard-card-infos">
+                <p id="treatment-booked"><strong><%= booking.treatment.name %></strong></p>
+                <p><%= booking.date %> </p>
+                <p>€<%= booking.price %> </p>
+              </div>
+              <div class="user-dashboard-card-links">
+                <i class="fab fa-whatsapp"></i>
+                <%= link_to '<i class="fas fa-chevron-right"></i>'.html_safe, treatment_booking_path(booking.treatment, booking)%>
+              </div>
+            </div>
+        <!-- </li> -->
     <% end %>
+  </div>
+</div>
+
+<br>
+
+  <div class="collapsible">
+    <div class="title">
+    <i class="fas fa-chevron-down"></i> <p id="pending-bookings">Pending</p> <p class="counter">(<%= @provider_bookings.where(status: 0).order(date: :desc).count %>)</p>
+    </div>
+      <div class="provider-dashboard-cards content pending">
+      <% @provider_bookings.where(status: 0).order(date: :desc).each do |booking| %>
+       <!--  <ul class="navbar-nav ml-auto">
+            <li class="nav-item"> -->
+                <div class="provider-dashboard-card">
+                  <div class="provider-dashboard-card-infos">
+                    <p id="treatment-booked"><strong><%= booking.treatment.name %></strong></p>
+                    <p><%= booking.date %> </p>
+                    <p>€<%= booking.price %> </p>
+                  </div>
+                  <div class="user-dashboard-card-links">
+                    <a href=# class="confirm-booking"><%= link_to '<i class="fas fa-check"></i>'.html_safe, confirm_path(booking), remote: true %></a>
+                    <a href=# class="decline-booking"><%=link_to '<i class="fas fa-times"></i>'.html_safe, treatment_booking_path(booking.treatment, booking), remote: true%>
+                      <%= link_to '<i class="fas fa-chevron-right"></i>'.html_safe, treatment_booking_path(booking.treatment, booking)%>
+                    </a>
+                  </div>
+                </div>
+            <!-- </li> -->
+        <% end %>
+      </div>
+    </div>
+
+<br>
+
+<div class="collapsible">
+  <div class="title">
+  <i class="fas fa-chevron-down"></i><p id="declined-bookings">Declined</p><p class="counter">(<%= @provider_bookings.where(status: 2).order(date: :desc).count %>)</p>
+  </div>
+    <div class="provider-dashboard-cards content declined">
+    <% @provider_bookings.where(status: 2).order(date: :desc).each do |booking| %>
+   <!--  <ul class="navbar-nav ml-auto">
+        <li class="nav-item"> -->
+            <div class="provider-dashboard-card">
+              <div class="provider-dashboard-card-infos">
+                <p id="treatment-booked"><strong><%= booking.treatment.name %></strong></p>
+                <p><%= booking.date %> </p>
+                <p>€<%= booking.price %> </p>
+              </div>
+              <div class="user-dashboard-card-links">
+                <%= link_to '<i class="fas fa-chevron-right"></i>'.html_safe, treatment_booking_path(booking.treatment, booking)%>
+              </div>
+            </div>
+        <!-- </li> -->
+    <% end %>
+  </div>
+</div>
+
+<br>
+
+<div class="collapsible">
+  <div class="title">
+  <i class="fas fa-chevron-down"></i><p id="cancelled-bookings">Cancelled</p><p class="counter">(<%= @provider_bookings.where(status: 3).order(date: :desc).count %>)</p>
+  </div>
+    <div class="provider-dashboard-cards content cancelled">
+    <% @provider_bookings.where(status: 3).order(date: :desc).each do |booking| %>
+   <!--  <ul class="navbar-nav ml-auto">
+        <li class="nav-item"> -->
+            <div class="provider-dashboard-card">
+              <div class="provider-dashboard-card-infos">
+                <p id="treatment-booked"><strong><%= booking.treatment.name %></strong></p>
+                <p><%= booking.date %> </p>
+                <p>€<%= booking.price %> </p>
+              </div>
+              <div class="user-dashboard-card-links">
+                <%= link_to '<i class="fas fa-chevron-right"></i>'.html_safe, treatment_booking_path(booking.treatment, booking)%>
+              </div>
+            </div>
+        <!-- </li> -->
+    <% end %>
+  </div>
+</div>
+
 <% else %>
   <p>You have no bookings yet.</p>
 <% end %>
 </div>
 
+</div>

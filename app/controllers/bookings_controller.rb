@@ -8,6 +8,40 @@ class BookingsController < ApplicationController
     @treatment = Treatment.find(params[:treatment_id])
   end
 
+  def edit
+  end
+
+  def update
+  end
+
+  def confirm
+    @booking = Booking.find(params[:id])
+    @booking.status = 1
+    if @booking.save
+      respond_to do |format|
+        format.html { redirect_to dashboard_path }
+        format.js  # <-- will render `app/views/bookings/confirm.js.erb`
+      end
+    else
+      respond_to do |format|
+        format.html { render 'restaurants/show' }
+        format.js  # <-- idem
+      end
+    end
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    current_user.provider.nil?
+    @booking.status = 3
+  else
+    @booking.status = 2
+    if @booking.save!
+    redirect_to dashboard_path
+    else
+    render :show
+    end
+
   def new
 
   end
@@ -33,5 +67,6 @@ class BookingsController < ApplicationController
 
   def strong_params
     params.require(:booking).permit(:treatment_id, :date, :price, :status, :user_id)
+
   end
 end

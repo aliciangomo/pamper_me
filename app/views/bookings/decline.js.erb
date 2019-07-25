@@ -1,5 +1,4 @@
-
-function refreshCollapsibles(bookingId) {
+function declineBooking(bookingId) {
 
   const pending = document.querySelector(".pending");
 
@@ -8,15 +7,15 @@ function refreshCollapsibles(bookingId) {
   const pendingCount = pending.querySelector('.number')
   pendingCount.innerText = parseInt(pendingCount.innerText, 10) - 1
 
-  const confirmed = document.querySelector(".confirmed");
-  const insertionPoint = confirmed.querySelector('.provider-dashboard-cards')
+  const declined = document.querySelector(".declined");
+  const insertionPoint = declined.querySelector('.provider-dashboard-cards')
 
   insertionPoint.insertAdjacentHTML('afterbegin', booking.outerHTML)
 
-  const confirmedCount = confirmed.querySelector('.number')
-  confirmedCount.innerText = parseInt(confirmedCount.innerText, 10) + 1
+  const declinedCount = declined.querySelector('.number')
+  declinedCount.innerText = parseInt(declinedCount.innerText, 10) + 1
 
   booking.style.display = "none";
 };
 
-refreshCollapsibles(<%= @booking.id %>)
+declineBooking(<%= @booking.id %>)

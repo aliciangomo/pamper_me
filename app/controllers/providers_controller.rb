@@ -14,12 +14,14 @@ class ProvidersController < ApplicationController
     end
 
     if params[:location].present?
-      if nearby_providers = @providers.near('params[:location]', 10).empty?
+      if nearby_providers == @providers.near('params[:location]', 10).empty?
         @providers
       else
         @providers = nearby_providers
       end
     end
+
+    @providers = @providers.uniq
 
     @markers = @providers.map do |provider|
       {

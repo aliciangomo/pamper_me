@@ -13,7 +13,7 @@ const initMapbox = () => {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v10'
+      style: 'mapbox://styles/mapbox/light-v9'
     });
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
@@ -21,6 +21,11 @@ const initMapbox = () => {
     var el = document.createElement('div');
     el.className = 'marker';
 
+      el.addEventListener('click', () => {
+        map.flyTo({
+          center: [marker.lng, marker.lat ]
+        });
+      });
     const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
       new mapboxgl.Marker(el)
         .setLngLat([ marker.lng, marker.lat ])
@@ -30,9 +35,9 @@ const initMapbox = () => {
     });
     fitMapToMarkers(map, markers);
 
-    console.log(map)
-    console.log()
   }
+
+
 };
 
 

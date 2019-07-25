@@ -8,27 +8,42 @@
   color: $black;
   font-family: $body-font;
   text-align: right;
-  font-size: 16px;
+  // font-size: 12px;
   font-weight: 100;
   .name {
-    font-size: 24px;
-    font-weight: 500px;
-    font-style: bold;
-    color: $blue;
+    font-size: 16px;
+    font-weight: 500;
+    color: $black;
   }
 }
 
+.popup_window_content {
+  margin: 8px;
+}
+
+
+.fa-star {
+  color: $green;
+  margin-top: 12px;
+}
 .mapboxgl-popup-content {
-  text-align: center;
+  text-align: left;
+    padding: 10px 10px 10px !important;
+  p {
+    margin: 0px;
+    // padding-top: 4px;
+    font-size: 12px;
+    opacity: .70%;
+  }
 }
 .marker {
-  background-image: url('https://i.imgur.com/8xA7CvZ.png');
+  background-image: url('https://i.imgur.com/qeaaFWD.png');
   background-size: cover;
-  // background-color: $blue;
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
   cursor: pointer;
 }
 
 
+// green stars, padding for box 5%

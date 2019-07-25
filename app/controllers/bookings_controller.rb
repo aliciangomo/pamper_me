@@ -17,30 +17,34 @@ class BookingsController < ApplicationController
   def confirm
     @booking = Booking.find(params[:id])
     @booking.status = 1
-    if @booking.save
-      respond_to do |format|
-        format.html { redirect_to dashboard_path }
-        format.js  # <-- will render `app/views/bookings/confirm.js.erb`
-      end
-    else
-      respond_to do |format|
-        format.html { render 'restaurants/show' }
-        format.js  # <-- idem
-      end
+    @booking.save
+    respond_to do |format|
+      format.html { redirect_to dashboard_path }
+      format.js  # <-- will render `app/views/bookings/confirm.js.erb`
     end
   end
 
   def destroy
     @booking = Booking.find(params[:id])
-    current_user.provider.nil?
-    @booking.status = 3
-  else
-    @booking.status = 2
-    if @booking.save!
-    redirect_to dashboard_path
-    else
-    render :show
+    if current_user.provider.nil?
+      @booking.status = 3
     end
+    if @booking.save!
+      redirect_to dashboard_path
+    else
+      render :show
+    end
+  end
+
+  def decline
+    @booking = Booking.find(params[:id])
+    @booking.status = 2
+    @booking.save
+    respond_to do |format|
+      format.html { redirect_to dashboard_path }
+      format.js  # <-- will render `app/views/bookings/decline.js.erb`
+    end
+  end
 
   def new
 

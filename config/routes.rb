@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   put "/bookings/:id/confirm", to: 'bookings#confirm', as: "confirm"
 
+  put "/bookings/:id/decline", to: 'bookings#decline', as: "decline"
+
   get "review_booking/bookings/:id", to: 'pages#review_booking', as: "review_booking"
 
 

@@ -34,28 +34,3 @@
 </div>
 <hr>
 
-<div class="booking-title">
-    <p>Booking details</p>
-  </div>
-  <div class="link-to-actions">
-    <p class="show-icon"><i class="far fa-edit"></i></p>
-    <p class="show-icon"><i class="far fa-trash-alt"></i></p>
-  </div>
-
-
-<div class="show-container">
-<p>Your booking details are as follows: </p>
-
-
-<ul>
-
-  <li>You have a booking with <strong><%= @booking.treatment.provider.user.first_name %> <%= @booking.treatment.provider.user.last_name %></strong></li>
-  <li>For: <strong><%= @booking.treatment.name %></strong></li>
-  <li>On: <strong><%= @booking.date %></strong></li>
-  <li>The total for your booking is <strong>€<%= @booking.price %></strong></li>
-  <li><%= @booking.treatment.provider.user.first_name %> awaits you at <strong><%= @booking.treatment.provider.location %></strong></li>
-<%# raise %>
-</ul>
-
-<p>See map</p>
-</div>

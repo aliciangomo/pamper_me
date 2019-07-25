@@ -6,8 +6,11 @@ Rails.application.routes.draw do
   get "dashboard", to: 'pages#dashboard', as: "dashboard"
 
   resources :treatments do
-    resources :bookings
+    resources :bookings, expect: [:create]
   end
+
+  resources :bookings, only: [:create]
+
 
   resources :providers
 end

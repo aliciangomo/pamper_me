@@ -59,7 +59,7 @@ class ProvidersController < ApplicationController
 
   def provider_params
     # not needed yet
-    # params.require(:painting).permit(:name, :description, :artist, :year, :style, :available, :price, :photo)
+    params.require(:provider).permit(:location, :photo, :statement, :description, :rating, :rating, :user_id, :neighborhood, :phone_number, :latitude, :longitude)
   end
 
   def treatment_search

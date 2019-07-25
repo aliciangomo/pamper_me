@@ -1,0 +1,6 @@
+<% @treatments.each do |treatment| %>
+  <h1><%= treatment.id %></h1>
+  <h1><%= treatment.name %></h1>
+  <h1><%= treatment.price %></h1>
+  <h1><%= treatment.provider.user.name %></h1>
+<% end %>

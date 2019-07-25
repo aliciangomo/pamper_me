@@ -1,10 +1,15 @@
 class TreatmentsController < ApplicationController
   def index
-    @treatments_
+    @treatments = Treatments.all
   end
 
-  def show
-    @booking = Booking.find(params[:id])
-    @treatment = Treatment.find(params[:treatment_id])
+  # def show
+  #   @treatment = Treatment.find(params[:treatment_id])
+  # end
+
+  private
+
+  def strong_params
+    params.require(:treatment).permit(:name, :description, :provider_id, :price, :category)
   end
 end

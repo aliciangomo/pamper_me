@@ -1,27 +1,33 @@
-<div class="booking-title">
-  <div class="link-to-dashboard">
-    <p><i class="fas fa-chevron-left"></i></p>
+<div class="link-to-dashboard">
+    <p><%=link_to '<i class="fas fa-chevron-left"></i>'.html_safe, dashboard_path%></p>
     <p>Booking details</p>
-  </div>
-  <div class="link-to-actions">
-    <p class="show-icon"><i class="far fa-edit"></i></p>
-    <p class="show-icon"><i class="far fa-trash-alt"></i></p>
-  </div>
 </div>
 
+
 <div class="show-container">
-<p>Your booking details are as follows: </p>
+<p>You have made a booking as follows: </p>
 
 
-<ul>
+<ul >
 
-  <li>You have a booking with <strong><%= @treatment.provider.user.first_name %> <%= @treatment.provider.user.last_name %></strong></li>
+  <li>You are meeting <strong><%= @treatment.provider.user.first_name %> <%= @treatment.provider.user.last_name %></strong></li>
   <li>For: <strong><%= @booking.treatment.name %></strong></li>
   <li>On: <strong><%= @booking.date %></strong></li>
   <li>The total for your booking is <strong>€<%= @booking.price %></strong></li>
-  <li><%= @booking.user.first_name %> awaits you at <strong><%= @treatment.provider.location %></strong></li>
-
+  <li><%= @treatment.provider.user.first_name %> awaits you at <strong><%= @treatment.provider.location %></strong></li>
 </ul>
 
-<p>See map</p>
+<hr>
+<div class="link-to-actions">
+    <i class="fab fa-whatsapp"></i>
+    <i class="fas fa-map-marker-alt"></i>
+    <i class="far fa-edit"></i><%#= link_to '<i class="far fa-edit"></i>'.html_safe, edit_treatment_booking_path(@booking.treatment, @booking) %>
+    <%= link_to '<i class="far fa-trash-alt"></i></i>'.html_safe, treatment_booking_path(@booking.treatment, @booking),
+                      method: 'delete',
+                      data: {confirm: "Are you sure?"} %>
+</div>
+<hr>
+
+<%#= render "shared/map"%>
+
 </div>

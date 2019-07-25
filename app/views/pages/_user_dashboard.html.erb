@@ -9,7 +9,7 @@
 <div class="user-dashboard-cards">
 
 <% if @bookings %>
-<% @bookings.each do |booking| %>
+<% @bookings.order(date: :desc).each do |booking| %>
   <div class="user-dashboard-card">
     <div class="user-dashboard-card-infos">
       <p id="treatment-booked"><strong><%= booking.treatment.name %></strong></p>

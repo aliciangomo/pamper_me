@@ -22,9 +22,10 @@
   font-size: 40px;
   font-weight: bold;
   font-family: $body-font;
-  @include media-breakpoint-up(md) {
-    font-size: 80px;
-  }
+  letter-spacing: 2px;
+  // @include media-breakpoint-up(md) {
+  //   font-size: 80px;
+  // }
 }
 
 #banner-green {

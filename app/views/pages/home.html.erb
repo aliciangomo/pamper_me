@@ -10,20 +10,21 @@
 <%= form_tag providers_path, method: :get do %>
   <%= text_field_tag :query,
     params[:query],
-    class: "input_field",
+    class: "form-control mt-2",
     placeholder: "Select treatment or stylist"
   %>
 <!--   <span> <i class="fas fa-search"></i></span> -->
   <%= text_field_tag :location,
     params[:location],
-    class: "input_field",
+    class: "form-control mt-2",
     placeholder: "Enter your location"
   %>
 <!--   <span><i class="far fa-map-marker-alt"></i></span> -->
-
-  <div class="input_field">
-    <p>Any date</p>
-  </div>
+  <%= text_field_tag :date,
+    params[:date],
+    class: "form-control mt-2",
+    placeholder: "Any date"
+  %>
 <!--   <span><i class="far fa-clock"></i></span> -->
 
   <%= submit_tag "Search", class: "btn button-primary btn-block" %>

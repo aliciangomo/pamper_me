@@ -1,16 +1,11 @@
-.booking-title {
-  display: flex;
-  justify-content: space-between;
-  margin: auto 10px;
-}
-
 .link-to-dashboard {
   display: flex;
   justify-content: flex-start;
   align-items: baseline;
+  margin-top: 20px;
 }
 
-.fa-chevron-left {
+.link-to-dashboard i {
   font-size: 1.5rem;
   color: $black;
   opacity: 0.5;
@@ -18,19 +13,8 @@
   margin-left: 10px;
 }
 
-.link-to-actions {
-  display: flex;
-  justify-content: flex-start;
-}
-
-.show-icon i {
-  margin-left: 20px;
-  color: $blue;
-  font-size: 16px;
-}
-
-.booking-title p {
-  font-size: 28px;
+.link-to-dashboard p {
+  font-size: 20px;
   font-weight: 500;
 }
 
@@ -48,6 +32,29 @@
 .show-container ul {
   font-size: 16;
   font-weight: 300;
-  line-height: 2.5rem;
+  line-height: 3rem;
+  margin-bottom: 5vh;
 }
 
+hr {
+    display: block;
+    height: 1px;
+    width: 87vw;
+    // width: 80vw;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.link-to-actions {
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+  padding: 7vw 7vw;
+  i {
+    font-size: 24px;
+    // opacity: .70;
+    color: $green;
+  }
+}

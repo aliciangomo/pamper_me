@@ -13,20 +13,19 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(booking_params)
+    @booking = Booking.new(strong_params)
     @booking.treatment = Treatment.find(params[:booking][:treatment_id])
     # @provider = @treatment.provider
     @booking.user = current_user
-    @booking.price = booking.treatment.price
+    @booking.price = @booking.treatment.price
     @booking.status = 0
-
-    # @booking.user = current_user
-    # @booking.price = price
-    # @booking.painting = @painting
+    @booking.date = Date.tomorrow
     if @booking.save!
-      redirect_to dashboard_path
+      # redirect_to treatment_booking_path(@booking.treatment, @booking)
+      redirect_to review_booking_path(@booking)
     else
-      render painting_path(@painting)
+      # Need to configure this
+      render bookings_path(@booking)
     end
   end
 

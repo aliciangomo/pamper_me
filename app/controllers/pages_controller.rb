@@ -7,4 +7,8 @@ class PagesController < ApplicationController
   def dashboard
     @bookings = Booking.where(user: current_user)
   end
+
+  def review_booking
+     @booking = Booking.find(params[:id])
+  end
 end

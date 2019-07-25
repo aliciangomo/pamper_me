@@ -10,4 +10,8 @@ class PagesController < ApplicationController
     @provider_bookings = Booking.joins(:treatment).where('treatments.provider': @provider)
   end
 
+  def review_booking
+     @booking = Booking.find(params[:id])
+  end
+
 end

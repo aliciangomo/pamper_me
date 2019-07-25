@@ -1,8 +1,18 @@
-<p class="name"><%= provider.user.first_name %> <%= provider.user.last_name %></p>
-<% provider.rating.times do  %>
-<i class="fa fa-star " ></i>
+<%= link_to provider_path(provider) do %>
+  <div class="popup_window_content">
+
+    <p class="name"><%= provider.user.first_name %> <%= provider.user.last_name %></p>
+
+
+          <% provider.rating.times do  %>
+          <i class="fa fa-star " ></i>
+        <% end %>
+
+    <div class="content_small">
+      <p class="statement"><%= provider.statement %></p>
+
+      <p><%= provider.location %></p>
+    </div>
+
+  </div>
 <% end %>
-
-<p class="statement"><%= provider.statement %></p>
-
-<p><%= provider.location %></p>

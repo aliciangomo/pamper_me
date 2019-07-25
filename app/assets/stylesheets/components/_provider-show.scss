@@ -12,6 +12,7 @@
   padding: 5vw 7vw;
   display: flex;
   justify-content: space-between;
+  align-content: baseline;
 }
 
 .provider-show-avatar .provider-show-avatar-img {
@@ -73,10 +74,25 @@ hr {
 .provider-show-icons {
   display: flex;
   justify-content: space-around;
+  align-items: baseline;
   padding: 5vw 7vw;
+  color: $green;
   i {
+    font-size: 27px;
+    // opacity: .70;
+  }
+}
+
+.provider-show-rating {
+  display: flex;
+  align-items: flex-start;
+  p {
+    margin: 0;
     font-size: 24px;
-    opacity: .70;
+  }
+  i {
+    color: $green;
+    font-size: 12px;
   }
 }
 

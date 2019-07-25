@@ -49,6 +49,7 @@ provider1 = Provider.create!(location: " Calle de las Infantas, 8, 28004 Madrid"
   description: "Great tattoos in Madrid. #{description_lorem}",
   statement: "100 percent satisfaction, guaranteed!",
   rating: 5,
+  phone_number: "+34 (123) 123-1234",
   user: user1)
 # provider1.save!
 puts "Provider 1 Seeded ✅"
@@ -58,6 +59,7 @@ provider2 = Provider.create!(location: "Calle del Barquillo, 39, 28004 Madrid",
   description: "Great nail tech in Madrid. #{description_lorem}",
   statement: "True art, right on your nails!",
   rating: 4,
+  phone_number: "+34 (123) 123-1234",
   user: user2)
 # provider2.save!
 puts "Provider 2 Seeded ✅"
@@ -67,6 +69,7 @@ provider3 = Provider.create!(location: "Calle de Valverde, 44, 28004 Madrid",
   description: "Great hair stylist in Madrid. #{description_lorem}",
   statement: "I do hair, with love and care!",
   rating: 3,
+  phone_number: "+34 (123) 123-1234",
   user: user3)
 # provider3.save!
 puts "Provider 3 Seeded ✅"
@@ -76,6 +79,7 @@ provider4 = Provider.create!(location: "Calle San Gregorio, 5, 28004 Madrid",
   description: "Perfect looking natural makeup! #{description_lorem}",
   statement: "I will help you look your BEST :)",
   rating: 5,
+  phone_number: "+34 (123) 123-1234",
   user: user8)
 provider4.save!
 puts "Provider 4 Seeded ✅"
@@ -85,6 +89,7 @@ provider5 = Provider.create!(location: "Junto al hotel Me de la, Plaza del Ánge
   description: "Studied physical training at oxford, I'm the best! #{description_lorem}",
   statement: "Get the body you DESERVE!",
   rating: 2,
+  phone_number: "+34 (123) 123-1234",
   user: user6)
 provider5.save!
 puts "Provider 5 Seeded ✅"
@@ -94,6 +99,7 @@ provider6 = Provider.create!(location: "Calle Barquillo 39, 28004, Madrid",
   description: "Hair is my passion! #{description_lorem}",
   statement: "Youre in great hands with me!!",
   rating: 2,
+  phone_number: "+34 (123) 123-1234",
   user: user9)
 provider6.save!
 puts "Provider 6 Seeded ✅"

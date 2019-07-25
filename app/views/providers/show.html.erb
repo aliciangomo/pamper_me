@@ -24,13 +24,15 @@
   <hr class="small">
   <div class="provider-show-icons">
     <div class="provider-show-rating">
-      <div class="provider-show-stars">
+      <div>
+        <p><%= @provider.rating %></p>
+      </div>
+      <div>
         <i class="fas fa-star"></i>
       </div>
-      <i class="fas fa-star"></i>
     </div>
     <div class="provider-show-contact">
-      <i class="fab fa-whatsapp"></i>
+      <a href="<%= @phone_number %>"><i class="fab fa-whatsapp"></i></a>
     </div>
     <div class="provider-show-location-tag">
       <i class="fas fa-map-marker-alt"></i>
@@ -38,17 +40,20 @@
   </div>
   <hr class="small">
   <div class="provider-show-services">
-    <% @provider.treatments.each do |treatment| %>
-    <div class="provider-show-treatments">
-      <%#= simple_form_for(treatment) do |f| %>
-      <%#= f.association :@provider.treatments, as: :check_boxes %>
+     <div class="provider-show-treatments">
+
+      <%= simple_form_for(@booking) do |f| %>
+
+        <%= f.association :treatment, collection: @provider.get_treatments, input_html: {multiple: false}, include_hidden: false, as: :radio_buttons %>
+        <%= f.submit %>
       <%# end %>
-      <p>
-        <%= treatment.name %>
-        <%= treatment.price %>
-      </p>
+      <% end %>
+      <!-- <p>
+        <%#= treatment.name %>
+        <%#= treatment.price %>
+      </p> -->
     </div>
-    <% end %>
+
     <%#= raise %>
   </div>
 

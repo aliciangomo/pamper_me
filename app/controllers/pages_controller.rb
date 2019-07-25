@@ -9,4 +9,5 @@ class PagesController < ApplicationController
     @provider = current_user.provider
     @provider_bookings = Booking.joins(:treatment).where('treatments.provider': @provider)
   end
+
 end

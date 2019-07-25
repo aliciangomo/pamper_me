@@ -1,16 +1,21 @@
+// .dashboardbanner {
+//   height: 100px;
+//   background-image: linear-gradient(to right, gold 30%, transparent 80%),
+//                     url('https://i.imgur.com/waDgcnc.jpg');
+//   background-repeat: no-repeat;
+//   background-size: 100% 100%, cover;
+// }
+
+
 .dashboardbanner {
-  height: 100px;
-  background-image: linear-gradient(to right, gold 30%, transparent 80%),
-                    url('https://i.imgur.com/waDgcnc.jpg');
+  // background-image: linear-gradient(to bottom, $blue, $blue, $green);
+  height: 40vw;
+  padding: 20px 10px 10px 5px;
+  background-size: 70% 40vw;
+  background-position: right top;
   background-repeat: no-repeat;
-  background-size: 100% 100%, cover;
-}
-
-
-.dashboardbanner {
-  background-image: linear-gradient(to bottom, $blue, $blue, $green);
-  height: 30vw;
-  padding: 20px 10px 10px 10px;
+  background-color: $blue;
+  overflow: hidden;
 }
 
 .dashboardbanner h2 {

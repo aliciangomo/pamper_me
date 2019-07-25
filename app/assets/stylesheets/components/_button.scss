@@ -9,6 +9,10 @@
   font-style: $body-font;
 }
 
+.button-primary:hover {
+  color: $white
+}
+
 .button-secondary {
   border-radius: 5px;
   border: 1px, $green, solid;
@@ -21,4 +25,7 @@
   font-style: $body-font;
 }
 
+.button-secondary:hover {
+  color: $green
+}
 

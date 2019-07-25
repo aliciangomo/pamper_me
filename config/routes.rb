@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   get "dashboard", to: 'pages#dashboard', as: "dashboard"
+  put "/bookings/:id/confirm", to: 'bookings#confirm', as: "confirm"
 
   resources :treatments do
     resources :bookings

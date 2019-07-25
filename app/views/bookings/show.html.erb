@@ -5,11 +5,11 @@
 
 
 <div class="show-container">
+
+<% if current_user.provider.nil? %>
+
 <p>You have made a booking as follows: </p>
-
-
 <ul >
-
   <li>You are meeting <strong><%= @treatment.provider.user.first_name %> <%= @treatment.provider.user.last_name %></strong></li>
   <li>For: <strong><%= @booking.treatment.name %></strong></li>
   <li>On: <strong><%= @booking.date %></strong></li>
@@ -22,12 +22,35 @@
     <i class="fab fa-whatsapp"></i>
     <i class="fas fa-map-marker-alt"></i>
     <i class="far fa-edit"></i><%#= link_to '<i class="far fa-edit"></i>'.html_safe, edit_treatment_booking_path(@booking.treatment, @booking) %>
-    <%= link_to '<i class="far fa-trash-alt"></i></i>'.html_safe, treatment_booking_path(@booking.treatment, @booking),
+    <%= link_to '<i class="far fa-check"></i></i>'.html_safe, treatment_booking_path(@booking.treatment, @booking),
                       method: 'delete',
                       data: {confirm: "Are you sure?"} %>
 </div>
 <hr>
 
 <%#= render "shared/map"%>
+
+<% else %>
+<p>Your booking is as follows: </p>
+<ul >
+  <li>You are meeting <strong><%= @booking.user.first_name %> <%= @booking.user.last_name %></strong></li>
+  <li>For: <strong><%= @booking.treatment.name %></strong></li>
+  <li>On: <strong><%= @booking.date %></strong></li>
+  <li>The total for this booking is <strong>€<%= @booking.price %></strong></li>
+  <li>Payment status: <strong>paid</strong></li>
+</ul>
+
+
+<hr>
+<div class="link-to-actions">
+    <i class="fab fa-whatsapp"></i>
+    <i class="far fa-edit"></i><%#= link_to '<i class="far fa-edit"></i>'.html_safe, edit_treatment_booking_path(@booking.treatment, @booking) %>
+    <%= link_to '<i class="fas fa-check"></i></i>'.html_safe, treatment_booking_path(@booking.treatment, @booking),
+                      method: 'delete',
+                      data: {confirm: "Are you sure?"} %>
+</div>
+<hr>
+
+<% end %>
 
 </div>

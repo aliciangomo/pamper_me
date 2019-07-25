@@ -1,8 +1,8 @@
 <% date = Time.new %>
-<div class="dashboardbanner">
+<div class="dashboardbanner" style="background-image: linear-gradient(to right, #193CE2 5%, transparent 55%),url(<%= current_user.avatar %>)">
   <div class="container">
-    <h2><%= current_user.first_name %>'s Dashboard</h2>
-    <p>Hey there, happy <%= date.strftime("%A") %>!</p>
+    <h2>Hi <%= current_user.first_name %> </h2>
+    <p>Happy <%= date.strftime("%A") %>!</p>
   </div>
 </div>
 

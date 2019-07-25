@@ -1,13 +1,47 @@
+<div class="booking-review-images">
+</div>
+
+<div class="booking-review-intro">
+  <div class="booking-review-name-description">
+    <p class="name">Review Your Booking</p>
+    <p class="statement">Confrim your booking with <%= @booking.treatment.provider.user.first_name %>:</p>
+  </div>
+  <div class="booking-review-avatar">
+    <%= image_tag( @booking.treatment.provider.user.avatar, class: "booking-review-avatar-img") %>
+  </div>
+</div>
+<hr>
+
+<div class="booking-review-description">
+  <ul >
+    <li>
+      <p>Your provider will be <strong><%= @booking.treatment.provider.user.first_name %> <%= @booking.treatment.provider.user.last_name %></strong></p>
+    </li>
+    <li>
+      <p>For a <strong><%= @booking.treatment.name %></strong></p>
+    </li>
+    <li>
+      <% date = @booking.date %>
+      <p>On <strong><%= date.strftime('%A %B %d, %Y') %></strong></p>
+    </li>
+    <li>
+      <p>The total for your booking is <strong>€<%= @booking.price %></strong></p>
+    </li>
+    <li>
+      <p>You have a booking with <strong><%= @booking.treatment.provider.user.first_name %> <%= @booking.treatment.provider.user.last_name %></strong></p>
+    </li>
+  </ul>
+</div>
+<hr>
+
 <div class="booking-title">
-  <div class="link-to-dashboard">
-    <p><i class="fas fa-chevron-left"></i></p>
     <p>Booking details</p>
   </div>
   <div class="link-to-actions">
     <p class="show-icon"><i class="far fa-edit"></i></p>
     <p class="show-icon"><i class="far fa-trash-alt"></i></p>
   </div>
-</div>
+
 
 <div class="show-container">
 <p>Your booking details are as follows: </p>

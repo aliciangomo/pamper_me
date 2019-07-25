@@ -1,0 +1,109 @@
+.booking-review-images {
+  width: 100vw;
+  height: 20vh;
+  background-image: url(https://images.unsplash.com/photo-1523390218733-2e5b84cd6974?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80);
+  background-position: center;
+  background-size: cover;
+}
+
+.booking-review-intro {
+  width: 100vw;
+  min-height: 5vh;
+  padding: 5vw 7vw;
+  display: flex;
+  justify-content: space-between;
+  align-content: baseline;
+}
+
+.booking-review-avatar .booking-review-avatar-img {
+  width: 8vh;
+  height: 8vh;
+  // image: cover;
+  border-radius: 50%;
+}
+
+.booking-review-name-description {
+  // margin-right: 10vw;
+  .name {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0px;
+  }
+  .statement {
+    font-size: 16px;
+    font-weight: 100;
+    margin: 0px;
+  }
+}
+
+// line for the top if we decide to make the first line under the name and photo
+// hr {
+//     display: block;
+//     height: 1px;
+//     // width: 80vw;
+//     border: 0;
+//     border-top: 1px solid #ccc;
+//     margin: 0 auto;
+//     padding: 0;
+// }
+
+hr {
+    display: block;
+    height: 1px;
+    width: 87vw;
+    // width: 80vw;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.booking-review-rating {
+  display: flex;
+}
+
+.booking-review-description {
+  padding: 5vw 7vw;
+  p {
+    margin: 0px;
+    letter-spacing: 1;
+    opacity: .70;
+  }
+
+  ul {
+  list-style-position:inside;
+  }
+
+  li:before {
+    margin-right: 1px;
+  }
+}
+
+.booking-review-icons {
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+  padding: 5vw 7vw;
+  color: $green;
+  i {
+    font-size: 27px;
+    // opacity: .70;
+  }
+}
+
+.booking-review-rating {
+  display: flex;
+  align-items: flex-start;
+  p {
+    margin: 0;
+    font-size: 24px;
+  }
+  i {
+    color: $green;
+    font-size: 12px;
+  }
+}
+
+.booking-review-services {
+
+}

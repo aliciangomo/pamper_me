@@ -85,31 +85,23 @@ hr {
   }
 }
 
-.booking-review-icons {
+.booking-pay-intro {
+  padding: 5vw 7vw;
+  padding-bottom: 0;
+}
+
+.booking-pay-icons {
   display: flex;
   justify-content: space-around;
   align-items: baseline;
   padding: 5vw 7vw;
-  color: $green;
+  color: $gray;
   i {
-    font-size: 27px;
+    font-size: 60px;
     // opacity: .70;
   }
 }
 
-.booking-review-rating {
-  display: flex;
-  align-items: flex-start;
-  p {
-    margin: 0;
-    font-size: 24px;
-  }
-  i {
-    color: $green;
-    font-size: 12px;
-  }
-}
-
-.booking-review-services {
-
-}
+#selected {
+  color: $green;
+    }

@@ -33,6 +33,8 @@ class ProvidersController < ApplicationController
   def show
     set_provider
     @booking = Booking.new
+    # input this into new/create when a new provider
+    # is added to save it in the DB in the correct format
     tel_to(@provider.phone_number)
     # When multiple photos are added
     # @photos = @painting.photos.all

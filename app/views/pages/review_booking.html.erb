@@ -1,34 +1,37 @@
-<div class="booking-review-images">
-</div>
+<!-- <div class="booking-review-images">
+</div> -->
 
 <div class="booking-review-intro">
   <div class="booking-review-name-description">
     <p class="name">Review Your Booking</p>
     <p class="statement">Confrim your booking with <%= @booking.treatment.provider.user.first_name %>:</p>
   </div>
-  <div class="booking-review-avatar">
-    <%= image_tag( @booking.treatment.provider.user.avatar, class: "booking-review-avatar-img") %>
-  </div>
+  <!-- <div class="booking-review-avatar">
+    <%#= image_tag( @booking.treatment.provider.user.avatar, class: "booking-review-avatar-img") %>
+  </div> -->
 </div>
 <hr>
 
 <div class="booking-review-description">
   <ul >
     <li>
+      <p>Your booking number is <strong><%= @booking.id %></strong></p>
+    </li>
+    <li>
       <p>Your provider will be <strong><%= @booking.treatment.provider.user.first_name %> <%= @booking.treatment.provider.user.last_name %></strong></p>
+    </li>
+    <li>
+      <p>At <strong><%= @booking.treatment.provider.location %></strong></p>
     </li>
     <li>
       <p>For a <strong><%= @booking.treatment.name %></strong></p>
     </li>
     <li>
       <% date = @booking.date %>
-      <p>On <strong><%= date.strftime('%A %B %d, %Y') %></strong></p>
+      <p>On <strong><%= date.strftime('%A %B %d, %Y') %></strong> at <strong>13:00</strong></p>
     </li>
     <li>
       <p>The total for your booking is <strong>€<%= @booking.price %></strong></p>
-    </li>
-    <li>
-      <p>You have a booking with <strong><%= @booking.treatment.provider.user.first_name %> <%= @booking.treatment.provider.user.last_name %></strong></p>
     </li>
   </ul>
 </div>

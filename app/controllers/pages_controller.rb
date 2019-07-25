@@ -11,7 +11,6 @@ class PagesController < ApplicationController
   end
 
   def review_booking
-     @booking = Booking.find(params[:id])
+    @booking = Booking.find(params[:id])
   end
-
 end

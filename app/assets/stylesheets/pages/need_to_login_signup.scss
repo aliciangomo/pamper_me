@@ -1,0 +1,70 @@
+.banner-signup {
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1495344517868-8ebaf0a2044a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=610&q=80);
+  background-size: cover;
+  background-position: top-left;
+  background-position: center;
+  padding-top: 50px;
+  height: 100vh;
+  position: relative;
+}
+
+.login-signup-container {
+  padding: 5vw 7vw;
+}
+
+.ugh-oh-buttons-div {
+  margin-top: 40px;
+}
+
+
+#ugh-oh-button-left {
+  margin-right: 30px;
+  font-size: 20px;
+  font-weight: 400;
+  padding: 5px 10px;
+  border: 1px solid $white;
+  background-color: transparent;
+  color: $white;
+}
+
+// #ugh-oh-button-left:hover {
+//   margin-right: 30px;
+//   font-size: 18px;
+//   font-weight: 500;
+//   padding: 5px 10px;
+//   border: 1px solid $green;
+//   background-color: none;
+//   color: $green;
+// }
+
+#ugh-oh-button-right {
+  margin-right: 30px;
+  font-size: 20px;
+  font-weight: 400;
+  padding: 5px 10px;
+  border: 1px solid $white;
+  background-color: transparent;
+  color: $white;
+}
+
+// #ugh-oh-button-right:hover {
+//   margin-right: 30px;
+//   font-size: 18px;
+//   font-weight: 500;
+//   padding: 5px 10px;
+//   border: 1px solid $green;
+//   background-color: none;
+//   color: $green;
+// }
+
+p {
+  font-size: 20px;
+  color: $white;
+  font-weight: 500;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: $white;
+  font-weight: 300;
+}

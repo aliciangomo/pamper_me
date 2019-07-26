@@ -10,76 +10,78 @@
 <div class="provider-show-intro">
   <div class="provider-show-name-description">
     <p class="name" >Happy <%= date.strftime("%A") %> <%= case date.hour
-      when 0..11 then 'morning'
-      when 12..17 then 'afternoon'
-      when 18..23 then 'evening'
-      else
-        ""
+    when 0..11 then 'morning'
+    when 12..17 then 'afternoon'
+    when 18..23 then 'evening'
+    else
+      ""
       end %>!</p>
-    <!-- <p class="name" >Hey there, <%= current_user.first_name %>!</p> -->
-    <p class="statement">Review and manage your recent bookings:</p>
-  </div>
-</div>
-<hr>
-<div class="user-dashboard-cards">
-
-<div class="user-dashboard-container">
-  <!-- <p class="user-dashboard-intro">Review and manage your recent bookings:</p> -->
-
-<!-- <p class="provider-dashboard-intro">Review and manage your recent bookings:</p> -->
-
-  <div class="user-dashboard-dropdown">
-    <div class="title">
-    <i class="fas fa-chevron-right"><!-- <i class="fas fa-chevron-down"> --></i><p id="current-bookings">My current bookings</p>
+      <!-- <p class="name" >Hey there, <%= current_user.first_name %>!</p> -->
+      <p class="statement">Review and manage your recent bookings:</p>
     </div>
-    <div class="user-dashboard-cards">
-    <% if @bookings %>
-    <% @bookings.where("date >= ?", Date.today).order(date: :asc).each do |booking| %>
-      <div class="user-dashboard-card">
-        <div class="user-dashboard-card-infos">
-          <p id="treatment-booked"><strong><%= booking.treatment.name %></strong></p>
-          <p><%= booking.date.strftime('%A %B %d, %Y') %> </p>
-          <p id="booking-status"><%= booking.status%></p>
-        </div>
+  </div>
+  <hr>
+  <div class="user-dashboard-cards">
 
-        <div class="user-dashboard-card-links">
-          <!-- <a href="<%#= booking.treatmentphone_number %>" class="call-user"><i class="fab fa-whatsapp" ></i></a> -->
-          <%= link_to '<i class="fas fa-chevron-right"></i>'.html_safe, treatment_booking_path(booking.treatment, booking)%>
+    <div class="user-dashboard-container">
+      <!-- <p class="user-dashboard-intro">Review and manage your recent bookings:</p> -->
+
+      <!-- <p class="provider-dashboard-intro">Review and manage your recent bookings:</p> -->
+
+      <div class="user-dashboard-dropdown">
+        <div class="title">
+          <i class="fas fa-chevron-right"><!-- <i class="fas fa-chevron-down"> --></i><p id="current-bookings">My current bookings</p>
         </div>
+        <div class="user-dashboard-cards">
+          <% if @bookings %>
+          <% @bookings.where("date >= ?", Date.today).order(date: :asc).each do |booking| %>
+          <div class="user-dashboard-card">
+            <div class="user-dashboard-card-infos">
+              <p id="treatment-booked"><strong><%= booking.treatment.name %></strong></p>
+              <p><%= booking.date.strftime('%A %B %d, %Y') %> </p>
+              <p id="booking-status"><%= booking.status%></p>
+            </div>
+
+            <div class="user-dashboard-card-links">
+              <!-- <a href="<%#= booking.treatmentphone_number %>" class="call-user"><i class="fab fa-whatsapp" ></i></a> -->
+              <%= link_to '<i class="fas fa-chevron-right"></i>'.html_safe, treatment_booking_path(booking.treatment, booking)%>
+            </div>
+          </div>
+          <hr>
+          <% end %>
+        </div>
+        <% else %>
+        <p>You have no bookings yet.</p>
+        <% end %>
       </div>
-      <hr>
-    <% end %>
-  </div>
-  <% else %>
-    <p>You have no bookings yet.</p>
-  <% end %>
-  </div>
 
-  <div class="user-dashboard-dropdown">
-    <div class="title">
-    <i class="fas fa-chevron-right"><!-- <i class="fas fa-chevron-down"> --></i><p id="past-bookings">My past bookings</p>
+      <div class="user-dashboard-dropdown">
+        <div class="title">
+          <i class="fas fa-chevron-right"><!-- <i class="fas fa-chevron-down"> --></i><p id="past-bookings">My past bookings</p>
+        </div>
+        <div class="user-dashboard-cards">
+          <% if @bookings %>
+          <% @bookings.where("date < ?", Date.today).order(date: :asc).each do |booking| %>
+          <div class="user-dashboard-card">
+            <div class="user-dashboard-card-infos">
+              <p id="treatment-booked"><strong><%= booking.treatment.name %></strong></p>
+              <p><%= booking.date.strftime('%A %B %d, %Y') %> </p>
+              <p id="booking-status"><%= booking.status%></p>
+            </div>
+
+            <div class="user-dashboard-card-links">
+              <!-- <a href="<%#=  %>" class="call-user"><i class="fab fa-whatsapp" ></i></a> -->
+              <%= link_to '<i class="fas fa-chevron-right"></i>'.html_safe, treatment_booking_path(booking.treatment, booking)%>
+            </div>
+          </div>
+          <hr>
+          <% end %>
+        </div>
+        <% else %>
+        <p>You have no bookings yet.</p>
+        <% end %>
+      </div>
     </div>
-    <div class="user-dashboard-cards">
-    <% if @bookings %>
-    <% @bookings.where("date < ?", Date.today).order(date: :asc).each do |booking| %>
-      <div class="user-dashboard-card">
-        <div class="user-dashboard-card-infos">
-          <p id="treatment-booked"><strong><%= booking.treatment.name %></strong></p>
-          <p><%= booking.date.strftime('%A %B %d, %Y') %> </p>
-          <p id="booking-status"><%= booking.status%></p>
-        </div>
-
-        <div class="user-dashboard-card-links">
-          <!-- <a href="<%#=  %>" class="call-user"><i class="fab fa-whatsapp" ></i></a> -->
-          <%= link_to '<i class="fas fa-chevron-right"></i>'.html_safe, treatment_booking_path(booking.treatment, booking)%>
-        </div>
-      </div>
-      <hr>
-    <% end %>
-  </div>
-    <% else %>
-    <p>You have no bookings yet.</p>
-  <% end %>
   </div>
 </div>
 

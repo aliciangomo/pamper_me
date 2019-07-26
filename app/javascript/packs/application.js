@@ -13,6 +13,9 @@ import {toggleDropdown} from '../components/user_dashboard_dropdown.js'
 
 import {renderMap} from '../components/search_map.js'
 
+import {mapsSelector} from '../components/maplink.js'
+window.mapsSelector = mapsSelector
+
 const application = Application.start()
 const context = require.context("./controllers", true, /\.js$/)
 application.load(definitionsFromContext(context))

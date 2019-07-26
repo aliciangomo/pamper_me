@@ -11,6 +11,9 @@ import {toggleCollapsible} from '../components/collapsible.js'
 
 import  {toggleDropdown} from '../components/user_dashboard_dropdown.js'
 
+import {mapsSelector} from '../components/maplink.js'
+window.mapsSelector = mapsSelector
+
 const application = Application.start()
 const context = require.context("./controllers", true, /\.js$/)
 application.load(definitionsFromContext(context))

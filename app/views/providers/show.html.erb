@@ -1,6 +1,6 @@
 <div>
   <div class="provider-show-images">
-    <p>This is where <%= @provider.user.first_name %>'s uploaded pictures will go</p>
+    <!-- <p>This is where <%= @provider.user.first_name %>'s uploaded pictures will go</p> -->
   </div>
 
   <div class="provider-show-intro">
@@ -34,7 +34,7 @@
     <div class="provider-show-contact">
       <a href="<%= @phone_number %>"><i class="fab fa-whatsapp"></i></a>
     </div>
-    <div class="provider-show-location-tag">
+    <div class="provider-show-location-tag" onclick="window.mapsSelector(<%= @provider.latitude %>, <%= @provider.longitude %>)">
       <i class="fas fa-map-marker-alt"></i>
     </div>
   </div>

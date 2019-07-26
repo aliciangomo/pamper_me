@@ -1,5 +1,5 @@
 <% date = Time.new %>
-<div class="dashboardbanner" style="background-image: linear-gradient(to right, #193CE2 5%, transparent 55%),url(<%= current_user.avatar %>)">
+<div class="dashboardbanner" style="background-image: linear-gradient(to right, #193CE2 5%, transparent 55%),url(https://images.unsplash.com/photo-1514782831304-632d84503f6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1296&q=60)">
 
   <div class="container">
     <h2>Hi <%= current_user.first_name %>!</h2>
@@ -24,10 +24,10 @@
             <div class="provider-dashboard-card">
               <div class="provider-dashboard-card-infos">
                 <p id="treatment-booked"><strong><%= booking.treatment.name %></strong></p>
-                <p><%= booking.date %> </p>
+                <p><%= booking.date.strftime('%A %B %d, %Y') %> </p>
                 <p>€<%= booking.price %> </p>
               </div>
-              <div class="user-dashboard-card-links">
+              <div class="provider-dashboard-card-links">
                 <i class="fab fa-whatsapp"></i>
                 <%= link_to '<i class="fas fa-chevron-right"></i>'.html_safe, treatment_booking_path(booking.treatment, booking)%>
               </div>

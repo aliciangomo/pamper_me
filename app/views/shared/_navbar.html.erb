@@ -30,7 +30,7 @@
             <%#= link_to "Hello #{current_user.first_name}!", root_path, :class => "nav-link disabled" %>
           </li> -->
           <li class="nav-item">
-              <%= link_to 'Profile', dashboard_path, :class => "dropdown-item"  %>
+              <%= link_to 'Dashboard', dashboard_path, :class => "dropdown-item"  %>
           </li>
           <li class="nav-item">
               <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>

@@ -56,7 +56,7 @@ class BookingsController < ApplicationController
     # @provider = @treatment.provider
     @booking.user = current_user
     @booking.price = @booking.treatment.price
-    @booking.status = 0
+    @booking.status = 4
     @booking.date = Date.tomorrow
     if @booking.save!
       # redirect_to treatment_booking_path(@booking.treatment, @booking)

@@ -4,27 +4,43 @@
     align-items: center;
     flex-direction: column;
 }
+.provider-card-images {
+  height: 30vh;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  margin-top: 5vh;
+  // background-image: linear-gradient(rgba(0,0,0,1),rgba(0,0,0,0.4));
+}
 
 .provider-cards {
-  min-height: 40vh;
-  width: 90vw;
+  min-height: 10vh;
+  width: 100vw;
+  padding: 0 5vw;
   min-width: 337.5px;
-  box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.1);
-  margin-bottom: 20px;
+  // box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.1);
+  margin-bottom: 2.5vh;
 
-  .provider-card-images {
-    height: 30vh;
-    width: 100%;
-    background-size: cover;
-    background-position: center;
-    // background-image: linear-gradient(rgba(0,0,0,1),rgba(0,0,0,0.4));
-  }
 
   .provider-card-info {
     padding: 15px 10px 0px;
     min-height: 5vh;
     // display: flex;
     align-content: flex-end;
+  }
+
+  .provider-card-name {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0px;
+    // margin-bottom: 8px;
+  }
+
+  .provider-card-motto {
+    font-size: 16px;
+    font-weight: 100;
+    margin: 0px;
+    // margin-bottom: 8px;
   }
 
   .provider-card-title-line {
@@ -48,8 +64,23 @@
     color: $green;
   }
 
-  .provider-card-location i {
-    color: $blue;
+  .provider-card-location {
+    p {
+      padding-top: 8px;
+      margin: 0
+    }
+    i {
+      color: $blue;
+    }
+  }
+
+  hr {
+    display: block;
+    height: 1px;
+    width: 87vw;
+    border: 0;
+    border-top: 1px solid #ccc;
+    padding: 0;
   }
 
 }

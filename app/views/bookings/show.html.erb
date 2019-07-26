@@ -1,56 +1,119 @@
-<div class="link-to-dashboard">
-    <p><%=link_to '<i class="fas fa-chevron-left"></i>'.html_safe, dashboard_path%></p>
+<!-- <div class="link-to-dashboard">
+    <p><%#=link_to '<i class="fas fa-chevron-left"></i>'.html_safe, dashboard_path%></p>
     <p>Booking details</p>
+  </div> -->
+
+  <% if current_user.provider.nil? %>
+
+  <div class="booking-review-intro">
+    <div class="booking-review-name-description">
+      <p class="name">Booking Details</p>
+      <p class="statement">You have made a booking as follows:</p>
+    </div>
+  <!-- <div class="booking-review-avatar">
+    <%#= image_tag( @booking.treatment.provider.user.avatar, class: "booking-review-avatar-img") %>
+  </div> -->
 </div>
-
-
-<div class="show-container">
-
-<% if current_user.provider.nil? %>
-
-<p>You have made a booking as follows: </p>
-<ul >
-  <li>You are meeting <strong><%= @treatment.provider.user.first_name %> <%= @treatment.provider.user.last_name %></strong></li>
-  <li>For: <strong><%= @booking.treatment.name %></strong></li>
-  <li>On: <strong><%= @booking.date %></strong></li>
-  <li>The total for your booking is <strong>€<%= @booking.price %></strong></li>
-  <li><%= @treatment.provider.user.first_name %> awaits you at <strong><%= @treatment.provider.location %></strong></li>
-</ul>
-
 <hr>
-<div class="link-to-actions">
-    <i class="fab fa-whatsapp"></i>
+
+<div class="booking-review-description">
+  <ul >
+    <li>
+      <p>Your booking number is <strong><%= @booking.id %></strong></p>
+    </li>
+    <li>
+      <p>You are meeting <strong><%= @treatment.provider.user.first_name %> <%= @treatment.provider.user.last_name %></strong></p>
+    </li>
+    <li>
+      <p>For a <strong><%= @booking.treatment.name %></strong></p>
+    </li>
+    <li>
+      <% date = @booking.date %>
+      <p>On <strong><%= date.strftime('%A %B %d, %Y') %></strong> at <strong>13:00</strong></p>
+    </li>
+    <li>
+      <p>The total for your booking is <strong>€<%= @booking.price %></strong></p>
+    </li>
+    <li>
+      <p><%= @treatment.provider.user.first_name %> awaits you at <strong><%= @treatment.provider.location %></strong></p>
+    </li>
+    <li>
+      <p>The total for your booking is <strong>€<%= @booking.price %></strong></p>
+    </li>
+  </ul>
+</div>
+<hr>
+
+<div class="provider-show-icons">
+  <div class="provider-show-contact">
+    <a href="<%= @phone_number %>"><i class="fab fa-whatsapp"></i></a>
+  </div>
+  <div class="provider-show-contact">
     <i class="fas fa-map-marker-alt"></i>
+  </div>
+  <div class="provider-show-contact">
     <i class="far fa-edit"></i><%#= link_to '<i class="far fa-edit"></i>'.html_safe, edit_treatment_booking_path(@booking.treatment, @booking) %>
+  </div>
+  <div class="provider-show-contact">
     <%= link_to '<i class="far fa-check"></i></i>'.html_safe, treatment_booking_path(@booking.treatment, @booking),
-                      method: 'delete',
-                      data: {confirm: "Are you sure?"} %>
+    method: 'delete',
+    data: {confirm: "Are you sure?"} %>
+  </div>
 </div>
 <hr>
 
 <%#= render "shared/map"%>
 
 <% else %>
-<p>Your booking is as follows: </p>
-<ul >
-  <li>You are meeting <strong><%= @booking.user.first_name %> <%= @booking.user.last_name %></strong></li>
-  <li>For: <strong><%= @booking.treatment.name %></strong></li>
-  <li>On: <strong><%= @booking.date %></strong></li>
-  <li>The total for this booking is <strong>€<%= @booking.price %></strong></li>
-  <li>Payment status: <strong>paid</strong></li>
-</ul>
-
-
-<hr>
-<div class="link-to-actions">
-    <i class="fab fa-whatsapp"></i>
-    <i class="far fa-edit"></i><%#= link_to '<i class="far fa-edit"></i>'.html_safe, edit_treatment_booking_path(@booking.treatment, @booking) %>
-    <%= link_to '<i class="fas fa-check"></i></i>'.html_safe, treatment_booking_path(@booking.treatment, @booking),
-                      method: 'delete',
-                      data: {confirm: "Are you sure?"} %>
+<div class="booking-review-intro">
+  <div class="booking-review-name-description">
+    <p class="name">Booking Details</p>
+    <p class="statement">Review <%= @booking.user.first_name %>'s booking with you:</p>
+  </div>
+  <div class="booking-review-avatar">
+    <%= image_tag( @booking.user.avatar, class: "booking-review-avatar-img") %>
+  </div>
 </div>
 <hr>
+<div class="booking-review-description">
+  <ul >
+    <li>
+      <p>Your booking number is <strong><%= @booking.id %></strong></p>
+    </li>
+    <li>
+      <p>You are meeting <strong><%= @booking.user.first_name %> <%= @booking.user.last_name %></strong></p>
+    </li>
+    <li>
+      <p>For: <strong><%= @booking.treatment.name %></strong></p>
+    </li>
+    <li>
+      <% date = @booking.date %>
+      <p>On <strong><%= date.strftime('%A %B %d, %Y') %></strong> at <strong>13:00</strong></p>
+    </li>
+    <li>
+      <p>The total for this booking is <strong>€<%= @booking.price %></strong></p>
+    </li>
+    <li>
+      <p>Payment status: <strong>paid</strong></p>
+    </li>
+  </ul>
+</div>
 
+<hr>
+<div class="provider-show-icons">
+  <div class="provider-show-contact">
+    <a href="<%= @phone_number %>"><i class="fab fa-whatsapp"></i></a>
+  </div>
+  <div class="provider-show-contact">
+    <i class="far fa-edit"></i><%#= link_to '<i class="far fa-edit"></i>'.html_safe, edit_treatment_booking_path(@booking.treatment, @booking) %>
+  </div>
+  <div class="provider-show-contact">
+    <%= link_to '<i class="fas fa-check"></i></i>'.html_safe, treatment_booking_path(@booking.treatment, @booking),
+    method: 'delete',
+    data: {confirm: "Are you sure?"} %>
+  </div>
+</div>
+<hr>
 <% end %>
 
 </div>

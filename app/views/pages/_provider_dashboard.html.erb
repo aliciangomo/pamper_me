@@ -15,7 +15,7 @@
   <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent"> -->
   <div class="collapsible confirmed">
   <div class="title">
-  <i class="fas fa-chevron-down"></i><p id="confirmed-bookings">Confirmed</p><p class="counter">(<span class="number"><%= @provider_bookings.where(status: 1).order(date: :desc).count %></span>)</p>
+  <i class="fas fa-chevron-right"></i><p id="confirmed-bookings">Confirmed</p><p class="counter">(<span class="number"><%= @provider_bookings.where(status: 1).order(date: :desc).count %></span>)</p>
   </div>
     <div class="provider-dashboard-cards content">
     <% @provider_bookings.where(status: 1).order(date: :desc).each do |booking| %>
@@ -41,7 +41,7 @@
 
   <div class="collapsible pending">
     <div class="title">
-    <i class="fas fa-chevron-down"></i> <p id="pending-bookings">Pending</p> <p class="counter">(<span class="number"><%= @provider_bookings.where(status: 0).order(date: :desc).count %></span>)</p>
+    <i class="fas fa-chevron-right"></i> <p id="pending-bookings">Pending</p> <p class="counter">(<span class="number"><%= @provider_bookings.where(status: 0).order(date: :desc).count %></span>)</p>
     </div>
       <div class="provider-dashboard-cards content">
       <% @provider_bookings.where(status: 0).order(date: :desc).each do |booking| %>
@@ -74,7 +74,7 @@
 
 <div class="collapsible declined">
   <div class="title">
-  <i class="fas fa-chevron-down"></i><p id="declined-bookings">Declined</p><p class="counter">(<span class="number"><%= @provider_bookings.where(status: 2).order(date: :desc).count %></span>)</p>
+  <i class="fas fa-chevron-right"></i><p id="declined-bookings">Declined</p><p class="counter">(<span class="number"><%= @provider_bookings.where(status: 2).order(date: :desc).count %></span>)</p>
   </div>
     <div class="provider-dashboard-cards content">
     <% @provider_bookings.where(status: 2).order(date: :desc).each do |booking| %>
@@ -99,7 +99,7 @@
 
 <div class="collapsible cancelled">
   <div class="title">
-  <i class="fas fa-chevron-down"></i><p id="cancelled-bookings">Cancelled</p><p class="counter">(<span class="number"><%= @provider_bookings.where(status: 3).order(date: :desc).count %></span>)</p>
+  <i class="fas fa-chevron-right"></i><p id="cancelled-bookings">Cancelled</p><p class="counter">(<span class="number"><%= @provider_bookings.where(status: 3).order(date: :desc).count %></span>)</p>
   </div>
     <div class="provider-dashboard-cards content">
     <% @provider_bookings.where(status: 3).order(date: :desc).each do |booking| %>

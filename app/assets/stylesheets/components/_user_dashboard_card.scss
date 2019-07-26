@@ -4,6 +4,13 @@
   align-items: baseline;
 }
 
+.title i {
+  transition: all 0.4s ease;
+}
+
+.rotate {
+  transform: rotateZ(90deg);
+}
 
 .user-dashboard-container {
  width: 100vw;

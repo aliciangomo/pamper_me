@@ -1,11 +1,11 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1511447333015-45b65e60f6d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2623&q=80);">
-  <div class="container">
-    <h1>Ugh Oh!  Looks like you need to be logged in for that!</h1>
-    <p>Unlock all the great features of Pamper Me with a Free Account! </p>
+<div class="banner-signup">
+  <div class="login-signup-container">
+    <p>Ugh Oh!  Looks like you need to be logged in for that!</p>
+    <p class="subtitle">Enjoy PamperMe with a Free Account! </p>
 
     <div class="ugh-oh-buttons-div">
-      <%= link_to 'Log in', new_user_session_path, { :class => "button-secondary my-2 my-sm-", :id => "ugh-oh-buttons", 'data-toggle' => 'modal', 'data-target' => '#sign-in-modal' } %>
-      <%= link_to 'Sign up', new_user_registration_path, { :class => "button-secondary my-2 my-sm-", :id => "ugh-oh-buttons", 'data-toggle' => 'modal', 'data-target' => '#sign-up-modal' } %>
+      <%= link_to 'Log in', new_user_session_path, { :class => "button-primary", :id => "ugh-oh-button-left", 'data-toggle' => 'modal', 'data-target' => '#sign-in-modal' } %>
+      <%= link_to 'Sign up', new_user_registration_path, { :class => "button-primary", :id => "ugh-oh-button-right", 'data-toggle' => 'modal', 'data-target' => '#sign-up-modal' } %>
     </div>
   </div>
 </div>

@@ -10,31 +10,31 @@ puts "🧼 cleaning the database... 🧼"
 puts "✨ database clean ✨, 🌱 starting seed! 🌱"
 
 puts "Creating Users"
-user1 = User.create!(first_name: "Jacob", last_name: "Morton", email: "Jacob@gmail.com", password: "123456", avatar: "https://i.imgur.com/hTnKsgG.png")
+user1 = User.create!(first_name: "Jacob", last_name: "Morton", email: "Jacob@gmail.com", password: "123456", avatar: "https://i.imgur.com/hTnKsgG.png", phone_number: "+34646850358")
 # user1.save!
 puts "User 1 - Seeded ✅"
-user2 = User.create!(first_name: "Adam", last_name: "McCallister", email: "Adam@gmail.com", password: "123456", avatar: "https://i.imgur.com/5FXWDB5.jpg")
+user2 = User.create!(first_name: "Adam", last_name: "McCallister", email: "Adam@gmail.com", password: "123456", avatar: "https://i.imgur.com/5FXWDB5.jpg", phone_number: "+34646850358")
 # user2.save!
 puts "User 2 - Seeded ✅"
-user3 = User.create!(first_name: "Alicia", last_name: "Ngomo", email: "Alicia@gmail.com", password: "123456", avatar: "https://i.imgur.com/NgTBg7y.jpg")
+user3 = User.create!(first_name: "Alicia", last_name: "Ngomo", email: "Alicia@gmail.com", password: "123456", avatar: "https://i.imgur.com/NgTBg7y.jpg", phone_number: "+34646850358")
 # user3.save!
 puts "User 3 - Seeded ✅"
-user4 = User.create!(first_name: "Jon", last_name: "Doe", email: "Jon@gmail.com", password: "123456", avatar: "https://i.imgur.com/pQRW7MK.jpg")
+user4 = User.create!(first_name: "Jon", last_name: "Doe", email: "Jon@gmail.com", password: "123456", avatar: "https://i.imgur.com/pQRW7MK.jpg", phone_number: "+34646850358")
 user4.save!
 puts "User 4 - Seeded ✅"
-user5 = User.create!(first_name: "Sam", last_name: "Barrett", email: "Sam@gmail.com", password: "123456", avatar: "https://i.imgur.com/jLJpsR6.jpg")
+user5 = User.create!(first_name: "Sam", last_name: "Barrett", email: "Sam@gmail.com", password: "123456", avatar: "https://i.imgur.com/jLJpsR6.jpg", phone_number: "+34646850358")
 # user5.save!
 puts "User 5 - Seeded ✅"
-user6 = User.create!(first_name: "Kyle", last_name: "Aaron", email: "Kyle@gmail.com", password: "123456", avatar: "https://i.imgur.com/xGfUUt9.jpg")
+user6 = User.create!(first_name: "Kyle", last_name: "Aaron", email: "Kyle@gmail.com", password: "123456", avatar: "https://i.imgur.com/xGfUUt9.jpg", phone_number: "+34646850358")
 user6.save!
 puts "User 6 - Seeded ✅"
-user7 = User.create!(first_name: "Kate", last_name: "Roberts", email: "Kate@gmail.com", password: "123456", avatar: "https://i.imgur.com/nwvVECy.jpg")
+user7 = User.create!(first_name: "Kate", last_name: "Roberts", email: "Kate@gmail.com", password: "123456", avatar: "https://i.imgur.com/nwvVECy.jpg", phone_number: "+34646850358")
 user7.save!
 puts "User 7 - Seeded ✅"
-user8 = User.create!(first_name: "Kathy", last_name: "Crow", email: "Kathy@gmail.com", password: "123456", avatar: "https://i.imgur.com/Uo9rgPO.jpg")
+user8 = User.create!(first_name: "Kathy", last_name: "Crow", email: "Kathy@gmail.com", password: "123456", avatar: "https://i.imgur.com/Uo9rgPO.jpg", phone_number: "+34646850358")
 user8.save!
 puts "User 8 - Seeded ✅"
-user9 = User.create!(first_name: "Ashley", last_name: "Green", email: "Ashley@gmail.com", password: "123456", avatar: "https://i.imgur.com/Uo9rgPO.jpg")
+user9 = User.create!(first_name: "Ashley", last_name: "Green", email: "Ashley@gmail.com", password: "123456", avatar: "https://i.imgur.com/Uo9rgPO.jpg", phone_number: "+34646850358")
 user9.save!
 puts "User 9 - Seeded ✅"
 puts "All Users seeded ✅"
@@ -49,7 +49,7 @@ provider1 = Provider.create!(location: " Calle de las Infantas, 8, 28004 Madrid"
   description: "Great tattoos in Madrid. #{description_lorem}",
   statement: "100 percent satisfaction, guaranteed!",
   rating: 5,
-  phone_number: "+34 (123) 123-1234",
+  phone_number: "+34646850358",
   user: user1)
 # provider1.save!
 puts "Provider 1 Seeded ✅"
@@ -59,7 +59,7 @@ provider2 = Provider.create!(location: "Calle del Barquillo, 39, 28004 Madrid",
   description: "Great nail tech in Madrid. #{description_lorem}",
   statement: "True art, right on your nails!",
   rating: 4,
-  phone_number: "+34 (123) 123-1234",
+  phone_number: "+34646850358",
   user: user2)
 # provider2.save!
 puts "Provider 2 Seeded ✅"
@@ -69,7 +69,7 @@ provider3 = Provider.create!(location: "Calle de Valverde, 44, 28004 Madrid",
   description: "Great hair stylist in Madrid. #{description_lorem}",
   statement: "I do hair, with love and care!",
   rating: 3,
-  phone_number: "+34 (123) 123-1234",
+  phone_number: "+34646850358",
   user: user3)
 # provider3.save!
 puts "Provider 3 Seeded ✅"
@@ -79,7 +79,7 @@ provider4 = Provider.create!(location: "Calle San Gregorio, 5, 28004 Madrid",
   description: "Perfect looking natural makeup! #{description_lorem}",
   statement: "I will help you look your BEST :)",
   rating: 5,
-  phone_number: "+34 (123) 123-1234",
+  phone_number: "+34646850358",
   user: user8)
 provider4.save!
 puts "Provider 4 Seeded ✅"
@@ -89,7 +89,7 @@ provider5 = Provider.create!(location: "Junto al hotel Me de la, Plaza del Ánge
   description: "Studied physical training at oxford, I'm the best! #{description_lorem}",
   statement: "Get the body you DESERVE!",
   rating: 2,
-  phone_number: "+34 (123) 123-1234",
+  phone_number: "+34646850358",
   user: user6)
 provider5.save!
 puts "Provider 5 Seeded ✅"
@@ -99,7 +99,7 @@ provider6 = Provider.create!(location: "Calle Barquillo 39, 28004, Madrid",
   description: "Hair is my passion! #{description_lorem}",
   statement: "Youre in great hands with me!!",
   rating: 2,
-  phone_number: "+34 (123) 123-1234",
+  phone_number: "+34646850358",
   user: user9)
 provider6.save!
 puts "Provider 6 Seeded ✅"

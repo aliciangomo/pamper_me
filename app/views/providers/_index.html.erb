@@ -4,7 +4,7 @@
   <% else %>
     <h1 class="index-title" id="search-index-heading">Explore our providers:</h1>
   <% end %>
-  <%= render "shared/map" %>
+  <%#= render "shared/map" %>
   <div class="index-cards">
     <% @providers.each do |provider| %>
       <%= link_to provider_path(provider) do %>

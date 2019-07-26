@@ -13,10 +13,10 @@ Rails.application.routes.draw do
 
 
   resources :treatments do
-    resources :bookings, expect: [:create]
+    resources :bookings, except: [:create, :update]
   end
 
-  resources :bookings, only: [:create]
+  resources :bookings, only: [:create, :update]
 
 
   resources :providers

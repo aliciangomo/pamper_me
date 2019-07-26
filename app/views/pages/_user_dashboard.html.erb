@@ -2,26 +2,31 @@
 <div class="dashboardbanner" style="background-image: linear-gradient(to right, #193CE2 10%, transparent 55%),url(https://images.pexels.com/photos/1020323/pexels-photo-1020323.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500)">
   <div class="container">
     <h2>Hi <%= current_user.first_name %> </h2>
-    <p>Happy <%= date.strftime("%A") %>!</p>
+    <!-- <p>!</p> -->
   </div>
 </div>
 
 
 <div class="provider-show-intro">
-    <div class="provider-show-name-description">
-      <p class="name" >Hi! I'm <%= @provider.user.first_name %> <%= @provider.user.last_name %>!</p>
-      <p class="statement"><%= @provider.statement %></p>
-    </div>
-    <div class="provider-show-avatar">
-      <%= image_tag( @provider.user.avatar, class: "provider-show-avatar-img") %>
-    </div>
+  <div class="provider-show-name-description">
+    <p class="name" >Happy <%= date.strftime("%A") %> <%= case date.hour
+      when 0..11 then 'morning'
+      when 12..17 then 'afternoon'
+      when 18..23 then 'evening'
+      else
+        ""
+      end %>!</p>
+    <!-- <p class="name" >Hey there, <%= current_user.first_name %>!</p> -->
+    <p class="statement">Review and manage your recent bookings:</p>
   </div>
+</div>
+<hr>
 <div class="user-dashboard-cards">
 
 <div class="user-dashboard-container">
   <!-- <p class="user-dashboard-intro">Review and manage your recent bookings:</p> -->
 
-<p class="provider-dashboard-intro">Review and manage your recent bookings:</p>
+<!-- <p class="provider-dashboard-intro">Review and manage your recent bookings:</p> -->
 
   <div class="user-dashboard-dropdown">
     <div class="title">

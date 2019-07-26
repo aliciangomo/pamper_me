@@ -12,6 +12,12 @@ class BookingsController < ApplicationController
   end
 
   def update
+    @booking = Booking.find(params[:id])
+    if @booking.update(strong_params)
+      redirect_to dashboard_path
+    else
+      render :edit
+    end
   end
 
   def confirm
@@ -70,7 +76,7 @@ class BookingsController < ApplicationController
   private
 
   def strong_params
-    params.require(:booking).permit(:treatment_id, :date, :price, :status, :user_id)
+    params.require(:booking).permit(:treatment_id, :date, :price, :status, :user_id, :payment_type)
 
   end
 end

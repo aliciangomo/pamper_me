@@ -37,23 +37,12 @@ class ProvidersController < ApplicationController
     @booking = Booking.new
     # input this into new/create when a new provider
     # is added to save it in the DB in the correct format
-    tel_to(@provider.phone_number)
+    @phone_number = PhoneNumberLinkFormaterService.new(@provider.phone_number).call
     # When multiple photos are added
     # @photos = @painting.photos.all
   end
 
   private
-
-  def tel_to(text)
-    groups = text.to_s.scan(/(?:^\+)?\d+/)
-    if groups.size > 1 && groups[0][0] == '+'
-      # remove leading 0 in area code if this is an international number
-      groups[1] = groups[1][1..-1] if groups[1][0] == '0'
-      groups.delete_at(1) if groups[1].size == 0 # remove if it was only a 0
-    end
-    # groups = text.to_s.scan(/(?:^\+)?\d+/)
-    @phone_number = "tel:#{groups.join '-'}"
-  end
 
   def set_provider
     @provider = Provider.find(params[:id])

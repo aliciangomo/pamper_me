@@ -38,17 +38,21 @@
     <p class="name">How would you like to pay?</p>
   </div>
 </div>
-<div class="booking-pay-icons">
-    <div class="provider-show-contact">
-      <i class="fab fa-cc-apple-pay"></i>
+<%= simple_form_for @booking do |f| %>
+  <div class="booking-pay-icons stim-select" data-controller="select">
+      <div class="provider-show-contact stim-select-button" data-select-value="1" data-action="click->select#update" data-target="select.button">
+        <i class="fab fa-cc-apple-pay"></i>
+      </div>
+      <div class="provider-show-contact stim-select-button" data-select-value="2" data-action="click->select#update" data-target="select.button">
+        <i class="far fa-credit-card"></i>
+      </div>
+      <div class="provider-show-location-tag stim-select-button" data-select-value="3" data-action="click->select#update" data-target="select.button">
+        <i class="fab fa-cc-paypal"></i>
+      </div>
+      <%= f.input :payment_type, as: :hidden, input_html: { 'data-target' => 'select.input' } %>
     </div>
-    <div class="provider-show-contact">
-      <i id="selected" class="far fa-credit-card"></i>
-    </div>
-    <div class="provider-show-location-tag">
-      <i class="fab fa-cc-paypal"></i>
-    </div>
-  </div>
-
+    <%= f.submit %>
+<% end %>
 <button class="btn button-primary btn-block">Book Appointment</button>
+
 

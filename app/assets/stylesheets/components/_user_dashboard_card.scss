@@ -1,7 +1,52 @@
+.title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+}
+
+
+.user-dashboard-container {
+ width: 100vw;
+ padding: 5vw 7vw;
+ margin: 0px auto;
+}
+
+.user-dashboard-intro {
+  font-size: 16px;
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+#current-bookings {
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 500;
+  color: $black;
+}
+
+#past-bookings {
+  margin-top: 40px;
+  font-size: 16px;
+  font-weight: 500;
+  color: $black;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    width: 87vw;
+    // width: 80vw;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 0 auto;
+    padding: 0;
+}
+
 .user-dahsboard-cards {
   display: block;
-  width: 95vw;
+  width: 100vw;
   margin: 0 auto;
+  padding: 5vw 7vw;
 }
 
 .user-dashboard-card {
@@ -10,9 +55,9 @@
   min-width: 337.5px;
   // box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.1);
   margin-top: 20px;
-  border-bottom: 1px solid $gray;
-  border-opacity: 0.7;
-  padding-left: 20px;
+  // border-bottom: 1px solid $gray;
+  // border-opacity: 0.7;
+  padding-left: 15px;
 }
 
 .user-dashboard-card-infos {
@@ -27,7 +72,7 @@
 }
 
 #treatment-booked {
-  font-weight: bold;
+  font-weight: 300;
 }
 
 
@@ -39,10 +84,14 @@
 }
 
 .user-dashboard-card-links i {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: $black;
-  opacity: 0.5;
-  padding-left: 30px;
+  opacity: 0.4;
+  padding-left: 20px;
 }
 
+.call-user i {
+  color: $green;
+  font-size: 27px;
 
+}

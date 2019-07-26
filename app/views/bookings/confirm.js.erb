@@ -17,6 +17,11 @@ function refreshCollapsibles(bookingId) {
   confirmedCount.innerText = parseInt(confirmedCount.innerText, 10) + 1
 
   booking.style.display = "none";
+
+ const confirmedButtons = booking.querySelector(".confirmed-version");
+ confirmedButtons.classList.remove('d-none');
+ const pendingButtons = booking.querySelector(".pending-version");
+ pendingButtons.classList.add('d-none');
 };
 
 refreshCollapsibles(<%= @booking.id %>)

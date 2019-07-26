@@ -1,0 +1,25 @@
+.index_menu {
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+  padding: 5vw 7vw;
+  color: $green;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  i {
+    font-size: 27px;
+    // opacity: .70;
+  }
+}
+
+hr {
+    display: block;
+    height: 1px;
+    width: 87vw;
+    // width: 80vw;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 0 auto;
+    padding: 0;
+}

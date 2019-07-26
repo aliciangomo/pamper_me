@@ -53,7 +53,11 @@
                     <p><%= booking.date %> </p>
                     <p>€<%= booking.price %> </p>
                   </div>
-                  <div class="user-dashboard-card-links">
+                  <div class="provider-dashboard-card-links confirmed-version d-none">
+                    <i class="fab fa-whatsapp"></i>
+                    <%= link_to '<i class="fas fa-chevron-right"></i>'.html_safe, treatment_booking_path(booking.treatment, booking)%>
+                  </div>
+                  <div class="user-dashboard-card-links pending-version">
                     <%= link_to confirm_path(booking), remote: true, class: "confirm-booking", method: :put do %>
                       <i class="fas fa-check"></i>
                     <% end %>

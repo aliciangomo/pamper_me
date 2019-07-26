@@ -9,6 +9,8 @@ const toggleCollapsible = () => {
       const content = element.querySelector('.content');
       content.classList.add('d-none');
 
+      const links = element.querySelectorAll('user-dashboard-card-links');
+
       const title = element.querySelector('.title');
       title.addEventListener("click", (event) => {
 

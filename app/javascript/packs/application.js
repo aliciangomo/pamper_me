@@ -7,6 +7,9 @@ import { colorStatus } from '../components/user_dashboard.js';
 
 import {toggleCollapsible} from '../components/collapsible.js'
 
+import  {toggleDropdown} from '../components/user_dashboard_dropdown.js'
+
 initMapbox();
 colorStatus();
 toggleCollapsible();
+toggleDropdown();

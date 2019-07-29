@@ -15,6 +15,7 @@
     <% @providers.each do |provider| %>
       <%= link_to provider_path(provider) do %>
         <div class="provider-card-images" style="background-image: url('<%= image_path("https://images.unsplash.com/photo-1481152508843-1ec796b30a8b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80") %>');">
+          <%= render 'photocarousel', photos: provider.photos %>
           <%#= image_tag("https://images.unsplash.com/photo-1481152508843-1ec796b30a8b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80") %>
           <%#= cl_image_tag url=() %>
         </div>

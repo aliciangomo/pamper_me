@@ -85,7 +85,7 @@ provider4 = Provider.create!(location: "Calle San Gregorio, 5, 28004 Madrid",
 provider4.save!
 puts "Provider 4 Seeded ✅"
 
-provider5 = Provider.create!(location: "Junto al hotel Me de la, Plaza del Ángel, Plaza de Sta. Ana, 6, 28012 Madrid",
+provider5 = Provider.create!(location: "Plaza de la Independencia, 7, 28001 Madrid",
   photo: "",
   description: "Studied physical training at oxford, I'm the best! #{description_lorem}",
   statement: "Get the body you DESERVE!",

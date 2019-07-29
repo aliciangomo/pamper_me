@@ -18,10 +18,10 @@ function refreshCollapsibles(bookingId) {
 
   booking.style.display = "none";
 
- const confirmedButtons = booking.querySelector(".confirmed-version");
- confirmedButtons.classList.remove('d-none');
- const pendingButtons = booking.querySelector(".pending-version");
- pendingButtons.classList.add('d-none');
+  const confirmedButtons = booking.querySelector(".confirmed-version");
+  confirmedButtons.classList.remove('d-none');
+  const pendingButtons = booking.querySelector(".pending-version");
+  pendingButtons.classList.add('d-none');
 };
 
 refreshCollapsibles(<%= @booking.id %>)

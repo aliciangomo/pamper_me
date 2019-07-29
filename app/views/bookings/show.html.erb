@@ -55,7 +55,7 @@
     <i class="far fa-edit"></i><%#= link_to '<i class="far fa-edit"></i>'.html_safe, edit_treatment_booking_path(@booking.treatment, @booking) %>
   </div>
   <div class="provider-show-contact">
-    <%= link_to '<i class="far fa-check"></i></i>'.html_safe, treatment_booking_path(@booking.treatment, @booking),
+    <%= link_to '<i class="fas fa-times"></i>'.html_safe, treatment_booking_path(@booking.treatment, @booking),
     method: 'delete',
     data: {confirm: "Are you sure?"} %>
   </div>
@@ -108,7 +108,7 @@
     <i class="far fa-edit"></i><%#= link_to '<i class="far fa-edit"></i>'.html_safe, edit_treatment_booking_path(@booking.treatment, @booking) %>
   </div>
   <div class="provider-show-contact">
-    <%= link_to '<i class="fas fa-check"></i></i>'.html_safe, treatment_booking_path(@booking.treatment, @booking),
+    <%= link_to '<i class="fas fa-times"></i>'.html_safe, treatment_booking_path(@booking.treatment, @booking),
     method: 'delete',
     data: {confirm: "Are you sure?"} %>
   </div>

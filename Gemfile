@@ -19,7 +19,7 @@ gem 'webpacker'
 
 # ADDED GEMS
 gem 'geocoder'
-
+gem 'chart', '~> 0.1.5.1'
 
 
 group :development do

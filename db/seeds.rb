@@ -2,6 +2,7 @@ Booking.destroy_all
 Treatment.destroy_all
 Provider.destroy_all
 User.destroy_all
+Photo.destroy_all
 
 puts "✏️ creating description lorem ✏️"
 description_lorem = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam facilis dolore quibusdam! Consectetur nam distinctio, tenetur cupiditate quas quasi tempora odit explicabo architecto officia cumque dolores, dicta tempore, eligendi voluptatum ab deleniti corrupti reiciendis ex fugit modi. Porro, quas architecto."
@@ -106,10 +107,7 @@ puts "Provider 6 Seeded ✅"
 puts "All Providers Seeded ✅"
 
 
-
-
-
-puts "Creating Treatments"
+puts "💆‍♀️ 💅🏽 💆‍♂️ Creating Treatments 💆‍♂️ 💅🏽 💆‍♀️"
 treatment1 = Treatment.create!(name: "Black Tattoo",
   description: "Pricing starts at 50 Euros for small tattoo in black. Feel free to contact me for more details on design and pricing! ;)",
   provider: provider1,
@@ -219,7 +217,7 @@ puts "All Treatments Seeded ✅"
 
 
 
-puts "Creating Bookings"
+puts "📚 📖 Creating Bookings 📖 📚"
 booking1 = Booking.create!(user: user5,
   treatment: treatment1,
   price: 50,
@@ -346,6 +344,232 @@ booking18 = Booking.create!(user: user4,
   status: 1)
 puts "Booking 18 Seeded ✅"
 puts "All Bookings Seeded ✅"
+
+puts "📸 📷 Creating Images 📷 📸"
+
+puts "Seeding Images for Provider 1"
+# Images for Tattoo
+photo1 = Photo.new(provider: provider1)
+photo1.remote_data_url = "https://imgur.com/5uC5QAT.jpg"
+photo1.save
+puts "Image 1 Seeded ✅"
+
+photo2 = Photo.new(provider: provider1)
+photo2.remote_data_url = "https://imgur.com/8iSZt4v.jpg"
+photo2.save
+puts "Image 2 Seeded ✅"
+
+photo3 = Photo.new(provider: provider1)
+photo3.remote_data_url = "https://imgur.com/ILd7IOu.jpg"
+photo3.save
+puts "Image 3 Seeded ✅"
+
+photo4 = Photo.new(provider: provider1)
+photo4.remote_data_url = "https://imgur.com/aBpbLTK.jpg"
+photo4.save
+puts "Image 4 Seeded ✅"
+
+photo5 = Photo.new(provider: provider1)
+photo5.remote_data_url = "https://imgur.com/S1ccCNy.jpg"
+photo5.save
+puts "Image 5 Seeded ✅"
+
+photo6 = Photo.new(provider: provider1)
+photo6.remote_data_url = "https://imgur.com/Sxz4ymK.jpg"
+photo6.save
+puts "Image 6 Seeded ✅"
+
+photo7 = Photo.new(provider: provider1)
+photo7.remote_data_url = "https://imgur.com/Xl8G0wB.jpg"
+photo7.save
+puts "Image 7 Seeded ✅"
+
+puts "Seeding Images for Provider 2"
+# Images for Nails
+photo8 = Photo.new(provider: provider2)
+photo8.remote_data_url = "https://imgur.com/FTifUE8.jpg"
+photo8.save
+puts "Image 8 Seeded ✅"
+
+photo9 = Photo.new(provider: provider2)
+photo9.remote_data_url = "https://imgur.com/6fOppMR.jpg"
+photo9.save
+puts "Image 9 Seeded ✅"
+
+photo10 = Photo.new(provider: provider2)
+photo10.remote_data_url = "https://imgur.com/1RGeAW7.jpg"
+photo10.save
+puts "Image 10 Seeded ✅"
+
+photo11 = Photo.new(provider: provider2)
+photo11.remote_data_url = "https://imgur.com/JEgxi8k.jpg"
+photo11.save
+puts "Image 11 Seeded ✅"
+
+photo12 = Photo.new(provider: provider2)
+photo12.remote_data_url = "https://imgur.com/5AkgRHR.jpg"
+photo12.save
+puts "Image 12 Seeded ✅"
+
+photo13 = Photo.new(provider: provider2)
+photo13.remote_data_url = "https://imgur.com/AkLE0XC.jpg"
+photo13.save
+puts "Image 13 Seeded ✅"
+
+photo14 = Photo.new(provider: provider2)
+photo14.remote_data_url = "https://imgur.com/Bg2bc89.jpg"
+photo14.save
+puts "Image 14 Seeded ✅"
+
+puts "Seeding Images for Provider 3"
+# Images for Hair
+photo15 = Photo.new(provider: provider3)
+photo15.remote_data_url = "https://imgur.com/8K5ta7H.jpg"
+photo15.save
+puts "Image 15 Seeded ✅"
+
+photo16 = Photo.new(provider: provider3)
+photo16.remote_data_url = "https://imgur.com/rVfm54U.jpg"
+photo16.save
+puts "Image 16 Seeded ✅"
+
+photo17 = Photo.new(provider: provider3)
+photo17.remote_data_url = "https://imgur.com/NzarkAC.jpg"
+photo17.save
+puts "Image 17 Seeded ✅"
+
+photo18 = Photo.new(provider: provider3)
+photo18.remote_data_url = "https://imgur.com/6BFxb9u.jpg"
+photo18.save
+puts "Image 18 Seeded ✅"
+
+photo19 = Photo.new(provider: provider3)
+photo19.remote_data_url = "https://imgur.com/lEKwaD3.jpg"
+photo19.save
+puts "Image 19 Seeded ✅"
+
+photo20 = Photo.new(provider: provider3)
+photo20.remote_data_url = "https://imgur.com/1t7Nnnb.jpg"
+photo20.save
+puts "Image 20 Seeded ✅"
+
+photo21 = Photo.new(provider: provider3)
+photo21.remote_data_url = "https://imgur.com/zRdsvV9.jpg"
+photo21.save
+puts "Image 21 Seeded ✅"
+
+puts "Seeding Images for Provider 4"
+# Images for Makeup
+photo22 = Photo.new(provider: provider4)
+photo22.remote_data_url = "https://imgur.com/bPwIctU.jpg"
+photo22.save
+puts "Image 22 Seeded ✅"
+
+photo23 = Photo.new(provider: provider4)
+photo23.remote_data_url = "https://imgur.com/Eh8jrGI.jpg"
+photo23.save
+puts "Image 23 Seeded ✅"
+
+photo24 = Photo.new(provider: provider4)
+photo24.remote_data_url = "https://imgur.com/zcASozy.jpg"
+photo24.save
+puts "Image 24 Seeded ✅"
+
+photo25 = Photo.new(provider: provider4)
+photo25.remote_data_url = "https://imgur.com/quiVc8V.jpg"
+photo25.save
+puts "Image 25 Seeded ✅"
+
+photo26 = Photo.new(provider: provider4)
+photo26.remote_data_url = "https://imgur.com/14RFWdR.jpg"
+photo26.save
+puts "Image 26 Seeded ✅"
+
+photo27 = Photo.new(provider: provider4)
+photo27.remote_data_url = "https://imgur.com/gOetNk4.jpg"
+photo27.save
+puts "Image 27 Seeded ✅"
+
+photo28 = Photo.new(provider: provider4)
+photo28.remote_data_url = "https://imgur.com/F7GG60S.jpg"
+photo28.save
+puts "Image 28 Seeded ✅"
+
+puts "Seeding Images for Provider 5"
+# Images for Personal Training
+photo29 = Photo.new(provider: provider5)
+photo29.remote_data_url = "https://imgur.com/dJoXaqR.jpg"
+photo29.save
+puts "Image 29 Seeded ✅"
+
+photo30 = Photo.new(provider: provider5)
+photo30.remote_data_url = "https://imgur.com/VR2GsHu.jpg"
+photo30.save
+puts "Image 30 Seeded ✅"
+
+photo31 = Photo.new(provider: provider5)
+photo31.remote_data_url = "https://imgur.com/ebeLhhY.jpg"
+photo31.save
+puts "Image 31 Seeded ✅"
+
+photo32 = Photo.new(provider: provider5)
+photo32.remote_data_url = "https://imgur.com/dumJ6JZ.jpg"
+photo32.save
+puts "Image 32 Seeded ✅"
+
+photo33 = Photo.new(provider: provider5)
+photo33.remote_data_url = "https://imgur.com/WMQGJYx.jpg"
+photo33.save
+puts "Image 33 Seeded ✅"
+
+photo34 = Photo.new(provider: provider5)
+photo34.remote_data_url = "https://imgur.com/RHSmOl5.jpg"
+photo34.save
+puts "Image 34 Seeded ✅"
+
+photo35 = Photo.new(provider: provider5)
+photo35.remote_data_url = "https://imgur.com/gl0Don4.jpg"
+photo35.save
+puts "Image 35 Seeded ✅"
+
+puts "Seeding Images for Provider 6"
+# Images for
+photo36 = Photo.new(provider: provider6)
+photo36.remote_data_url = "https://imgur.com/z0Gkssx.jpg"
+photo36.save
+puts "Image 36 Seeded ✅"
+
+photo37 = Photo.new(provider: provider6)
+photo37.remote_data_url = "https://imgur.com/q0pO3Bw.jpg"
+photo37.save
+puts "Image 37 Seeded ✅"
+
+photo38 = Photo.new(provider: provider6)
+photo38.remote_data_url = "https://imgur.com/Vh3qrtO.jpg"
+photo38.save
+puts "Image 38 Seeded ✅"
+
+photo39 = Photo.new(provider: provider6)
+photo39.remote_data_url = "https://imgur.com/N39G1z8.jpg"
+photo39.save
+puts "Image 39 Seeded ✅"
+
+photo40 = Photo.new(provider: provider6)
+photo40.remote_data_url = "https://imgur.com/sTAxG1v.jpg"
+photo40.save
+puts "Image 40 Seeded ✅"
+
+photo41 = Photo.new(provider: provider6)
+photo41.remote_data_url = "https://imgur.com/TZnZQ1G.jpg"
+photo41.save
+puts "Image 41 Seeded ✅"
+
+photo42 = Photo.new(provider: provider6)
+photo42.remote_data_url = "https://imgur.com/28eQy4c.jpg"
+photo42.save
+puts "Image 42 Seeded ✅"
+
+puts "All Images Seeded ✅"
 
 puts "🎊 🎉 Congratulations, database succesfully seeded! 🎉 🎊"
 

@@ -111,105 +111,105 @@ puts "💆‍♀️ 💅🏽 💆‍♂️ Creating Treatments 💆‍♂️ �
 treatment1 = Treatment.create!(name: "Black Tattoo",
   description: "Pricing starts at 50 Euros for small tattoo in black. Feel free to contact me for more details on design and pricing! ;)",
   provider: provider1,
-  price: 50,
+  price: 5000,
   category: "Tattoo")
 puts "Treatment 1 Seeded ✅"
 
 treatment2 = Treatment.create!(name: "White Tattoo",
   description: "Pricing starts at 50 Euros for small tattoo in white. Feel free to contact me for more details on design and pricing! ;)",
   provider: provider1,
-  price: 80,
+  price: 8000,
   category: "tattoo")
 puts "Treatment 2 Seeded ✅"
 
 treatment3 = Treatment.create!(name: "Color Tattoo",
   description: "Pricing starts at 50 Euros for small tattoo in any color ink. Feel free to contact me for more details on design and pricing! ;)",
   provider: provider1,
-  price: 50,
+  price: 5000,
   category: "tattoo")
 puts "Treatment 3 Seeded ✅"
 
 treatment4 = Treatment.create!(name: "Gel Mani",
   description: "Gel manicures last much longer! Keep that beautiful color!",
   provider: provider2,
-  price: 30,
+  price: 3000,
   category: "Nails")
 puts "Treatment 4 Seeded! ✅"
 
 treatment5 = Treatment.create!(name: "Gel Pedi",
   description: "Keep those piggies on fleek!",
   provider: provider2,
-  price: 50,
+  price: 5000,
   category: "Nails")
 puts "Treatment 5 Seeded! ✅"
 
 treatment6 = Treatment.create!(name: "Nail art Mani",
   description: "Any custom design for your hands!",
   provider: provider2,
-  price: 40,
+  price: 4000,
   category: "Nails")
 puts "Treatment 6 Seeded! ✅"
 
 treatment7 = Treatment.create!(name: "Nail art Pedi",
   description: "any custom design for your toes!",
   provider: provider2,
-  price: 60,
+  price: 6000,
   category: "Nails")
 puts "Treatment 7 Seeded! ✅"
 
 treatment8 = Treatment.create!(name: "French tip Mani",
   description: "Beautiful, classic, and CHIC!",
   provider: provider2,
-  price: 55,
+  price: 5500,
   category: "Nails")
 puts "Treatment 8 Seeded! ✅"
 
 treatment9 = Treatment.create!(name: "Blowout",
   description: "Beautiful, classic",
   provider: provider3,
-  price: 50,
+  price: 5000,
   category: "Hair")
 puts "Treatment 9 Seeded! ✅"
 
 treatment10 = Treatment.create!(name: "Color",
   description: "Achieve the beautiful color you want!",
   provider: provider3,
-  price: 300,
+  price: 30000,
   category: "Hair")
 puts "Treatment 10 Seeded! ✅"
 
 treatment11 = Treatment.create!(name: "Cut",
   description: "Change things up with a nice new cut!",
   provider: provider3,
-  price: 100,
+  price: 10000,
   category: "Hair")
 puts "Treatment 11 Seeded! ✅"
 
 treatment12 = Treatment.create!(name: "Natural Look Makeup",
   description: "Achieve that flawless natural look!",
   provider: provider4,
-  price: 150,
+  price: 15000,
   category: "Makeup")
 puts "Treatment 12 Seeded! ✅"
 
 treatment13 = Treatment.create!(name: "Red Carpet Makeup",
   description: "Red Carpet Ready!!",
   provider: provider4,
-  price: 250,
+  price: 25000,
   category: "Makeup")
 puts "Treatment 13 Seeded! ✅"
 
 treatment14 = Treatment.create!(name: "1 hour full-body",
   description: "A full-body workout you're sure to see results from!",
   provider: provider5,
-  price: 80,
+  price: 8000,
   category: "Fitness")
 puts "Treatment 14 Seeded! ✅"
 
 treatment15 = Treatment.create!(name: "Up-do",
   description: "Impress with my famous up-do hair style",
   provider: provider6,
-  price: 100,
+  price: 10000,
   category: "Hair")
 puts "Treatment 15 Seeded! ✅"
 puts "All Treatments Seeded ✅"

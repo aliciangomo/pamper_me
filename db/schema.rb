@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_26_123520) do
+ActiveRecord::Schema.define(version: 2019_07_29_102833) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,14 @@ ActiveRecord::Schema.define(version: 2019_07_26_123520) do
     t.integer "payment_type"
     t.index ["treatment_id"], name: "index_bookings_on_treatment_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.string "data"
+    t.bigint "provider_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["provider_id"], name: "index_photos_on_provider_id"
   end
 
   create_table "providers", force: :cascade do |t|
@@ -73,6 +81,7 @@ ActiveRecord::Schema.define(version: 2019_07_26_123520) do
 
   add_foreign_key "bookings", "treatments"
   add_foreign_key "bookings", "users"
+  add_foreign_key "photos", "providers"
   add_foreign_key "providers", "users"
   add_foreign_key "treatments", "providers"
 end

@@ -3,34 +3,34 @@ class ProvidersController < ApplicationController
 
   def index
     @providers = Provider.geocoded
-    # @providers = Provider.all
-    # if params[:query].present?
-    #   sql_query = " \
-    #     users.first_name @@ :query \
-    #     OR users.last_name @@ :query \
-    #     OR treatments.name @@ :query \
-    #     OR treatments.category @@ :query \
-    #   "
-    #   @providers = Provider.joins(:treatments).joins(:user).where(sql_query, query: "%#{params[:query]}%")
-    # end
+    @providers = Provider.all
+    if params[:query].present?
+      sql_query = " \
+        users.first_name @@ :query \
+        OR users.last_name @@ :query \
+        OR treatments.name @@ :query \
+        OR treatments.category @@ :query \
+      "
+      @providers = Provider.joins(:treatments).joins(:user).where(sql_query, query: "%#{params[:query]}%")
+    end
 
-    # if params[:location].present?
-    #   if nearby_providers = @providers.near('params[:location]', 10).empty?
-    #     @providers
-    #   else
-    #     @providers = nearby_providers
-    #   end
-    # end
+    if params[:location].present?
+      if nearby_providers = @providers.near('params[:location]', 10).empty?
+        @providers
+      else
+        @providers = nearby_providers
+      end
+    end
 
-    # @providers = @providers.uniq
+    @providers = @providers.uniq
 
-    # @markers = @providers.map do |provider|
-    #   {
-    #     lat: provider.latitude,
-    #     lng: provider.longitude,
-    #     infoWindow: render_to_string(partial: "infowindow", locals: { provider: provider })
-    #   }
-    # end
+    @markers = @providers.map do |provider|
+      {
+        lat: provider.latitude,
+        lng: provider.longitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { provider: provider })
+      }
+    end
     @providers
   end
 

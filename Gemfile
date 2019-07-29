@@ -19,7 +19,8 @@ gem 'webpacker'
 
 # ADDED GEMS
 gem 'geocoder'
-
+gem 'cloudinary', '~> 1.9.1'
+gem 'carrierwave', '~> 1.2'
 
 
 group :development do

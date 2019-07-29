@@ -535,37 +535,37 @@ puts "Image 35 Seeded ✅"
 puts "Seeding Images for Provider 6"
 # Images for
 photo36 = Photo.new(provider: provider6)
-photo36.remote_data_url = ""
+photo36.remote_data_url = "https://imgur.com/z0Gkssx"
 photo36.save
 puts "Image 36 Seeded ✅"
 
 photo37 = Photo.new(provider: provider6)
-photo37.remote_data_url = ""
+photo37.remote_data_url = "https://imgur.com/q0pO3Bw"
 photo37.save
 puts "Image 37 Seeded ✅"
 
 photo38 = Photo.new(provider: provider6)
-photo38.remote_data_url = ""
+photo38.remote_data_url = "https://imgur.com/Vh3qrtO"
 photo38.save
 puts "Image 38 Seeded ✅"
 
 photo39 = Photo.new(provider: provider6)
-photo39.remote_data_url = ""
+photo39.remote_data_url = "https://imgur.com/N39G1z8"
 photo39.save
 puts "Image 39 Seeded ✅"
 
 photo40 = Photo.new(provider: provider6)
-photo40.remote_data_url = ""
+photo40.remote_data_url = "https://imgur.com/sTAxG1v"
 photo40.save
 puts "Image 40 Seeded ✅"
 
 photo41 = Photo.new(provider: provider6)
-photo41.remote_data_url = ""
+photo41.remote_data_url = "https://imgur.com/TZnZQ1G"
 photo41.save
 puts "Image 41 Seeded ✅"
 
 photo42 = Photo.new(provider: provider6)
-photo42.remote_data_url = ""
+photo42.remote_data_url = "https://imgur.com/28eQy4c"
 photo42.save
 puts "Image 42 Seeded ✅"
 

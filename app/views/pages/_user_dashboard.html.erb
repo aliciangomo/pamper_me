@@ -43,7 +43,7 @@
             </div>
 
             <div class="user-dashboard-card-links">
-              <!-- <a href="<%#= booking.treatmentphone_number %>" class="call-user"><i class="fab fa-whatsapp" ></i></a> -->
+              <a href="<%= @provider_phone_number %>" class="call-user"><i class="fab fa-whatsapp" ></i></a>
               <%= link_to '<i class="fas fa-chevron-right"></i>'.html_safe, treatment_booking_path(booking.treatment, booking)%>
             </div>
           </div>
@@ -70,7 +70,7 @@
             </div>
 
             <div class="user-dashboard-card-links">
-              <!-- <a href="<%#=  %>" class="call-user"><i class="fab fa-whatsapp" ></i></a> -->
+              <a href="<%= @provider_phone_number %>" class="call-user"><i class="fab fa-whatsapp" ></i></a>
               <%= link_to '<i class="fas fa-chevron-right"></i>'.html_safe, treatment_booking_path(booking.treatment, booking)%>
             </div>
           </div>

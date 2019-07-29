@@ -1,6 +1,10 @@
 
-  <% if params[:query].present? %>
-    <h1 class="index-title" id="search-index-heading">Your Search Results for: <%= params[:query] %></h1>
+  <% if params[:query].present? && params[:location].present? %>
+    <h1 class="index-title" id="search-index-heading">Your Search Results for:<strong> <%= params[:query] %></strong> and <strong><%= params[:location] %></strong></h1>
+  <% elsif params[:query].present? && params[:location].blank?%>
+    <h1 class="index-title" id="search-index-heading">Your Search Results for:<strong> <%= params[:query] %></h1>
+  <% elsif params[:query].blank? && params[:location].present?%>
+    <h1 class="index-title" id="search-index-heading">Your Search Results for:<strong> <%= params[:location] %></h1>
   <% else %>
     <h1 class="index-title" id="search-index-heading">Explore our providers:</h1>
   <% end %>

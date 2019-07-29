@@ -2,11 +2,12 @@
   display: flex;
   justify-content: space-around;
   align-items: baseline;
-  padding: 5vw 7vw;
+  padding: 5vw 3vw;
   color: $green;
-  position: fixed;
+  position: sticky;
   bottom: 0;
   left: 0;
+  background-color: $gray;
   i {
     font-size: 27px;
     // opacity: .70;

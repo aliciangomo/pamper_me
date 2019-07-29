@@ -8,7 +8,7 @@ if (map) {
 
   const marker = document.querySelector('.provider-index-map');
 
-  marker.addEventListerner("click", (event) => {
+  marker.addEventListener("click", (event) => {
 
   map.classList.toggle('d-none');
 

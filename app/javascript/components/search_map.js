@@ -1,6 +1,6 @@
 const renderMap = () => {
 
-const map = document.querySelector('.search-map');
+const map = document.querySelector('.map');
 if (map) {
  map.classList.add('d-none');
 
@@ -8,10 +8,9 @@ if (map) {
 
   const marker = document.querySelector('.provider-index-map');
 
-  marker.addEventListerner("click", (event) => {
+  marker.addEventListener("click", (event) => {
 
   map.classList.toggle('d-none');
-
 
 });
 }

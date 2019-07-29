@@ -1,12 +1,20 @@
+#search-index-heading {
+  margin: 5vw 5vw;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+
 .index_menu {
   display: flex;
   justify-content: space-around;
   align-items: baseline;
-  padding: 5vw 7vw;
+  padding: 3vw 7vw;
   color: $green;
-  position: fixed;
+  position: sticky;
   bottom: 0;
   left: 0;
+  z-index: 70;
   i {
     font-size: 27px;
     // opacity: .70;
@@ -22,4 +30,9 @@ hr {
     border-top: 1px solid #ccc;
     margin: 0 auto;
     padding: 0;
+}
+
+.map {
+  width: 100vw;
+  height: 100vh;
 }

@@ -3,7 +3,6 @@ class ProvidersController < ApplicationController
 
   def index
     @providers = Provider.geocoded
-    @providers = Provider.all
     if params[:query].present?
       sql_query = " \
         users.first_name @@ :query \

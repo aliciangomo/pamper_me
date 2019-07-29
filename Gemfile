@@ -21,6 +21,7 @@ gem 'webpacker'
 gem 'geocoder'
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
+gem 'chart', '~> 0.1.5.1'
 
 
 group :development do

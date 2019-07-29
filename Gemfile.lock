@@ -59,6 +59,8 @@ GEM
     cloudinary (1.9.1)
       aws_cf_signer
       rest-client
+    chart (0.1.5.1)
+      rails
     coderay (1.1.2)
     concurrent-ruby (1.1.5)
     crass (1.0.4)
@@ -220,6 +222,7 @@ DEPENDENCIES
   bootsnap
   carrierwave (~> 1.2)
   cloudinary (~> 1.9.1)
+  chart (~> 0.1.5.1)
   devise
   dotenv-rails
   font-awesome-sass (~> 5.6.1)

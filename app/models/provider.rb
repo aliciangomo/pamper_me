@@ -10,4 +10,7 @@ class Provider < ApplicationRecord
     self.treatments
   end
 
+  def distance_to(my_location)
+    return Geocoder::Calculations.distance_between([my_location.latitude,my_location.longitude], [latitude,longitude])
+  end
 end

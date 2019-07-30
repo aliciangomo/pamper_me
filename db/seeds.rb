@@ -69,7 +69,7 @@ provider3 = Provider.create!(location: "Calle de Valverde, 44, 28004 Madrid",
   photo: "",
   description: "Great hair stylist in Madrid. #{description_lorem}",
   statement: "I do hair, with love and care!",
-  rating: 3,
+  rating: 4,
   phone_number: "+34646850358",
   user: user3)
 # provider3.save!
@@ -85,11 +85,11 @@ provider4 = Provider.create!(location: "Calle San Gregorio, 5, 28004 Madrid",
 provider4.save!
 puts "Provider 4 Seeded ✅"
 
-provider5 = Provider.create!(location: "Junto al hotel Me de la, Plaza del Ángel, Plaza de Sta. Ana, 6, 28012 Madrid",
+provider5 = Provider.create!(location: "Plaza de la Independencia, 7, 28001 Madrid",
   photo: "",
   description: "Studied physical training at oxford, I'm the best! #{description_lorem}",
   statement: "Get the body you DESERVE!",
-  rating: 2,
+  rating: 4,
   phone_number: "+34646850358",
   user: user6)
 provider5.save!
@@ -99,7 +99,7 @@ provider6 = Provider.create!(location: "Calle Barquillo 39, 28004, Madrid",
   photo: "",
   description: "Hair is my passion! #{description_lorem}",
   statement: "Youre in great hands with me!!",
-  rating: 2,
+  rating: 4,
   phone_number: "+34646850358",
   user: user9)
 provider6.save!

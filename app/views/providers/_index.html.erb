@@ -9,12 +9,15 @@
     <h1 class="index-title" id="search-index-heading">Explore our providers:</h1>
   <% end %>
 
+
+
   <div class="map"> <%= render "shared/map" %></div>
 
   <div class="index-cards">
     <% @providers.each do |provider| %>
       <%= link_to provider_path(provider) do %>
         <div class="provider-card-images" style="background-image: url('<%= image_path("https://images.unsplash.com/photo-1481152508843-1ec796b30a8b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80") %>');">
+          <%= render 'photocarousel', photos: provider.photos %>
           <%#= image_tag("https://images.unsplash.com/photo-1481152508843-1ec796b30a8b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80") %>
           <%#= cl_image_tag url=() %>
         </div>
@@ -59,8 +62,14 @@
 
 
               <div class="provider-card-location">
+                <% distance = provider.distance_to(@my_location).round(2) %>
                 <p>
-                  <i class="fas fa-walking"></i> <%= rand(0...31) %> minutes
+                  <% if distance > 3.01 %>
+                    <i class="fas fa-car"></i> <i class="fas fa-subway"></i> <%= distance %>km
+                  <% else %>
+                    <i class="fas fa-walking"></i> <%= distance %>km
+                  <% end %>
+                  <%# raise %>
                 </p>
               </div>
             </div>

@@ -97,16 +97,15 @@ hr {
 }
 
 .provider-show-services {
-  .pictures {
-    user-select: none;
+  width: 100vw;
+  padding:5vw 11vw;
+  padding-top: 0vw;
+  .col-form-label {
+    display: none;
   }
-  .card-test {
-    color: $green;
-    background-image: url(https://images.unsplash.com/photo-1493799817216-4b57dda4229f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2252&q=80);
-    background-size: cover;
-    background-position: center;
-    height: 15vh;
-    width: 35vw;
-    border-radius: 5px;
+  .collection_radio_buttons {
+    // font-size: 16px;
+    font-weight: 100;
+    // margin: 0px;
   }
 }

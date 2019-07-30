@@ -6,7 +6,9 @@
   <% if current_user.provider.nil? %>
 
   <div class="booking-review-intro">
+
     <div class="booking-review-name-description">
+      <!-- <span> <%#= link_to '<i class="fas fa-chevron-left"></i>'.html_safe, dashboard_path %></span> -->
       <p class="name">Booking Details</p>
       <p class="statement">You have made a booking as follows:</p>
     </div>
@@ -32,7 +34,7 @@
       <p>On <strong><%= date.strftime('%A %B %d, %Y') %></strong> at <strong>13:00</strong></p>
     </li>
     <li>
-      <p>The total for your booking is <strong>€<%= humanized_money_with_symbol@booking.amount %></strong></p>
+      <p>The total for your booking is <strong>€<%= humanized_money_with_symbol(@booking.amount) %></strong></p>
     </li>
     <li>
       <p><%= @treatment.provider.user.first_name %> awaits you at <strong><%= @treatment.provider.location %></strong></p>
@@ -47,11 +49,11 @@
 
 <div class="provider-show-icons">
   <div class="provider-show-contact">
-    <a href="<%= @phone_number %>"><i class="fab fa-whatsapp"></i></a>
+    <a href="<%= @provider_phone_number %>"><i class="fab fa-whatsapp"></i></a>
   </div>
-  <div class="provider-show-contact">
-    <i class="fas fa-map-marker-alt"></i>
-  </div>
+  <div class="provider-show-location-tag" onclick="window.mapsSelector(<%= @provider.latitude %>, <%= @provider.longitude %>)">
+      <i class="fas fa-map-marker-alt"></i>
+    </div>
   <div class="provider-show-contact">
     <i class="far fa-edit"></i><%#= link_to '<i class="far fa-edit"></i>'.html_safe, edit_treatment_booking_path(@booking.treatment, @booking) %>
   </div>
@@ -92,7 +94,7 @@
       <p>On <strong><%= date.strftime('%A %B %d, %Y') %></strong> at <strong>13:00</strong></p>
     </li>
     <li>
-      <p>The total for this booking is <strong>€<%= humanized_money_with_symbol@booking.amount %></strong></p>
+      <p>The total for this booking is <strong><%= humanized_money_with_symbol@booking.amount %></strong></p>
     </li>
     <li>
       <p>Payment status: <% if @booking.status == 4 %><strong> Pending payment</strong></p> <% else %> <strong> Paid </strong>
@@ -104,7 +106,7 @@
 <hr>
 <div class="provider-show-icons">
   <div class="provider-show-contact">
-    <a href="<%= @phone_number %>"><i class="fab fa-whatsapp"></i></a>
+    <a href="<%= @user_phone_number %>"><i class="fab fa-whatsapp"></i></a>
   </div>
   <div class="provider-show-contact">
     <i class="far fa-edit"></i><%#= link_to '<i class="far fa-edit"></i>'.html_safe, edit_treatment_booking_path(@booking.treatment, @booking) %>

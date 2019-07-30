@@ -36,7 +36,7 @@
                 <div class="provider-dashboard-card-infos">
                   <p id="treatment-booked"><strong><%= booking.treatment.name %></strong></p>
                   <p><%= booking.date.strftime('%A %B %d, %Y') %> </p>
-                  <p>€<%= booking.price %> </p>
+                  <p><%= humanized_money_with_symbol(booking.amount) %> </p>
                 </div>
                 <div class="provider-dashboard-card-links">
                   <a href="<%= @user_phone_number %>" class="call-user"><i class="fab fa-whatsapp" ></i></a>
@@ -62,7 +62,7 @@
                     <div class="provider-dashboard-card-infos">
                       <p id="treatment-booked"><strong><%= booking.treatment.name %></strong></p>
                       <p><%= booking.date %> </p>
-                      <p>€<%= booking.price %> </p>
+                      <p><%= humanized_money_with_symbol(booking.amount) %> </p>
                     </div>
                     <div class="provider-dashboard-card-links confirmed-version d-none">
                       <a href="<%= @user_phone_number %>" class="call-user"><i class="fab fa-whatsapp" ></i></a>
@@ -99,7 +99,7 @@
                 <div class="provider-dashboard-card-infos">
                   <p id="treatment-booked"><strong><%= booking.treatment.name %></strong></p>
                   <p><%= booking.date %> </p>
-                  <p>€<%= booking.price %> </p>
+                  <p><%= humanized_money_with_symbol(booking.amount) %> </p>
                 </div>
                 <div class="user-dashboard-card-links">
                   <%= link_to '<i class="fas fa-chevron-right navigate-right"></i>'.html_safe, treatment_booking_path(booking.treatment, booking)%>
@@ -125,7 +125,7 @@
                 <div class="provider-dashboard-card-infos">
                   <p id="treatment-booked"><strong><%= booking.treatment.name %></strong></p>
                   <p><%= booking.date %> </p>
-                  <p>€<%= booking.price %> </p>
+                  <p><%= humanized_money_with_symbol(booking.amount) %> </p>
                 </div>
                 <div class="user-dashboard-card-links">
                   <%= link_to '<i class="fas fa-chevron-right navigate-right"></i>'.html_safe, treatment_booking_path(booking.treatment, booking)%>

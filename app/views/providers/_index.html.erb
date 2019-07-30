@@ -64,7 +64,12 @@
               <div class="provider-card-location">
                 <% distance = provider.distance_to(@my_location).round(2) %>
                 <p>
-                  <i class="fas fa-walking"></i> <%= distance %>km
+                  <% if distance > 3.01 %>
+                    <i class="fas fa-car"></i> <i class="fas fa-subway"></i> <%= distance %>km
+                  <% else %>
+                    <i class="fas fa-walking"></i> <%= distance %>km
+                  <% end %>
+                  <%# raise %>
                 </p>
               </div>
             </div>

@@ -9,6 +9,8 @@
     <h1 class="index-title" id="search-index-heading">Explore our providers:</h1>
   <% end %>
 
+
+
   <div class="map"> <%= render "shared/map" %></div>
 
   <div class="index-cards">
@@ -60,7 +62,7 @@
 
               <div class="provider-card-location">
                 <p>
-                  <i class="fas fa-walking"></i> <%= rand(0...31) %> minutes
+                  <i class="fas fa-walking"></i> <%= provider.distance_to(@my_location).round(2)  %>km
                 </p>
               </div>
             </div>

@@ -16,8 +16,12 @@ class PagesController < ApplicationController
 
     @provider_earnings = provider_moneys.reduce(0, :+)
 
-    @user_phone_number = PhoneNumberLinkFormaterService.new(@current_user.phone_number).call
-    @provider_phone_number = PhoneNumberLinkFormaterService.new(@provider.phone_number).call
+    if @current_user.provider
+      @user_phone_number = PhoneNumberLinkFormaterService.new(@current_user.phone_number).call
+      @provider_phone_number = PhoneNumberLinkFormaterService.new(@provider.phone_number).call
+    else
+      @user_phone_number = PhoneNumberLinkFormaterService.new(@current_user.phone_number).call
+    end
 
     @pieSize = {
     :height => 150,

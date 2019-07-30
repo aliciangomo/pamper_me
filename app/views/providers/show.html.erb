@@ -40,30 +40,17 @@
     </div>
   </div>
   <hr class="small">
-  <div class="provider-show-services">
-     <div class="provider-show-treatments">
-        <form action="/bookings" method="post" accept-charset="UTF-8">
-          <% @provider.treatments.each do |treatment| %>
-            <label class="picture">
-              <input type="radio" name="<%= treatment.name %>" value="big">
-              <div class="card-test"></div>
-            </label>
-          <% end %>
-          <input type="submit" value="Submit">
-        </form>
-
-      <%= simple_form_for(@booking) do |f| %>
-
-        <%= f.association :treatment, collection: @provider.get_treatments, input_html: {multiple: false}, include_hidden: false, item_wrapper_tag: :div, class: 'card_test' %>
-        <%= f.submit %>
-      <%# end %>
-      <% end %>
-      <!-- <p>
-        <%#= treatment.name %>
-        <%#= treatment.price %>
-      </p> -->
+  <div class="provider-show-intro">
+    <div class="provider-show-name-description">
+      <p class="name">What would you like to book?</p>
+      <p class="statement">Please select a service:</p>
     </div>
-
+  </div>
+  <div class="provider-show-services">
+    <%= simple_form_for(@booking) do |f| %>
+    <%= f.association :treatment, collection: @provider.get_treatments, input_html: {multiple: false}, include_hidden: false, as: :radio_buttons, boolean_style: :inline, label_method: "name_and_price" %>
+    <%= f.submit "Book It!", class: "btn button-primary btn-block" %>
+    <% end %>
     <%#= raise %>
   </div>
 

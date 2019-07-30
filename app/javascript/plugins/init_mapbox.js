@@ -1,10 +1,17 @@
 import mapboxgl from 'mapbox-gl';
+// const MapboxDirections = require('mapbox-gl-directions');
+
+
+
+
 
 const fitMapToMarkers = (map, markers) => {
   const bounds = new mapboxgl.LngLatBounds();
   markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
   map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
 };
+
+
 
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
@@ -15,6 +22,14 @@ const initMapbox = () => {
       container: 'map',
       style: 'mapbox://styles/mapbox/light-v9'
     });
+    map.addControl(new mapboxgl.GeolocateControl({
+    positionOptions: {
+    enableHighAccuracy: true
+    },
+    trackUserLocation: true
+    }));
+
+
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
 
@@ -34,6 +49,7 @@ const initMapbox = () => {
 
     });
     fitMapToMarkers(map, markers);
+
 
   }
 

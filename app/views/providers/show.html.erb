@@ -55,3 +55,9 @@
   </div>
 
 </div>
+
+<h1>insta test</h1>
+@instagram
+<% @instagram.each do |instagram| %>
+  <%= image_tag instagram.images.standard_resolution.url %>
+<% end %>

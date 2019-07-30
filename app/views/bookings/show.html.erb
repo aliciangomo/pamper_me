@@ -13,7 +13,7 @@
   <!-- <div class="booking-review-avatar">
     <%#= image_tag( @booking.treatment.provider.user.avatar, class: "booking-review-avatar-img") %>
   </div> -->
-</div>
+  </div>
 <hr>
 
 <div class="booking-review-description">
@@ -32,13 +32,14 @@
       <p>On <strong><%= date.strftime('%A %B %d, %Y') %></strong> at <strong>13:00</strong></p>
     </li>
     <li>
-      <p>The total for your booking is <strong>€<%= @booking.price %></strong></p>
+      <p>The total for your booking is <strong>€<%= humanized_money_with_symbol@booking.amount %></strong></p>
     </li>
     <li>
       <p><%= @treatment.provider.user.first_name %> awaits you at <strong><%= @treatment.provider.location %></strong></p>
     </li>
     <li>
-      <p>The total for your booking is <strong>€<%= @booking.price %></strong></p>
+      <p>Payment status: <% if @booking.status == 4 %><strong> Pending payment</strong></p> <% else %> <strong> Paid </strong>
+      <% end %>
     </li>
   </ul>
 </div>
@@ -91,10 +92,11 @@
       <p>On <strong><%= date.strftime('%A %B %d, %Y') %></strong> at <strong>13:00</strong></p>
     </li>
     <li>
-      <p>The total for this booking is <strong>€<%= @booking.price %></strong></p>
+      <p>The total for this booking is <strong>€<%= humanized_money_with_symbol@booking.amount %></strong></p>
     </li>
     <li>
-      <p>Payment status: <strong>paid</strong></p>
+      <p>Payment status: <% if @booking.status == 4 %><strong> Pending payment</strong></p> <% else %> <strong> Paid </strong>
+      <% end %>
     </li>
   </ul>
 </div>
@@ -116,4 +118,3 @@
 <hr>
 <% end %>
 
-</div>

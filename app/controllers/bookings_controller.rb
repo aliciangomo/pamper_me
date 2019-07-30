@@ -59,7 +59,7 @@ class BookingsController < ApplicationController
     @booking.treatment = Treatment.find(params[:booking][:treatment_id])
     # @provider = @treatment.provider
     @booking.user = current_user
-    @booking.price = @booking.treatment.price
+    @booking.amount_cents = @booking.treatment.price_cents
     @booking.status = 4
     @booking.date = Date.tomorrow
     if @booking.save!
@@ -75,6 +75,5 @@ class BookingsController < ApplicationController
 
   def strong_params
     params.require(:booking).permit(:treatment_id, :date, :price, :status, :user_id, :payment_type)
-
   end
 end

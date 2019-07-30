@@ -1,0 +1,65 @@
+.StripeElement {
+  box-sizing: border-box;
+
+  height: 40px;
+  width: 90vw;
+
+  padding: 10px 12px;
+
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: white;
+
+  box-shadow: 0 1px 3px 0 #e6ebf1;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+  margin-bottom: 5vw;
+}
+
+.StripeElement--focus {
+  box-shadow: 0 1px 4px 1px #cfd7df;
+}
+
+.StripeElement--invalid {
+  border-color: #fa755a;
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
+}
+
+
+.card-payment-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  padding: 5vw 7vw;
+}
+
+#payment-form {
+  display: block;
+  width: 90vw;
+  padding: 15px;
+  border: 1px $gray solid;
+  border-radius: 5px;
+}
+
+#payment-form p {
+  font-weight: 100;
+  width: 90vw;
+}
+
+#payment-form button {
+  width: 100%;
+}
+
+#paypal-button {
+  width: 332px;
+  height: 50px;
+}
+
+#apple-pay-button {
+  width: 332px;
+  height: 50px;
+}

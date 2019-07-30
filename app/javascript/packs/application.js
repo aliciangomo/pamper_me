@@ -18,6 +18,8 @@ import {renderMap} from '../components/search_map.js';
 import {mapsSelector} from '../components/maplink.js';
 window.mapsSelector = mapsSelector;
 
+import {handleStripe} from '../components/payment.js';
+
 const application = Application.start();
 const context = require.context("./controllers", true, /\.js$/);
 application.load(definitionsFromContext(context));
@@ -27,3 +29,4 @@ initMapbox();
 colorStatus();
 toggleCollapsible();
 toggleDropdown();
+global.handleStripe = handleStripe;

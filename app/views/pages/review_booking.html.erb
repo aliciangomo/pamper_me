@@ -28,7 +28,7 @@
       <p>On <strong><%= date.strftime('%A %B %d, %Y') %></strong> at <strong>13:00</strong></p>
     </li>
     <li>
-      <p>The total for your booking is <strong>€<%= @booking.price %></strong></p>
+      <p>The total for your booking is <strong><%=humanized_money_with_symbol(@booking.treatment.price) %></strong></p>
     </li>
   </ul>
 </div>
@@ -38,21 +38,35 @@
     <p class="name">How would you like to pay?</p>
   </div>
 </div>
-<%= simple_form_for @booking do |f| %>
-  <div class="booking-pay-icons stim-select" data-controller="select">
-      <div class="provider-show-contact stim-select-button" data-select-value="1" data-action="click->select#update" data-target="select.button">
-        <i class="fab fa-cc-apple-pay"></i>
-      </div>
-      <div class="provider-show-contact stim-select-button" data-select-value="2" data-action="click->select#update" data-target="select.button">
-        <i class="far fa-credit-card"></i>
-      </div>
-      <div class="provider-show-location-tag stim-select-button" data-select-value="3" data-action="click->select#update" data-target="select.button">
+<script src="https://js.stripe.com/v3/"></script>
+<%#= simple_form_for @booking do |f| %>
+  <div class="booking-pay-icons">
+      <%= link_to apple_payment_path(@booking), remote: true, method: :put do %>
+      <!-- <div class="provider-show-contact stim-select-button" data-select-value="1" data-action="click->select#update" data-target="select.button" id="apple-pay" remote: true> -->
+      <i class="fab fa-cc-apple-pay"></i>
+      <% end %>
+
+      <%= link_to stripe_payment_path(@booking), remote: true, method: :put do %>
+        <!-- <div class="provider-show-contact stim-select-button" data-select-value="2" data-action="click->select#update" data-target="select.button" id="credit-card"> -->
+          <i class="far fa-credit-card"></i>
+      <% end %>
+
+      <%= link_to paypal_payment_path(@booking), remote: true, method: :put do %>
+      <!-- <div class="provider-show-location-tag stim-select-button" data-select-value="3" data-action="click->select#update" data-target="select.button" id="paypal"> -->
         <i class="fab fa-cc-paypal"></i>
-      </div>
-      <%= f.input :payment_type, as: :hidden, input_html: { 'data-target' => 'select.input' } %>
-    </div>
-    <%= f.submit %>
-<% end %>
-<button class="btn button-primary btn-block">Book Appointment</button>
+        <% end %>
+
+  </div>
+    <%#= f.input :payment_type, as: :hidden, input_html: { 'data-target' => 'select.input' } %>
+    <%# end %>
+
+<!-- <div class="booking-pay-icons">
+
+<a href="#" class="provider-show-contact" id="apple-pay"><i class="fab fa-cc-apple-pay"></i></a>
+
+
+</div> -->
+
+<div class="card-payment-form" id="card-payment-form"></div>
 
 

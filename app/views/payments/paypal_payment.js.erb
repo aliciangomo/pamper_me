@@ -1,0 +1,8 @@
+var togglePaypalPayment = (html) => {
+
+  var paymentForm = document.querySelector('#card-payment-form');
+  paymentForm.innerHTML = html;
+
+}
+
+togglePaypalPayment('<%= j render "payments/paypal" %>')

@@ -95,13 +95,29 @@ hr {
   justify-content: space-around;
   align-items: baseline;
   padding: 5vw 7vw;
-  color: $gray;
+  // color: $gray;
   i {
     font-size: 60px;
+    margin: 0px;
     // opacity: .70;
   }
 }
 
-.selected {
+.booking-pay-icons {
+  a:link {
+  color: $gray;
+  }
+  a:visited {
   color: $green;
-    }
+  }
+  a:hover {
+  color: $green;
+  }
+  a:active {
+  color: $green;
+  }
+}
+
+// .selected {
+//   color: $green;
+//     }

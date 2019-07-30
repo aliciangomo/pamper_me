@@ -1,0 +1,9 @@
+var toggleStripePayment = (html) => {
+
+  var paymentForm = document.querySelector('#card-payment-form');
+  paymentForm.innerHTML = html;
+
+}
+
+toggleStripePayment('<%= j render "payments/stripe" %>')
+handleStripe();

@@ -2,6 +2,7 @@ class ProvidersController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
+    @my_location = request.location
     @providers = Provider.geocoded
     if params[:query].present?
       sql_query = " \
@@ -34,6 +35,7 @@ class ProvidersController < ApplicationController
   end
 
   def show
+
     set_provider
     @booking = Booking.new
     # input this into new/create when a new provider
@@ -43,7 +45,11 @@ class ProvidersController < ApplicationController
     # @photos = @painting.photos.all
   end
 
+
+
+
   private
+
 
   def set_provider
     @provider = Provider.find(params[:id])

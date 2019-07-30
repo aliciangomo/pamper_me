@@ -11,7 +11,7 @@ class PagesController < ApplicationController
 
     provider_moneys = []
     @provider_bookings.each do |booking|
-      provider_moneys << booking.price
+      provider_moneys << booking.amount_cents
     end
 
     @provider_earnings = provider_moneys.reduce(0, :+)

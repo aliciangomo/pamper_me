@@ -35,7 +35,7 @@ class ProvidersController < ApplicationController
   end
 
   def show
-    @instagram = Instagram.user_recent_media(insta_user_id, {:count => 10})
+    @instagram = Instagram.user_recent_media(insta_user_id, {:count => 6})
     # @instagram = Instagram.media_popular
     set_provider
     @booking = Booking.new

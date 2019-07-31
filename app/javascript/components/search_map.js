@@ -15,6 +15,7 @@ if (map) {
   providers.classList.toggle('d-none');
 
 });
+
 }
 
 };

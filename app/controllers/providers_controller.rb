@@ -47,6 +47,15 @@ class ProvidersController < ApplicationController
     @review = Review.new
     # review = Review.find(params[:review_id])
     # @blank_stars = 5 - review.rating.to_i
+    reviews = @provider.reviews
+    ratings = []
+    reviews.each do |review|
+      ratings << review.rating.to_i
+    end
+    sum = 0
+    ratings.each { |a| sum+=a }
+    @provider.rating = sum/(@provider.reviews.count)
+
   end
 
   private
@@ -61,7 +70,7 @@ class ProvidersController < ApplicationController
 
   def provider_params
     # not needed yet
-    params.require(:provider).permit(:location, :photo, :statement, :description, :rating, :rating, :user_id, :neighborhood, :phone_number, :latitude, :longitude)
+    params.require(:provider).permit(:location, :photo, :statement, :description, :rating, :user_id, :neighborhood, :phone_number, :latitude, :longitude)
   end
 
   def treatment_search

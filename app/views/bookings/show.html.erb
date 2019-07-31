@@ -34,7 +34,7 @@
       <p>On <strong><%= date.strftime('%A %B %d, %Y') %></strong> at <strong>13:00</strong></p>
     </li>
     <li>
-      <p>The total for your booking is <strong>€<%= humanized_money_with_symbol(@booking.amount) %></strong></p>
+      <p>The total for your booking is <strong><%= humanized_money_with_symbol(@booking.amount) %></strong></p>
     </li>
     <li>
       <p><%= @treatment.provider.user.first_name %> awaits you at <strong><%= @treatment.provider.location %></strong></p>
@@ -51,7 +51,7 @@
   <div class="provider-show-contact">
     <a href="<%= @provider_phone_number %>"><i class="fab fa-whatsapp"></i></a>
   </div>
-  <div class="provider-show-location-tag" onclick="window.mapsSelector(<%= @provider.latitude %>, <%= @provider.longitude %>)">
+  <div class="provider-show-location-tag" onclick="window.mapsSelector(<%= @treatment.provider.latitude %>, <%= @treatment.provider.longitude %>)">
       <i class="fas fa-map-marker-alt"></i>
     </div>
   <div class="provider-show-contact">

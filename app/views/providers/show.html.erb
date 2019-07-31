@@ -1,7 +1,7 @@
 <div>
   <div class="provider-show-images">
     <%= render 'photocarousel', photos: @provider.photos %>
-    <!-- <p>This is where <%= @provider.user.first_name %>'s uploaded pictures will go</p> -->
+    <!-- <p>This is where <%#= @provider.user.first_name %>'s uploaded pictures will go</p> -->
   </div>
 
   <div class="provider-show-intro">
@@ -61,3 +61,24 @@
 <% @instagram.each do |instagram| %>
   <%= image_tag instagram.images.standard_resolution.url %>
 <% end %>
+
+
+<hr>
+
+<h1>
+  <%= pluralize @provider.reviews.size, "review" %>
+</h1>
+
+<div id="reviews">
+  <% if @provider.reviews.blank? %>
+    Be the first to leave a review for <%= @provider.user.first_name %>
+  <% else %>
+    <% @provider.reviews.each do |review| %>
+      <% review.rating.to_i.times do  %>
+      <span class="glyphicon glyphicon-star"></span>
+      <% end %>
+
+      <%= review.content %>
+    <% end %>
+  <% end %>
+</div>

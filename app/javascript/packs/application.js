@@ -30,3 +30,5 @@ colorStatus();
 toggleCollapsible();
 toggleDropdown();
 global.handleStripe = handleStripe;
+global.mapp = initMapbox();
+

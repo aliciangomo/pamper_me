@@ -1,7 +1,7 @@
 <div>
   <div class="provider-show-images">
     <%= render 'photocarousel', photos: @provider.photos %>
-    <!-- <p>This is where <%= @provider.user.first_name %>'s uploaded pictures will go</p> -->
+    <!-- <p>This is where <%#= @provider.user.first_name %>'s uploaded pictures will go</p> -->
   </div>
 
   <div class="provider-show-intro">
@@ -75,5 +75,36 @@
   </div>
   <% end %>
 
+</div>
+
+<hr>
+
+<div class="reviews-container" id="reviews">
+
+    <div class="review-intro">
+      <div>
+        <p class="reviews-title">Reviews</p>
+        <% if @provider.reviews.blank? %>
+        <p class="reviews-statement">Be the first to leave a review for <%= @provider.user.first_name %></p>
+        <% else %>
+        <p class="reviews-statement">Leave a review for <%= @provider.user.first_name %></p>
+        <% end %>
+      </div>
+      <button class="button secondary btn-light"><%= link_to 'Add review', provider_reviews_path(@provider), { :class => "nav-link", 'data-toggle' => 'modal', 'data-target' => '#new-review-modal' } %></button>
+    </div>
+    <div id="reviews">
+
+        <% @provider.reviews.each do |review| %>
+          <% review.rating.to_i.times do %>
+          <i class="fas fa-star"></i>
+          <% end %>
+          <% (5 - review.rating.to_i).times do %>
+          <i class="far fa-star"></i>
+          <% end %>
+          <p class="review-content"> "<%= review.content %>"</p>
+        <% end %>
+    </div>
+
+    <%= render "reviews/new", review: @review, provider: @provider  %>
 </div>
 

@@ -7,9 +7,12 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @treatment = Treatment.find(params[:treatment_id])
 
-    provider = current_user.provider
+
+    if current_user.provider.nil?
     @user_phone_number = PhoneNumberLinkFormaterService.new(current_user.phone_number).call
-    @provider_phone_number = PhoneNumberLinkFormaterService.new(provider.phone_number).call
+    else
+    @provider_phone_number = PhoneNumberLinkFormaterService.new(current_user.provider.phone_number).call
+    end
 
   end
 

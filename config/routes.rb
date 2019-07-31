@@ -28,6 +28,7 @@ Rails.application.routes.draw do
 
   resources :providers do
     resources :images, only: [:create, :index, :new]
+    resources :reviews, only: [:new, :create]
   end
 
   resources :images, only: [:destroy]

@@ -1,4 +1,4 @@
-const renderMap = () => {
+const renderMap = (mapbox) => {
 
   const map = document.querySelector('.map');
 
@@ -16,7 +16,7 @@ const renderMap = () => {
 
       map.classList.toggle('d-none');
 
-      mapp.resize();
+      mapbox.resize();
 
 
     })

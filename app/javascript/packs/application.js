@@ -24,11 +24,9 @@ const application = Application.start();
 const context = require.context("./controllers", true, /\.js$/);
 application.load(definitionsFromContext(context));
 
-renderMap();
-initMapbox();
 colorStatus();
 toggleCollapsible();
 toggleDropdown();
 global.handleStripe = handleStripe;
-global.mapp = initMapbox();
+renderMap(initMapbox());
 

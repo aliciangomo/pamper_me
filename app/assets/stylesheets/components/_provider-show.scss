@@ -110,14 +110,38 @@ hr {
   }
 }
 
-<<<<<<< HEAD
 .reviews-container {
   width: 100vw;
   padding: 5vw 7vw;
 }
 
-#reviews {
+.review-intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
+.review-intro a {
+  padding: 5px 7px;
+  border-radius: 5px;
+}
+
+
+.reviews-statement {
+    font-size: 16px;
+    font-weight: 100;
+    margin: 0px;
+    text-align: left;
+}
+
+.reviews-title {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0px;
+}
+
+#reviews {
+  margin-top: 3vw;
 }
 
 .review-content {
@@ -126,14 +150,14 @@ hr {
   font-style: italic;
 }
 
-.glyphicon-star {
+#reviews i {
   color: $green;
-  background-color: $green;
-  width: 2px;
-  height: 2px;
+  width: 3px;
+  height: 3px;
+  padding: 7px;
 }
 
-=======
+
 .provider-show-insta-logo {
   text-align: center;
   font-size: 5vh;
@@ -162,4 +186,4 @@ hr {
     margin-bottom: 8vw;
   }
 }
->>>>>>> 17961a47ed05375c6b511f133d7371cc5f547da5
+

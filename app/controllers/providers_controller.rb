@@ -45,16 +45,10 @@ class ProvidersController < ApplicationController
     # When multiple photos are added
     # @photos = @painting.photos.all
     @review = Review.new
+    # review = Review.find(params[:review_id])
+    # @blank_stars = 5 - review.rating.to_i
   end
 
-<<<<<<< HEAD
-  def blank_stars
-    5 - rating.to_i
-  end
-
-
-=======
->>>>>>> 17961a47ed05375c6b511f133d7371cc5f547da5
   private
 
   def insta_user_id

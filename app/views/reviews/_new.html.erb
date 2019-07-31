@@ -2,13 +2,13 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title" id="exampleModalLabel">Add a review for <%= @provider.user.first_name %></h4>
+        <h4 class="modal-title" id="exampleModalLabel">Add a review for <%= provider.user.first_name %></h4>
         <button type="button" class="close button-primary" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <%= simple_form_for([ @provider, @review ]) do |form| %>
+        <%= simple_form_for([ provider, review ]) do |form| %>
           <%= form.input :rating, as: :integer %>
           <%= form.input :content, as: :text %>
           <%= form.button :submit, class: "button-primary" %>

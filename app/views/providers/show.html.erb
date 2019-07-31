@@ -77,40 +77,34 @@
 
 </div>
 
-<<<<<<< HEAD
-<h1>insta test</h1>
-@instagram
-<% @instagram.each do |instagram| %>
-  <%= image_tag instagram.images.standard_resolution.url %>
-<% end %>
-
-
 <hr>
 
-<div class="reviews-container">
-<h1 class="name">Reviews</h1>
-<% if @provider.reviews.blank? %>
-<p>Be the first to leave a review for <%= @provider.user.first_name %></p>
-<% else %>
-<p>Leave a review for <%= @provider.user.first_name %></p>
-<% end %>
-<button class="button secondary btn-light"><%= link_to 'Add a review', provider_reviews_path(@provider), { :class => "nav-link", 'data-toggle' => 'modal', 'data-target' => '#new-review-modal' } %></button>
+<div class="reviews-container" id="reviews">
 
-<div id="reviews">
+    <div class="review-intro">
+      <div>
+        <p class="reviews-title">Reviews</p>
+        <% if @provider.reviews.blank? %>
+        <p class="reviews-statement">Be the first to leave a review for <%= @provider.user.first_name %></p>
+        <% else %>
+        <p class="reviews-statement">Leave a review for <%= @provider.user.first_name %></p>
+        <% end %>
+      </div>
+      <button class="button secondary btn-light"><%= link_to 'Add review', provider_reviews_path(@provider), { :class => "nav-link", 'data-toggle' => 'modal', 'data-target' => '#new-review-modal' } %></button>
+    </div>
+    <div id="reviews">
 
-    <% @provider.reviews.each do |review| %>
-      <% review.rating.to_i.times do %>
-      <i class="fas fa-star"></i>
-      <% end %>
-      <% review.blank_stars.times do %>
-      <i class="far fa-star"></i>
-      <% end %>
-      <p class="review-content"> "<%= review.content %>"</p>
-    <% end %>
+        <% @provider.reviews.each do |review| %>
+          <% review.rating.to_i.times do %>
+          <i class="fas fa-star"></i>
+          <% end %>
+          <% (5 - review.rating.to_i).times do %>
+          <i class="far fa-star"></i>
+          <% end %>
+          <p class="review-content"> "<%= review.content %>"</p>
+        <% end %>
+    </div>
+
+    <%= render "reviews/new", review: @review, provider: @provider  %>
 </div>
 
-
-<%= render "reviews/new" %>
-</div>
-=======
->>>>>>> 17961a47ed05375c6b511f133d7371cc5f547da5

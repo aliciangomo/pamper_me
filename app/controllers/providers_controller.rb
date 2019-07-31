@@ -35,9 +35,7 @@ class ProvidersController < ApplicationController
   end
 
   def show
-    # insta_user_id = "asm902"
-    insta_user_id = "23040587"
-    @instagram = Instagram.user_recent_media(insta_user_id)
+    @instagram = Instagram.user_recent_media(insta_user_id, {:count => 10})
     # @instagram = Instagram.media_popular
     set_provider
     @booking = Booking.new
@@ -48,11 +46,11 @@ class ProvidersController < ApplicationController
     # @photos = @painting.photos.all
   end
 
-
-
-
   private
 
+  def insta_user_id
+    "23040587"
+  end
 
   def set_provider
     @provider = Provider.find(params[:id])

@@ -109,3 +109,14 @@ hr {
     // margin: 0px;
   }
 }
+
+.provider-show-instagram {
+  width: 100vw;
+  padding: 5vw 7vw;
+  padding-top: 0vw;
+  img {
+    width: 30vw;
+    height: 30vw;
+    object-fit: cover;
+  }
+}

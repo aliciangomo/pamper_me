@@ -18,6 +18,7 @@ const renderMap = () => {
 
       mapp.resize();
 
+
     })
   }
 }

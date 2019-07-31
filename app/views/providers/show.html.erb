@@ -25,15 +25,19 @@
   <hr class="small">
   <div class="provider-show-icons">
     <div class="provider-show-rating">
-      <div>
-        <p><%= @provider.rating %></p>
-      </div>
-      <div>
-        <i class="fas fa-star"></i>
-      </div>
+      <a href="#reviews">
+        <div>
+          <p><%= @provider.rating %></p>
+        </div>
+      </a>
+      <a href="#reviews">
+        <div>
+          <i class="fas fa-star"></i>
+        </div>
+      </a>
     </div>
     <div class="provider-show-contact">
-      <a href="<%#= @phone_number %>"><i class="fab fa-instagram"></i></a>
+      <a href="#insta"><i class="fab fa-instagram"></i></a>
     </div>
     <div class="provider-show-contact">
       <a href="<%= @phone_number %>"><i class="fab fa-whatsapp"></i></a>
@@ -59,13 +63,13 @@
 
   <% if @provider.user.first_name = "Jacob" %>
   <hr class="small">
-  <div class="provider-show-intro">
+  <div class="provider-show-intro" id="insta">
     <div class="provider-show-name-description">
       <p class="name"> @tattoosbyjm90<%#= @provider.user.first_name %> <%#= @provider.user.last_name %></p>
       <p class="statement">Check out my recent work on Instagram</p>
     </div>
     <div class="provider-show-insta-logo">
-      <a href="<%#= @phone_number %>"><i class="fab fa-instagram"></i></a>
+      <a href="https://instagram.com"><i class="fab fa-instagram"></i></a>
     </div>
   </div>
   <div class="provider-show-instagram">

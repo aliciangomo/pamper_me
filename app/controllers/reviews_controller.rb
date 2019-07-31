@@ -11,6 +11,10 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def blank_stars
+    5 - rating.to_i
+  end
+
   private
 
   def review_params

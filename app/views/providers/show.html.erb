@@ -65,20 +65,28 @@
 
 <hr>
 
-<h1>
-  <%= pluralize @provider.reviews.size, "review" %>
-</h1>
+<div class="reviews-container">
+<h1 class="name">Reviews</h1>
+<% if @provider.reviews.blank? %>
+<p>Be the first to leave a review for <%= @provider.user.first_name %></p>
+<% else %>
+<p>Leave a review for <%= @provider.user.first_name %></p>
+<% end %>
+<button class="button secondary btn-light"><%= link_to 'Add a review', provider_reviews_path(@provider), { :class => "nav-link", 'data-toggle' => 'modal', 'data-target' => '#new-review-modal' } %></button>
 
 <div id="reviews">
-  <% if @provider.reviews.blank? %>
-    Be the first to leave a review for <%= @provider.user.first_name %>
-  <% else %>
-    <% @provider.reviews.each do |review| %>
-      <% review.rating.to_i.times do  %>
-      <span class="glyphicon glyphicon-star"></span>
-      <% end %>
 
-      <%= review.content %>
+    <% @provider.reviews.each do |review| %>
+      <% review.rating.to_i.times do %>
+      <i class="fas fa-star"></i>
+      <% end %>
+      <% review.blank_stars.times do %>
+      <i class="far fa-star"></i>
+      <% end %>
+      <p class="review-content"> "<%= review.content %>"</p>
     <% end %>
-  <% end %>
+</div>
+
+
+<%= render "reviews/new" %>
 </div>

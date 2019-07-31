@@ -571,6 +571,67 @@ puts "Image 42 Seeded ✅"
 
 puts "All Images Seeded ✅"
 
+review1 = Review.create!(user: user4,
+  provider: provider1,
+  content: "Awesome! I loved the tatoos and it was nearly painless! ",
+  rating: 4)
+puts "Review 1 Seeded ✅"
+
+review2 = Review.create!(user: user5,
+  provider: provider1,
+  content: "Great tattos! Totally recommended :) ",
+  rating: 3)
+puts "Review 2 Seeded ✅"
+
+review3 = Review.create!(user: user6,
+  provider: provider2,
+  content: "My hair has never looked better",
+  rating: 4)
+puts "Review 3 Seeded ✅"
+
+review4 = Review.create!(user: user7,
+  provider: provider2,
+  content: "I was struggling to find a hair cut that worked and this has been fantastic. My friends all love it ",
+  rating: 5)
+puts "Review 4 Seeded ✅"
+
+review5 = Review.create!(user: user8,
+  provider: provider3,
+  content: "The cut was fine but struggled to get the color I asked for",
+  rating: 3)
+puts "Review 5 Seeded ✅"
+
+review6 = Review.create!(user: user4,
+  provider: provider3,
+  content: "I would go back in a heartbit ",
+  rating: 5)
+puts "Review 6 Seeded ✅"
+
+review7 = Review.create!(user: user8,
+  provider: provider4,
+  content: "I wanted something different and she totally understood what I needed",
+  rating: 4)
+puts "Review 7 Seeded ✅"
+
+review8 = Review.create!(user: user4,
+  provider: provider4,
+  content: "I tried her for my wedding make up and it was fantastic ",
+  rating: 4)
+puts "Review 8 Seeded ✅"
+
+review9 = Review.create!(user: user2,
+  provider: provider5,
+  content: "Amazing! I have never had abs like this! :)",
+  rating: 4)
+puts "Review 9 Seeded ✅"
+
+review10 = Review.create!(user: user6,
+  provider: provider5,
+  content: "I absolutely love the way Kyle makes training something fun and easy while achieving results",
+  rating: 5)
+puts "Review 10 Seeded ✅"
+
+
 puts "🎊 🎉 Congratulations, database succesfully seeded! 🎉 🎊"
 
 

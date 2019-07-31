@@ -46,9 +46,12 @@ class ProvidersController < ApplicationController
     @phone_number = PhoneNumberLinkFormaterService.new(@provider.phone_number).call
     # When multiple photos are added
     # @photos = @painting.photos.all
+    @review = Review.new
   end
 
-
+  def blank_stars
+    5 - rating.to_i
+  end
 
 
   private

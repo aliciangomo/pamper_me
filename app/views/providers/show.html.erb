@@ -33,6 +33,9 @@
       </div>
     </div>
     <div class="provider-show-contact">
+      <a href="<%#= @phone_number %>"><i class="fab fa-instagram"></i></a>
+    </div>
+    <div class="provider-show-contact">
       <a href="<%= @phone_number %>"><i class="fab fa-whatsapp"></i></a>
     </div>
     <div class="provider-show-location-tag" onclick="window.mapsSelector(<%= @provider.latitude %>, <%= @provider.longitude %>)">
@@ -54,8 +57,27 @@
     <%#= raise %>
   </div>
 
+  <% if @provider.user.first_name = "Jacob" %>
+  <hr class="small">
+  <div class="provider-show-intro">
+    <div class="provider-show-name-description">
+      <p class="name"> @tattoosbyjm90<%#= @provider.user.first_name %> <%#= @provider.user.last_name %></p>
+      <p class="statement">Check out my recent work on Instagram</p>
+    </div>
+    <div class="provider-show-insta-logo">
+      <a href="<%#= @phone_number %>"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+  <div class="provider-show-instagram">
+    <% @instagram.each do |instagram| %>
+      <%= image_tag instagram.images.standard_resolution.url %>
+    <% end %>
+  </div>
+  <% end %>
+
 </div>
 
+<<<<<<< HEAD
 <h1>insta test</h1>
 @instagram
 <% @instagram.each do |instagram| %>
@@ -90,3 +112,5 @@
 
 <%= render "reviews/new" %>
 </div>
+=======
+>>>>>>> 17961a47ed05375c6b511f133d7371cc5f547da5

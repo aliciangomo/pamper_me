@@ -110,6 +110,7 @@ hr {
   }
 }
 
+<<<<<<< HEAD
 .reviews-container {
   width: 100vw;
   padding: 5vw 7vw;
@@ -132,3 +133,33 @@ hr {
   height: 2px;
 }
 
+=======
+.provider-show-insta-logo {
+  text-align: center;
+  font-size: 5vh;
+  align-items: baseline;
+  i {
+    background: -webkit-radial-gradient(33% 100% circle, #FED373 4%, #F15245 30%, #D92E7F 62%, #9B36B7 85%, #515ECF);
+    background: radial-gradient(circle at 33% 100%, #FED373 4%, #F15245 30%, #D92E7F 62%, #9B36B7 85%, #515ECF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.provider-show-instagram {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  // align-content: space-around;
+  // width: 100vw;
+  padding: 5vw 7vw;
+  padding-top: 0vw;
+  img {
+    width: 35vw;
+    height: 35vw;
+    object-fit: cover;
+    margin-bottom: 8vw;
+  }
+}
+>>>>>>> 17961a47ed05375c6b511f133d7371cc5f547da5

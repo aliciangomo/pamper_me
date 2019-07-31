@@ -35,9 +35,7 @@ class ProvidersController < ApplicationController
   end
 
   def show
-    # insta_user_id = "asm902"
-    insta_user_id = "23040587"
-    @instagram = Instagram.user_recent_media(insta_user_id)
+    @instagram = Instagram.user_recent_media(insta_user_id, {:count => 6})
     # @instagram = Instagram.media_popular
     set_provider
     @booking = Booking.new
@@ -49,13 +47,19 @@ class ProvidersController < ApplicationController
     @review = Review.new
   end
 
+<<<<<<< HEAD
   def blank_stars
     5 - rating.to_i
   end
 
 
+=======
+>>>>>>> 17961a47ed05375c6b511f133d7371cc5f547da5
   private
 
+  def insta_user_id
+    "23040587"
+  end
 
   def set_provider
     @provider = Provider.find(params[:id])

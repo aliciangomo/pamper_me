@@ -41,9 +41,6 @@ puts "User 9 - Seeded ✅"
 puts "All Users seeded ✅"
 
 
-
-
-
 puts "Creating Providers"
 provider1 = Provider.create!(location: " Calle de las Infantas, 8, 28004 Madrid",
   photo: "",

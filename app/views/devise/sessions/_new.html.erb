@@ -23,6 +23,11 @@
           <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
         </div>
 
+         <%= link_to user_google_oauth2_omniauth_authorize_path, class:"g-signin2" do %>
+         <div class="button-primary" style='width:max-content; padding: 10px'>Sign up with <i class="fab fa-google"></i></div>
+         <% end %>
+
+
         <button type="submit" class="button-primary">Log in!</button>
         <% end %>
       </div>
@@ -42,6 +47,7 @@
 
 
 </div>
+
 
 
 

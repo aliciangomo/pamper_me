@@ -15,17 +15,15 @@ class PagesController < ApplicationController
     end
 
     @provider_earnings = provider_moneys.reduce(0, :+)
+    if @current_user.phone_number != nil
 
-    if @current_user.provider
       @user_phone_number = PhoneNumberLinkFormaterService.new(@current_user.phone_number).call
       @provider_phone_number = PhoneNumberLinkFormaterService.new(@provider.phone_number).call
-    else
-      @user_phone_number = PhoneNumberLinkFormaterService.new(@current_user.phone_number).call
     end
 
     @pieSize = {
-    :height => 150,
-    :width => 150
+      :height => 150,
+      :width => 150
     }
     @confirmed = @provider_bookings.where("status = ?", '1')
     @declined = @provider_bookings.where("status = ?", '2')

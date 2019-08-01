@@ -35,6 +35,12 @@
                 required: true,
                 input_html: { placeholder: "Confirm Password" } %>
 
+<!-- "Sign up with Google" -->
+
+<%= link_to user_google_oauth2_omniauth_authorize_path, class:"g-signin2" do %>
+     <div class="button-primary">Sign up with <i class="fab fa-google"></i></div>
+    <% end %>
+
 
   <button type="submit" class="button-primary">Sign up!</button>
   </div>
@@ -47,4 +53,6 @@
     </div>
   </div>
 </div>
+
+<script src="https://apis.google.com/js/platform.js" async defer></script>
 

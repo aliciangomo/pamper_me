@@ -35,6 +35,7 @@
         <div class="user-dashboard-cards">
           <% if @bookings %>
           <% @bookings.where("date >= ?", Date.today).order(date: :asc).each do |booking| %>
+          <% provider_phone_number = PhoneNumberLinkFormaterService.new(booking.treatment.provider.phone_number).call %>
           <div class="user-dashboard-card">
             <div class="user-dashboard-card-infos">
               <p id="treatment-booked"><strong><%= booking.treatment.name %></strong></p>
@@ -43,7 +44,7 @@
             </div>
 
             <div class="user-dashboard-card-links">
-              <a href="<%= @provider_phone_number %>" class="call-user"><i class="fab fa-whatsapp" ></i></a>
+              <a href="<%= provider_phone_number %>" class="call-user"><i class="fab fa-whatsapp" ></i></a>
               <%= link_to '<i class="fas fa-chevron-right"></i>'.html_safe, treatment_booking_path(booking.treatment, booking)%>
             </div>
           </div>
@@ -62,6 +63,7 @@
         <div class="user-dashboard-cards">
           <% if @bookings %>
           <% @bookings.where("date < ?", Date.today).order(date: :asc).each do |booking| %>
+          <% provider_phone_number = PhoneNumberLinkFormaterService.new(booking.treatment.provider.phone_number).call %>
           <div class="user-dashboard-card">
             <div class="user-dashboard-card-infos">
               <p id="treatment-booked"><strong><%= booking.treatment.name %></strong></p>
@@ -70,8 +72,10 @@
             </div>
 
             <div class="user-dashboard-card-links">
-              <a href="<%= @provider_phone_number %>" class="call-user"><i class="fab fa-whatsapp" ></i></a>
+              <a href="<%= provider_phone_number %>" class="call-user"><i class="fab fa-whatsapp" ></i></a>
+
               <%= link_to '<i class="fas fa-chevron-right"></i>'.html_safe, treatment_booking_path(booking.treatment, booking)%>
+
             </div>
           </div>
           <hr>

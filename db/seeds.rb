@@ -14,13 +14,13 @@ puts "Creating Users"
 user1 = User.create!(first_name: "Jacob", last_name: "Morton", email: "Jacob@gmail.com", password: "123456", avatar: "https://i.imgur.com/hTnKsgG.png", phone_number: "+34646850358")
 # user1.save!
 puts "User 1 - Seeded ✅"
-user2 = User.create!(first_name: "Adam", last_name: "McCallister", email: "Adam@gmail.com", password: "123456", avatar: "https://i.imgur.com/5FXWDB5.jpg", phone_number: "+34646850358")
+user2 = User.create!(first_name: "Jon", last_name: "Doe", email: "Adam@gmail.com", password: "123456", avatar: "https://i.imgur.com/5FXWDB5.jpg", phone_number: "+34646850358")
 # user2.save!
 puts "User 2 - Seeded ✅"
 user3 = User.create!(first_name: "Alicia", last_name: "Ngomo", email: "Alicia@gmail.com", password: "123456", avatar: "https://i.imgur.com/NgTBg7y.jpg", phone_number: "+34646850358")
 # user3.save!
 puts "User 3 - Seeded ✅"
-user4 = User.create!(first_name: "Jon", last_name: "Doe", email: "Jon@gmail.com", password: "123456", avatar: "https://i.imgur.com/pQRW7MK.jpg", phone_number: "+34646850358")
+user4 = User.create!(first_name: "Adam", last_name: "McCallister", email: "Jon@gmail.com", password: "123456", avatar: "https://i.imgur.com/pQRW7MK.jpg", phone_number: "+34646850358")
 user4.save!
 puts "User 4 - Seeded ✅"
 user5 = User.create!(first_name: "Sam", last_name: "Barrett", email: "Sam@gmail.com", password: "123456", avatar: "https://i.imgur.com/jLJpsR6.jpg", phone_number: "+34646850358")

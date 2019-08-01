@@ -11,13 +11,13 @@ puts "🧼 cleaning the database... 🧼"
 puts "✨ database clean ✨, 🌱 starting seed! 🌱"
 
 puts "Creating Users"
-user1 = User.create!(first_name: "Jacob", last_name: "Morton", email: "Jacob@gmail.com", password: "123456", avatar: "https://i.imgur.com/hTnKsgG.png", phone_number: "+34646850358")
+user1 = User.create!(first_name: "Jacob", last_name: "Morton", email: "Jacob@gmail.com", password: "123456", avatar: "https://i.imgur.com/Os8fIHX.jpg", phone_number: "+34646850358")
 # user1.save!
 puts "User 1 - Seeded ✅"
 user2 = User.create!(first_name: "Jon", last_name: "Doe", email: "jon@gmail.com", password: "123456", avatar: "https://i.imgur.com/pQRW7MK.jpg", phone_number: "+34646850358")
 # user2.save!
 puts "User 2 - Seeded ✅"
-user3 = User.create!(first_name: "Alicia", last_name: "Ngomo", email: "Alicia@gmail.com", password: "123456", avatar: "https://i.imgur.com/NgTBg7y.jpg", phone_number: "+34646850358")
+user3 = User.create!(first_name: "Alicia", last_name: "Ngomo", email: "Alicia@gmail.com", password: "123456", avatar: "https://i.imgur.com/BtlB7uq.jpg", phone_number: "+34646850358")
 # user3.save!
 puts "User 3 - Seeded ✅"
 user4 = User.create!(first_name: "Adam", last_name: "McCallister", email: "adam@gmail.com", password: "123456", avatar: "https://i.imgur.com/5FXWDB5.jpg", phone_number: "+34646850358")
@@ -32,10 +32,10 @@ puts "User 6 - Seeded ✅"
 user7 = User.create!(first_name: "Kate", last_name: "Roberts", email: "Kate@gmail.com", password: "123456", avatar: "https://i.imgur.com/nwvVECy.jpg", phone_number: "+34646850358")
 user7.save!
 puts "User 7 - Seeded ✅"
-user8 = User.create!(first_name: "Kathy", last_name: "Crow", email: "Kathy@gmail.com", password: "123456", avatar: "https://i.imgur.com/Uo9rgPO.jpg", phone_number: "+34646850358")
+user8 = User.create!(first_name: "Kathy", last_name: "Crow", email: "Kathy@gmail.com", password: "123456", avatar: "https://i.imgur.com/8j3YJn4.jpg", phone_number: "+34646850358")
 user8.save!
 puts "User 8 - Seeded ✅"
-user9 = User.create!(first_name: "Ashley", last_name: "Green", email: "Ashley@gmail.com", password: "123456", avatar: "https://i.imgur.com/Uo9rgPO.jpg", phone_number: "+34646850358")
+user9 = User.create!(first_name: "Ashley", last_name: "Green", email: "Ashley@gmail.com", password: "123456", avatar: "https://i.imgur.com/DSplRly.jpg", phone_number: "+34646850358")
 user9.save!
 puts "User 9 - Seeded ✅"
 puts "All Users seeded ✅"
@@ -407,22 +407,22 @@ puts "Image 7 Seeded ✅"
 puts "Seeding Images for Provider 2"
 # Images for Nails
 photo8 = Photo.new(provider: provider2)
-photo8.remote_data_url = "https://imgur.com/FTifUE8.jpg"
+photo8.remote_data_url = "https://i.imgur.com/sGSOJqW.jpg"
 photo8.save
 puts "Image 8 Seeded ✅"
 
 photo9 = Photo.new(provider: provider2)
-photo9.remote_data_url = "https://imgur.com/6fOppMR.jpg"
+photo9.remote_data_url = "https://i.imgur.com/l5iIQaE.jpg"
 photo9.save
 puts "Image 9 Seeded ✅"
 
 photo10 = Photo.new(provider: provider2)
-photo10.remote_data_url = "https://imgur.com/1RGeAW7.jpg"
+photo10.remote_data_url = "https://i.imgur.com/3t6smbi.jpg"
 photo10.save
 puts "Image 10 Seeded ✅"
 
 photo11 = Photo.new(provider: provider2)
-photo11.remote_data_url = "https://imgur.com/JEgxi8k.jpg"
+photo11.remote_data_url = "https://i.imgur.com/gA3wDP3.jpg"
 photo11.save
 puts "Image 11 Seeded ✅"
 
@@ -474,7 +474,7 @@ photo20.save
 puts "Image 20 Seeded ✅"
 
 photo21 = Photo.new(provider: provider3)
-photo21.remote_data_url = "https://imgur.com/zRdsvV9.jpg"
+photo21.remote_data_url = "https://imgur.com/rVfm54U.jpg"
 photo21.save
 puts "Image 21 Seeded ✅"
 
@@ -555,7 +555,7 @@ puts "Image 35 Seeded ✅"
 puts "Seeding Images for Provider 6"
 # Images for
 photo36 = Photo.new(provider: provider6)
-photo36.remote_data_url = "https://imgur.com/z0Gkssx.jpg"
+photo36.remote_data_url = "https://imgur.com/28eQy4c.jpg"
 photo36.save
 puts "Image 36 Seeded ✅"
 
@@ -585,7 +585,7 @@ photo41.save
 puts "Image 41 Seeded ✅"
 
 photo42 = Photo.new(provider: provider6)
-photo42.remote_data_url = "https://imgur.com/28eQy4c.jpg"
+photo42.remote_data_url = "https://imgur.com/z0Gkssx.jpg"
 photo42.save
 puts "Image 42 Seeded ✅"
 

@@ -15,13 +15,15 @@ class PagesController < ApplicationController
     end
 
     @provider_earnings = provider_moneys.reduce(0, :+)
+    if @current_user.phone_number != nil
 
-    @user_phone_number = PhoneNumberLinkFormaterService.new(@current_user.phone_number).call
-    @provider_phone_number = PhoneNumberLinkFormaterService.new(@provider.phone_number).call
+      @user_phone_number = PhoneNumberLinkFormaterService.new(@current_user.phone_number).call
+      @provider_phone_number = PhoneNumberLinkFormaterService.new(@provider.phone_number).call
+    end
 
     @pieSize = {
-    :height => 150,
-    :width => 150
+      :height => 150,
+      :width => 150
     }
     @confirmed = @provider_bookings.where("status = ?", '1')
     @declined = @provider_bookings.where("status = ?", '2')
@@ -29,32 +31,32 @@ class PagesController < ApplicationController
     @desisted = @provider_bookings.where("status = ?", '4')
 
     @pieData = [
-          {
-            value: @confirmed.count,
-            color: '#19AA86',
-            highlight: "#19AA86",
-            label: "Confirmed"
-          },
-          {
-            value: @declined.count,
-            color: "#c71f0c",
-            highlight: "#c71f0c",
-            label: "Declined"
-          },
-          {
-            value: @cancelled.count,
-            color: "#000000",
-            highlight: "#000000",
-            label: "Cancelled by user"
-          },
-          {
-            value: @desisted.count,
-            color: "#193CE2",
-            highlight: "#193CE2",
-            label: "Did not get to payment"
-          }
+      {
+        value: @confirmed.count,
+        color: '#19AA86',
+        highlight: "#19AA86",
+        label: "Confirmed"
+      },
+      {
+        value: @declined.count,
+        color: "#c71f0c",
+        highlight: "#c71f0c",
+        label: "Declined"
+      },
+      {
+        value: @cancelled.count,
+        color: "#000000",
+        highlight: "#000000",
+        label: "Cancelled by user"
+      },
+      {
+        value: @desisted.count,
+        color: "#193CE2",
+        highlight: "#193CE2",
+        label: "Did not get to payment"
+      }
 
-        ].to_json
+    ].to_json
   end
 
   def review_booking

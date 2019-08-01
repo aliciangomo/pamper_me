@@ -241,6 +241,14 @@ Devise.setup do |config|
   # Set this configuration to false if you want /users/sign_out to sign out
   # only the current scope. By default, Devise signs out all scopes.
   # config.sign_out_all_scopes = true
+  client_id = ENV['GOOGLE_CLIENT_ID']
+  client_secret = ENV['GOOGLE_SECRET_ID=iHGNt1Vsz2YXBykqYmmi94pD']
+  # Configure Google omniauth with proper scope
+  config.omniauth :google_oauth2, client_id, client_secret, {
+    scope: "contacts.readonly,userinfo.email,userinfo.profile", skip_jwt: true
+  }
+
+
 
   # ==> Navigation configuration
   # Lists the formats that should be treated as navigational. Formats like

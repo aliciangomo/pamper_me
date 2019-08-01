@@ -9,12 +9,8 @@ class BookingsController < ApplicationController
 
     provider =current_user.provider
 
-    if current_user.provider
-      @user_phone_number = PhoneNumberLinkFormaterService.new(current_user.phone_number).call
-      @provider_phone_number = PhoneNumberLinkFormaterService.new(provider.phone_number).call
-    else
-      @user_phone_number = PhoneNumberLinkFormaterService.new(current_user.phone_number).call
-    end
+    @provider_phone_number = PhoneNumberLinkFormaterService.new(@booking.treatment.provider.phone_number).call
+    @user_phone_number = PhoneNumberLinkFormaterService.new(@booking.user.phone_number).call
 
   end
 

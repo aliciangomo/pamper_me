@@ -8,8 +8,9 @@
   <div class="booking-review-intro">
 
     <div class="booking-review-name-description">
-      <!-- <span> <%#= link_to '<i class="fas fa-chevron-left"></i>'.html_safe, dashboard_path %></span> -->
+      <div class="booking-review-title"> <%= link_to '<i class="fas fa-chevron-left"></i>'.html_safe, dashboard_path %>
       <p class="name">Booking Details</p>
+      </div>
       <p class="statement">You have made a booking as follows:</p>
     </div>
   <!-- <div class="booking-review-avatar">
@@ -71,7 +72,9 @@
 <% else %>
 <div class="booking-review-intro">
   <div class="booking-review-name-description">
+    <div class="booking-review-title"> <%= link_to '<i class="fas fa-chevron-left"></i>'.html_safe, dashboard_path %>
     <p class="name">Booking Details</p>
+    </div>
     <p class="statement">Review <%= @booking.user.first_name %>'s booking with you:</p>
   </div>
   <div class="booking-review-avatar">

@@ -7,11 +7,10 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @treatment = Treatment.find(params[:treatment_id])
 
-
+    provider =current_user.provider
 
     @provider_phone_number = PhoneNumberLinkFormaterService.new(@booking.treatment.provider.phone_number).call
     @user_phone_number = PhoneNumberLinkFormaterService.new(@booking.user.phone_number).call
-
 
   end
 

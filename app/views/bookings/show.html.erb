@@ -117,7 +117,7 @@
   </div>
   <%# raise %>
   <div class="provider-show-contact">
-    <%= link_to '<i class="fas fa-times"></i>'.html_safe, treatment_booking_path(@booking.treatment, @booking),
+    <%= link_to '<i class="fas fa-times"></i>'.html_safe, decline_path(@booking.treatment, @booking),
     method: 'delete',
     data: {confirm: "Are you sure?"} %>
   </div>

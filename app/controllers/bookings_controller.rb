@@ -38,7 +38,7 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking = Booking.find(params[:id])
-    current_user.provider.nil? ? @booking.status = 3 :
+    @booking.status = 3
     if @booking.save!
       redirect_to dashboard_path
     else

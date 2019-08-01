@@ -15,7 +15,7 @@
   <!-- <div class="booking-review-avatar">
     <%#= image_tag( @booking.treatment.provider.user.avatar, class: "booking-review-avatar-img") %>
   </div> -->
-  </div>
+</div>
 <hr>
 
 <div class="booking-review-description">
@@ -51,9 +51,10 @@
   <div class="provider-show-contact">
     <a href="<%= @provider_phone_number %>"><i class="fab fa-whatsapp"></i></a>
   </div>
+  <%# raise %>
   <div class="provider-show-location-tag" onclick="window.mapsSelector(<%= @treatment.provider.latitude %>, <%= @treatment.provider.longitude %>)">
-      <i class="fas fa-map-marker-alt"></i>
-    </div>
+    <i class="fas fa-map-marker-alt"></i>
+  </div>
   <div class="provider-show-contact">
     <i class="far fa-edit"></i><%#= link_to '<i class="far fa-edit"></i>'.html_safe, edit_treatment_booking_path(@booking.treatment, @booking) %>
   </div>
@@ -111,6 +112,7 @@
   <div class="provider-show-contact">
     <i class="far fa-edit"></i><%#= link_to '<i class="far fa-edit"></i>'.html_safe, edit_treatment_booking_path(@booking.treatment, @booking) %>
   </div>
+  <%# raise %>
   <div class="provider-show-contact">
     <%= link_to '<i class="fas fa-times"></i>'.html_safe, treatment_booking_path(@booking.treatment, @booking),
     method: 'delete',

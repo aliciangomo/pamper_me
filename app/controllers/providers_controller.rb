@@ -58,16 +58,6 @@ class ProvidersController < ApplicationController
 
   private
 
-  def provider_rating(reviews, ratings)
-    # if reviews.count.zero?
-    #   @provider.rating = 0
-    # else
-    #   sum = 0
-    #   ratings.each { |a| sum+=a }
-    #   @provider.rating = sum/(@provider.reviews.count)
-    # end
-  end
-
   def insta_user_id
     "23040587"
   end

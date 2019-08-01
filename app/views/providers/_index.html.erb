@@ -48,13 +48,16 @@
             </div>
             <div class="provider-card-btm-line">
               <div class="provider-card-rating">
-
-                <% provider.rating.times do %>
-                  <i class="fas fa-star"></i>
-                <% end %>
-                <% empty_hearts = 5 - provider.rating %>
-                <% empty_hearts.times do %>
-                  <i class="far fa-star"></i>
+                <% if provider.reviews.count != 0 %>
+                  <% provider.rating_number.times do %>
+                    <i class="fas fa-star"></i>
+                  <% end %>
+                  <% empty_hearts = 5 - provider.rating %>
+                  <% empty_hearts.times do %>
+                    <i class="far fa-star"></i>
+                  <% end %>
+                <% else %>
+                  <i>No reviews yet</i>
                 <% end %>
               </div>
 

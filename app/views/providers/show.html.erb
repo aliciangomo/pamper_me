@@ -18,26 +18,26 @@
       <h5>4</h5><i class="fas fa-star"></i>
     </div> -->
 
-  <div class="provider-show-description">
-    <p><%= @provider.description %></p>
-  </div>
-
-  <hr class="small">
-  <div class="provider-show-icons">
-
-    <div class="provider-show-rating">
-      <a href="#reviews">
-        <div>
-          <p><%= @provider.rating %></p>
-        </div>
-      </a>
-      <a href="#reviews">
-        <div>
-          <i class="fas fa-star"></i>
-        </div>
-      </a>
-
+    <div class="provider-show-description">
+      <p><%= @provider.description %></p>
     </div>
+
+    <hr class="small">
+    <div class="provider-show-icons">
+
+      <div class="provider-show-rating">
+        <a href="#reviews">
+          <div>
+            <p><%= @provider.rating %></p>
+          </div>
+        </a>
+        <a href="#reviews">
+          <div>
+            <i class="fas fa-star"></i>
+          </div>
+        </a>
+
+      </div>
     </a>
     <div class="provider-show-contact">
       <a href="#insta"><i class="fab fa-instagram"></i></a>
@@ -65,9 +65,9 @@
     <%#= raise %>
   </div>
 
-  <% if @provider.user.first_name = "Jacob" %>
+  <% if @provider.user.first_name == "Jacob" %>
   <hr class="small">
-    <div class="provider-show-intro" id="insta">
+  <div class="provider-show-intro" id="insta">
     <div class="provider-show-name-description">
       <p class="name"> @tattoosbyjm90<%#= @provider.user.first_name %> <%#= @provider.user.last_name %></p>
       <p class="statement">Check out my recent work on Instagram</p>
@@ -75,17 +75,17 @@
     <div class="provider-show-insta-logo">
       <a href="https://instagram.com"><i class="fab fa-instagram"></i></a>
     </div>
-</div>
-    <div class="provider-show-instagram">
-      <% @instagram.each do |instagram| %>
-        <%= image_tag instagram.images.standard_resolution.url %>
-      <% end %>
   </div>
-<%end%>
+  <div class="provider-show-instagram">
+    <% @instagram.each do |instagram| %>
+    <%= image_tag instagram.images.standard_resolution.url %>
+    <% end %>
+  </div>
+  <%end%>
 
-<hr>
+  <hr>
 
-<div class="reviews-container" id="reviews">
+  <div class="reviews-container" id="reviews">
 
     <div class="review-intro">
       <div>
@@ -98,19 +98,24 @@
       </div>
       <button class="button secondary btn-light"><%= link_to 'Add review', provider_reviews_path(@provider), { :class => "nav-link", 'data-toggle' => 'modal', 'data-target' => '#new-review-modal' } %></button>
     </div>
+    <% if @provider.reviews.count != 0 %>
     <div id="reviews">
-
-        <% @provider.reviews.each do |review| %>
-          <% review.rating.to_i.times do %>
-          <i class="fas fa-star"></i>
-          <% end %>
-          <% (5 - review.rating.to_i).times do %>
-          <i class="far fa-star"></i>
-          <% end %>
-          <p class="review-content"> "<%= review.content %>"</p>
-        <% end %>
+      <% @provider.reviews.each do |review| %>
+      <% review.rating.to_i.times do %>
+      <i class="fas fa-star"></i>
+      <% end %>
+      <% (5 - review.rating.to_i).times do %>
+      <i class="far fa-star"></i>
+      <% end %>
+      <p class="review-content"> "<%= review.content %>"</p>
+      <% end %>
     </div>
-
+    <% else %>
+    <div class="provider-show-description">
+      <p>It looks like <%= @provider.user.first_name %> doesn't have any reviews yet...</p>
+      <p>Do them a solid and be the first to add one!</p>
+    </div>
+    <% end %>
     <%= render "reviews/new", review: @review, provider: @provider  %>
-</div>
+  </div>
 

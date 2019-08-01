@@ -6,10 +6,10 @@ class ProvidersController < ApplicationController
     @providers = Provider.geocoded
     if params[:query].present?
       sql_query = " \
-        users.first_name @@ :query \
-        OR users.last_name @@ :query \
-        OR treatments.name @@ :query \
-        OR treatments.category @@ :query \
+      users.first_name @@ :query \
+      OR users.last_name @@ :query \
+      OR treatments.name @@ :query \
+      OR treatments.category @@ :query \
       "
       @providers = Provider.joins(:treatments).joins(:user).where(sql_query, query: "%#{params[:query]}%")
     end
@@ -47,18 +47,26 @@ class ProvidersController < ApplicationController
     @review = Review.new
     # review = Review.find(params[:review_id])
     # @blank_stars = 5 - review.rating.to_i
-    reviews = @provider.reviews
-    ratings = []
-    reviews.each do |review|
-      ratings << review.rating.to_i
-    end
-    sum = 0
-    ratings.each { |a| sum+=a }
-    @provider.rating = sum/(@provider.reviews.count)
-
+    # reviews = @provider.reviews
+    # ratings = []
+    # reviews.each do |review|
+    #   ratings << review.rating.to_i
+    # end
+    # provider_rating(reviews, ratings)
+    @provider.rating = @provider.rating_number
   end
 
   private
+
+  def provider_rating(reviews, ratings)
+    # if reviews.count.zero?
+    #   @provider.rating = 0
+    # else
+    #   sum = 0
+    #   ratings.each { |a| sum+=a }
+    #   @provider.rating = sum/(@provider.reviews.count)
+    # end
+  end
 
   def insta_user_id
     "23040587"
@@ -74,6 +82,6 @@ class ProvidersController < ApplicationController
   end
 
   def treatment_search
-   # to refactor the above
+    # to refactor the above
   end
 end

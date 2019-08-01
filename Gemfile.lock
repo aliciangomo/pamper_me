@@ -275,8 +275,8 @@ DEPENDENCIES
   instagram
   jbuilder (~> 2.0)
   listen (~> 3.0.5)
-  omniauth-google-oauth2
   money-rails
+  omniauth-google-oauth2
   pg (~> 0.21)
   pry-byebug
   pry-rails

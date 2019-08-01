@@ -449,7 +449,7 @@ photo15.save
 puts "Image 15 Seeded ✅"
 
 photo16 = Photo.new(provider: provider3)
-photo16.remote_data_url = "https://imgur.com/rVfm54U.jpg"
+photo16.remote_data_url = "https://i.imgur.com/z0Gkssx.jpg"
 photo16.save
 puts "Image 16 Seeded ✅"
 

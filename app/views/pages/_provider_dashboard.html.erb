@@ -14,8 +14,8 @@
     <%= pie :pie_chart, @pieSize, @pieData%>
     </div>
     <div class="stats-infos">
-      <p><span class="dashboard-highlight"><%= humanized_money_with_symbol(@provider_earnings.to_i*10, precision: 0, strip_insignificant_zeros: true)%></span> earned this month. </p>
-      <p><span class="dashboard-highlight"><%= @provider_bookings.count %></span> bookings with an average value of <span class="dashboard-highlight"><%= number_to_currency(@provider_earnings/@provider_bookings.count, unit: €)  %></span></p>
+      <p><span class="dashboard-highlight"><%= humanized_money_with_symbol(@provider_earnings)%></span> earned this month. </p>
+      <p><span class="dashboard-highlight"><%= @provider_bookings.count %></span> bookings with an average value of <span class="dashboard-highlight"><%= humanized_money_with_symbol@provider_earnings/@provider_bookings.count %></span></p>
       <p><span class="dashboard-highlight"><%= number_to_percentage(@confirmed.count/@provider_bookings.count.to_f*100, precision: 0) %></span> confirmed bookings</p>
       <p><span class="dashboard-highlight"><%= number_to_percentage(@desisted.count/@provider_bookings.count.to_f*100, precision: 0) %> </span>bookings did not reach payment</p>
     </div>

@@ -15,6 +15,18 @@
   align-content: baseline;
 }
 
+.booking-review-title {
+  display: flex;
+  align-items: baseline;
+
+  i {
+      padding-right: 10px;
+      opacity: 0.35;
+      color: $black;
+      font-size: 1.2rem;
+  }
+}
+
 .booking-review-avatar .booking-review-avatar-img {
   width: 8vh;
   height: 8vh;

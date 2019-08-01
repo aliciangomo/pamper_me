@@ -10,8 +10,8 @@ class PagesController < ApplicationController
     @provider_bookings = Booking.joins(:treatment).where('treatments.provider': @provider)
 
     provider_moneys = []
-    @provider_bookings.each do |booking|
-      provider_moneys << booking.amount_cents
+    @provider_bookings.where.not(status: 2 || 3).each do |booking|
+      provider_moneys << booking.amount
     end
 
     @provider_earnings = provider_moneys.reduce(0, :+)

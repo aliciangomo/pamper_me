@@ -31,6 +31,7 @@ class PagesController < ApplicationController
     @declined = @provider_bookings.where("status = ?", '2')
     @cancelled = @provider_bookings.where("status = ?", '3')
     @desisted = @provider_bookings.where("status = ?", '4')
+    @pending = @provider_bookings.where("status = ?", '0')
 
     @pieData = [
           {
@@ -56,6 +57,12 @@ class PagesController < ApplicationController
             color: "#193CE2",
             highlight: "#193CE2",
             label: "Did not get to payment"
+          },
+          {
+            value: @pending.count,
+            color: "#E67E22",
+            highlight: "#E67E22",
+            label: "Pending your confirmation"
           }
 
         ].to_json

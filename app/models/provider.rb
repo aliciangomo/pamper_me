@@ -11,6 +11,21 @@ class Provider < ApplicationRecord
     self.treatments
   end
 
+  def rating_number
+    reviews = self.reviews
+    ratings = []
+    reviews.each do |review|
+      ratings << review.rating.to_i
+    end
+    if reviews.count.zero?
+      self.rating = 0
+    else
+      sum = 0
+      ratings.each { |a| sum+=a }
+      self.rating = sum/(self.reviews.count)
+    end
+  end
+
   def distance_to(my_location)
     return Geocoder::Calculations.distance_between([my_location.latitude,my_location.longitude], [latitude,longitude])
   end

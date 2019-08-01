@@ -1,30 +1,39 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Pamper Me</title>
-    <%= csrf_meta_tags %>
-    <%= action_cable_meta_tag %>
-    <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
-    <%= favicon_link_tag asset_path('favicon.ico') %>
-    <script src="https://js.stripe.com/v3/"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title><%= meta_title %></title>
+  <meta name="description" content="<%= meta_description %>">
 
-  </head>
-  <body>
-    <%= javascript_include_tag 'application' %>
+  <!-- Facebook Open Graph data -->
+  <meta property="og:title" content="<%= meta_title %>" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="<%= request.original_url %>" />
+  <meta property="og:image" content="<%= meta_image %>" />
+  <meta property="og:description" content="<%= meta_description %>" />
+  <meta property="og:site_name" content="<%= meta_title %>" />
+  <%= csrf_meta_tags %>
+  <%= action_cable_meta_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+  <%= favicon_link_tag asset_path('favicon.ico') %>
+  <script src="https://js.stripe.com/v3/"></script>
 
-    <%= render "shared/navbar" %>
-    <div style="min-height: calc(100vh - 130px)">
-      <%= yield %>
-      <% if notice %>
-        <span class="notice"><%= notice %></span>
-      <% elsif alert %>
-        <span class="alert"><%= alert %></span>
-      <% end %>
-    </div>
-    <%= render "shared/footer" %>
-    <%= javascript_pack_tag 'application' %>
-  </body>
+</head>
+<body>
+  <%= javascript_include_tag 'application' %>
+
+  <%= render "shared/navbar" %>
+  <div style="min-height: calc(100vh - 130px)">
+    <%= yield %>
+    <% if notice %>
+    <span class="notice"><%= notice %></span>
+    <% elsif alert %>
+    <span class="alert"><%= alert %></span>
+    <% end %>
+  </div>
+  <%= render "shared/footer" %>
+  <%= javascript_pack_tag 'application' %>
+</body>
 </html>

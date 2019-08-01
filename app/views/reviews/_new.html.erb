@@ -9,8 +9,8 @@
       </div>
       <div class="modal-body">
         <%= simple_form_for([ provider, review ]) do |form| %>
-          <%= form.input :rating, as: :integer %>
-          <%= form.input :content, as: :text %>
+          <%= form.input :rating, as: :integer, placeholder: "Rate from 1-5"%>
+          <%= form.input :content, as: :text, placeholder: "Enter your review"%>
           <%= form.button :submit, class: "button-primary" %>
         <% end %>
       </div>

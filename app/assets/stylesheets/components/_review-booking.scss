@@ -15,6 +15,18 @@
   align-content: baseline;
 }
 
+.booking-review-title {
+  display: flex;
+  align-items: baseline;
+
+  i {
+      padding-right: 10px;
+      opacity: 0.35;
+      color: $black;
+      font-size: 1.2rem;
+  }
+}
+
 .booking-review-avatar .booking-review-avatar-img {
   width: 8vh;
   height: 8vh;
@@ -95,13 +107,29 @@ hr {
   justify-content: space-around;
   align-items: baseline;
   padding: 5vw 7vw;
-  color: $gray;
+  // color: $gray;
   i {
     font-size: 60px;
+    margin: 0px;
     // opacity: .70;
   }
 }
 
-.selected {
+.booking-pay-icons {
+  a:link {
+  color: $gray;
+  }
+  a:visited {
   color: $green;
-    }
+  }
+  a:hover {
+  color: $green;
+  }
+  a:active {
+  color: $green;
+  }
+}
+
+// .selected {
+//   color: $green;
+//     }

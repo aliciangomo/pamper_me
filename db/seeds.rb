@@ -66,7 +66,7 @@ provider3 = Provider.create!(location: "Calle de Valverde, 44, 28004 Madrid",
   photo: "",
   description: "Great hair stylist in Madrid. #{description_lorem}",
   statement: "I do hair, with love and care!",
-  rating: 3,
+  rating: 4,
   phone_number: "+34646850358",
   user: user3)
 # provider3.save!
@@ -82,11 +82,11 @@ provider4 = Provider.create!(location: "Calle San Gregorio, 5, 28004 Madrid",
 provider4.save!
 puts "Provider 4 Seeded ✅"
 
-provider5 = Provider.create!(location: "Junto al hotel Me de la, Plaza del Ángel, Plaza de Sta. Ana, 6, 28012 Madrid",
+provider5 = Provider.create!(location: "Plaza de la Independencia, 7, 28001 Madrid",
   photo: "",
   description: "Studied physical training at oxford, I'm the best! #{description_lorem}",
   statement: "Get the body you DESERVE!",
-  rating: 2,
+  rating: 4,
   phone_number: "+34646850358",
   user: user6)
 provider5.save!
@@ -96,7 +96,7 @@ provider6 = Provider.create!(location: "Calle Barquillo 39, 28004, Madrid",
   photo: "",
   description: "Hair is my passion! #{description_lorem}",
   statement: "Youre in great hands with me!!",
-  rating: 2,
+  rating: 4,
   phone_number: "+34646850358",
   user: user9)
 provider6.save!
@@ -108,105 +108,105 @@ puts "💆‍♀️ 💅🏽 💆‍♂️ Creating Treatments 💆‍♂️ �
 treatment1 = Treatment.create!(name: "Black Tattoo",
   description: "Pricing starts at 50 Euros for small tattoo in black. Feel free to contact me for more details on design and pricing! ;)",
   provider: provider1,
-  price: 50,
+  price_cents: 5000,
   category: "Tattoo")
 puts "Treatment 1 Seeded ✅"
 
 treatment2 = Treatment.create!(name: "White Tattoo",
   description: "Pricing starts at 50 Euros for small tattoo in white. Feel free to contact me for more details on design and pricing! ;)",
   provider: provider1,
-  price: 80,
+  price_cents: 8000,
   category: "tattoo")
 puts "Treatment 2 Seeded ✅"
 
 treatment3 = Treatment.create!(name: "Color Tattoo",
   description: "Pricing starts at 50 Euros for small tattoo in any color ink. Feel free to contact me for more details on design and pricing! ;)",
   provider: provider1,
-  price: 50,
+  price_cents: 5000,
   category: "tattoo")
 puts "Treatment 3 Seeded ✅"
 
 treatment4 = Treatment.create!(name: "Gel Mani",
   description: "Gel manicures last much longer! Keep that beautiful color!",
   provider: provider2,
-  price: 30,
+  price_cents: 3000,
   category: "Nails")
 puts "Treatment 4 Seeded! ✅"
 
 treatment5 = Treatment.create!(name: "Gel Pedi",
   description: "Keep those piggies on fleek!",
   provider: provider2,
-  price: 50,
+  price_cents: 5000,
   category: "Nails")
 puts "Treatment 5 Seeded! ✅"
 
 treatment6 = Treatment.create!(name: "Nail art Mani",
   description: "Any custom design for your hands!",
   provider: provider2,
-  price: 40,
+  price_cents: 4000,
   category: "Nails")
 puts "Treatment 6 Seeded! ✅"
 
 treatment7 = Treatment.create!(name: "Nail art Pedi",
   description: "any custom design for your toes!",
   provider: provider2,
-  price: 60,
+  price_cents: 6000,
   category: "Nails")
 puts "Treatment 7 Seeded! ✅"
 
 treatment8 = Treatment.create!(name: "French tip Mani",
   description: "Beautiful, classic, and CHIC!",
   provider: provider2,
-  price: 55,
+  price_cents: 5500,
   category: "Nails")
 puts "Treatment 8 Seeded! ✅"
 
 treatment9 = Treatment.create!(name: "Blowout",
   description: "Beautiful, classic",
   provider: provider3,
-  price: 50,
+  price_cents: 5000,
   category: "Hair")
 puts "Treatment 9 Seeded! ✅"
 
 treatment10 = Treatment.create!(name: "Color",
   description: "Achieve the beautiful color you want!",
   provider: provider3,
-  price: 300,
+  price_cents: 30000,
   category: "Hair")
 puts "Treatment 10 Seeded! ✅"
 
 treatment11 = Treatment.create!(name: "Cut",
   description: "Change things up with a nice new cut!",
   provider: provider3,
-  price: 100,
+  price_cents: 10000,
   category: "Hair")
 puts "Treatment 11 Seeded! ✅"
 
 treatment12 = Treatment.create!(name: "Natural Look Makeup",
   description: "Achieve that flawless natural look!",
   provider: provider4,
-  price: 150,
+  price_cents: 15000,
   category: "Makeup")
 puts "Treatment 12 Seeded! ✅"
 
 treatment13 = Treatment.create!(name: "Red Carpet Makeup",
   description: "Red Carpet Ready!!",
   provider: provider4,
-  price: 250,
+  price_cents: 25000,
   category: "Makeup")
 puts "Treatment 13 Seeded! ✅"
 
 treatment14 = Treatment.create!(name: "1 hour full-body",
   description: "A full-body workout you're sure to see results from!",
   provider: provider5,
-  price: 80,
+  price_cents: 8000,
   category: "Fitness")
 puts "Treatment 14 Seeded! ✅"
 
 treatment15 = Treatment.create!(name: "Up-do",
   description: "Impress with my famous up-do hair style",
   provider: provider6,
-  price: 100,
+  price_cents: 10000,
   category: "Hair")
 puts "Treatment 15 Seeded! ✅"
 puts "All Treatments Seeded ✅"
@@ -217,126 +217,126 @@ puts "All Treatments Seeded ✅"
 puts "📚 📖 Creating Bookings 📖 📚"
 booking1 = Booking.create!(user: user5,
   treatment: treatment1,
-  price: 50,
+  amount_cents: 5000,
   date: "2019-09-09",
   status: 1)
 puts "Booking 1 Seeded ✅"
 
 booking2 = Booking.create!(user: user4,
   treatment: treatment3,
-  price: 50,
+  amount_cents: 5000,
   date: "2019-10-09",
   status: 0)
 puts "Booking 2 Seeded ✅"
 
 booking3 = Booking.create!(user: user4,
   treatment: treatment2,
-  price: 80,
+  amount_cents: 8000,
   date: "2019-11-09",
   status: 2)
 puts "Booking 3 Seeded ✅"
 
 booking4 = Booking.create!(user: user3,
   treatment: treatment7,
-  price: 60,
+  amount_cents: 6000,
   date: "2019-10-10",
   status: 1)
 puts "Booking 4 Seeded ✅"
 
 booking5 = Booking.create!(user: user3,
   treatment: treatment8,
-  price: 55,
+  amount_cents: 5500,
   date: "2019-10-11",
   status: 1)
 puts "Booking 5 Seeded ✅"
 
 booking6 = Booking.create!(user: user5,
   treatment: treatment5,
-  price: 50,
+  amount_cents: 5000,
   date: "2019-10-12",
   status: 0)
 puts "Booking 6 Seeded ✅"
 
 booking7 = Booking.create!(user: user4,
   treatment: treatment8,
-  price: 55,
+  amount_cents: 5500,
   date: "2019-07-11",
   status: 2)
 puts "Booking 7 Seeded ✅"
 
 booking8 = Booking.create!(user: user1,
   treatment: treatment4,
-  price: 30,
+  amount_cents: 3000,
   date: "2019-07-14",
   status: 1)
 puts "Booking 8 Seeded ✅"
 
 booking9 = Booking.create!(user: user1,
   treatment: treatment5,
-  price: 50,
+  amount_cents: 5000,
   date: "2019-07-14",
   status: 2)
 puts "Booking 9 Seeded ✅"
 
 booking10 = Booking.create!(user: user1,
   treatment: treatment10,
-  price: 300,
+  amount_cents: 30000,
   date: "2019-07-29",
   status: 1)
 puts "Booking 10 Seeded ✅"
 
 booking11 = Booking.create!(user: user2,
   treatment: treatment11,
-  price: 100,
+  amount_cents: 10000,
   date: "2019-07-29",
   status: 2)
 puts "Booking 11 Seeded ✅"
 
 booking12 = Booking.create!(user: user4,
   treatment: treatment9,
-  price: 50,
+  amount_cents: 5000,
   date: "2019-09-15",
   status: 0)
 puts "Booking 12 Seeded ✅"
 
 booking13 = Booking.create!(user: user5,
   treatment: treatment12,
-  price: 150,
+  amount_cents: 15000,
   date: "2019-08-15",
   status: 1)
 puts "Booking 13 Seeded ✅"
 
 booking14 = Booking.create!(user: user2,
   treatment: treatment13,
-  price: 250,
+  amount_cents: 25000,
   date: "2019-08-03",
   status: 1)
 puts "Booking 13 Seeded ✅"
 
 booking15 = Booking.create!(user: user1,
   treatment: treatment14,
-  price: 80,
+  amount_cents: 8000,
   date: "2019-08-02",
   status: 1)
 puts "Booking 15 Seeded ✅"
 
 booking16 = Booking.create!(user: user5,
   treatment: treatment14,
-  price: 80,
+  amount_cents: 8000,
   date: "2019-08-01",
   status: 1)
 puts "Booking 16 Seeded ✅"
 
 booking17 = Booking.create!(user: user2,
   treatment: treatment14,
-  price: 80,
+  amount_cents: 8000,
   date: "2019-08-03",
   status: 3)
 puts "Booking 17 Seeded ✅"
 
 booking18 = Booking.create!(user: user4,
   treatment: treatment14,
-  price: 80,
+  amount_cents: 8000,
   date: "2019-07-28",
   status: 1)
 puts "Booking 18 Seeded ✅"
@@ -567,6 +567,67 @@ photo42.save
 puts "Image 42 Seeded ✅"
 
 puts "All Images Seeded ✅"
+
+review1 = Review.create!(user: user4,
+  provider: provider1,
+  content: "Awesome! I loved the tatoos and it was nearly painless! ",
+  rating: 4)
+puts "Review 1 Seeded ✅"
+
+review2 = Review.create!(user: user5,
+  provider: provider1,
+  content: "Great tattos! Totally recommended :) ",
+  rating: 3)
+puts "Review 2 Seeded ✅"
+
+review3 = Review.create!(user: user6,
+  provider: provider2,
+  content: "My hair has never looked better",
+  rating: 4)
+puts "Review 3 Seeded ✅"
+
+review4 = Review.create!(user: user7,
+  provider: provider2,
+  content: "I was struggling to find a hair cut that worked and this has been fantastic. My friends all love it ",
+  rating: 5)
+puts "Review 4 Seeded ✅"
+
+review5 = Review.create!(user: user8,
+  provider: provider3,
+  content: "The cut was fine but struggled to get the color I asked for",
+  rating: 3)
+puts "Review 5 Seeded ✅"
+
+review6 = Review.create!(user: user4,
+  provider: provider3,
+  content: "I would go back in a heartbit ",
+  rating: 5)
+puts "Review 6 Seeded ✅"
+
+review7 = Review.create!(user: user8,
+  provider: provider4,
+  content: "I wanted something different and she totally understood what I needed",
+  rating: 4)
+puts "Review 7 Seeded ✅"
+
+review8 = Review.create!(user: user4,
+  provider: provider4,
+  content: "I tried her for my wedding make up and it was fantastic ",
+  rating: 4)
+puts "Review 8 Seeded ✅"
+
+review9 = Review.create!(user: user2,
+  provider: provider5,
+  content: "Amazing! I have never had abs like this! :)",
+  rating: 4)
+puts "Review 9 Seeded ✅"
+
+review10 = Review.create!(user: user6,
+  provider: provider5,
+  content: "I absolutely love the way Kyle makes training something fun and easy while achieving results",
+  rating: 5)
+puts "Review 10 Seeded ✅"
+
 
 puts "🎊 🎉 Congratulations, database succesfully seeded! 🎉 🎊"
 

@@ -1,0 +1,21 @@
+
+<form action="/bookings/<%= @booking.id %>/payments" method="post" id="payment-form">
+<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+<p>You are paying: <strong><%=humanized_money_with_symbol(@booking.treatment.price) %></strong></p>
+<p>Enter your credit or debit card</p>
+<div class="form-row">
+  <!-- <label for="card-element">
+    Credit or debit card
+  </label> -->
+  <div id="card-element">
+    <!-- A Stripe Element will be inserted here. -->
+  </div>
+
+  <!-- Used to display form errors. -->
+  <div id="card-errors" role="alert"></div>
+</div>
+
+<button class="button-primary btn-block">Submit Payment</button>
+</form>
+
+

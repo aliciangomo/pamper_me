@@ -14,8 +14,8 @@
     <%= pie :pie_chart, @pieSize, @pieData%>
     </div>
     <div class="stats-infos">
-      <p><span class="dashboard-highlight">$<%= @provider_earnings%></span> earned this month. </p>
-      <p><span class="dashboard-highlight"><%= @provider_bookings.count %></span> bookings with an average value of <span class="dashboard-highlight">$<%= @provider_earnings/@provider_bookings.count %></span></p>
+      <p><span class="dashboard-highlight"><%= humanized_money_with_symbol(@provider_earnings)%></span> earned this month. </p>
+      <p><span class="dashboard-highlight"><%= @provider_bookings.count %></span> bookings with an average value of <span class="dashboard-highlight"><%= humanized_money_with_symbol@provider_earnings/@provider_bookings.count %></span></p>
       <p><span class="dashboard-highlight"><%= number_to_percentage(@confirmed.count/@provider_bookings.count.to_f*100, precision: 0) %></span> confirmed bookings</p>
       <p><span class="dashboard-highlight"><%= number_to_percentage(@desisted.count/@provider_bookings.count.to_f*100, precision: 0) %> </span>bookings did not reach payment</p>
     </div>
@@ -36,7 +36,7 @@
                 <div class="provider-dashboard-card-infos">
                   <p id="treatment-booked"><strong><%= booking.treatment.name %></strong></p>
                   <p><%= booking.date.strftime('%A %B %d, %Y') %> </p>
-                  <p>€<%= booking.price %> </p>
+                  <p><%= humanized_money_with_symbol(booking.amount) %> </p>
                 </div>
                 <div class="provider-dashboard-card-links">
                   <a href="<%= @user_phone_number %>" class="call-user"><i class="fab fa-whatsapp" ></i></a>
@@ -61,8 +61,8 @@
                   <div class="provider-dashboard-card" id="booking-<%= booking.id %>">
                     <div class="provider-dashboard-card-infos">
                       <p id="treatment-booked"><strong><%= booking.treatment.name %></strong></p>
-                      <p><%= booking.date %> </p>
-                      <p>€<%= booking.price %> </p>
+                      <p><%= booking.date.strftime('%A %B %d, %Y') %> </p>
+                      <p><%= humanized_money_with_symbol(booking.amount) %> </p>
                     </div>
                     <div class="provider-dashboard-card-links confirmed-version d-none">
                       <a href="<%= @user_phone_number %>" class="call-user"><i class="fab fa-whatsapp" ></i></a>
@@ -98,8 +98,8 @@
               <div class="provider-dashboard-card">
                 <div class="provider-dashboard-card-infos">
                   <p id="treatment-booked"><strong><%= booking.treatment.name %></strong></p>
-                  <p><%= booking.date %> </p>
-                  <p>€<%= booking.price %> </p>
+                  <p><%= booking.date.strftime('%A %B %d, %Y') %> </p>
+                  <p><%= humanized_money_with_symbol(booking.amount) %> </p>
                 </div>
                 <div class="user-dashboard-card-links">
                   <%= link_to '<i class="fas fa-chevron-right navigate-right"></i>'.html_safe, treatment_booking_path(booking.treatment, booking)%>
@@ -124,8 +124,8 @@
               <div class="provider-dashboard-card">
                 <div class="provider-dashboard-card-infos">
                   <p id="treatment-booked"><strong><%= booking.treatment.name %></strong></p>
-                  <p><%= booking.date %> </p>
-                  <p>€<%= booking.price %> </p>
+                  <p><%= booking.date.strftime('%A %B %d, %Y') %> </p>
+                  <p><%= humanized_money_with_symbol(booking.amount) %> </p>
                 </div>
                 <div class="user-dashboard-card-links">
                   <%= link_to '<i class="fas fa-chevron-right navigate-right"></i>'.html_safe, treatment_booking_path(booking.treatment, booking)%>

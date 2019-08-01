@@ -1,0 +1,8 @@
+var toggleApplePayment = (html) => {
+
+  var paymentForm = document.querySelector('#card-payment-form');
+  paymentForm.innerHTML = html;
+
+}
+
+toggleApplePayment('<%= j render "payments/apple" %>')

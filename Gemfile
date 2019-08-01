@@ -23,7 +23,9 @@ gem 'geocoder'
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
 gem 'chart', '~> 0.1.5.1'
-
+gem 'money-rails'
+gem 'stripe'
+gem 'instagram'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

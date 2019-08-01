@@ -97,16 +97,93 @@ hr {
 }
 
 .provider-show-services {
-  .pictures {
-    user-select: none;
+  width: 100vw;
+  padding:5vw 11vw;
+  padding-top: 0vw;
+  .col-form-label {
+    display: none;
   }
-  .card-test {
-    color: $green;
-    background-image: url(https://images.unsplash.com/photo-1493799817216-4b57dda4229f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2252&q=80);
-    background-size: cover;
-    background-position: center;
-    height: 15vh;
-    width: 35vw;
-    border-radius: 5px;
+  .collection_radio_buttons {
+    // font-size: 16px;
+    font-weight: 100;
+    // margin: 0px;
   }
 }
+
+.reviews-container {
+  width: 100vw;
+  padding: 5vw 7vw;
+}
+
+.review-intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.review-intro button {
+  padding: 3px 5px;
+  border-radius: 5px;
+  border: 1px solid #e3e6e4;
+}
+
+.reviews-statement {
+    font-size: 16px;
+    font-weight: 100;
+    margin: 0px;
+    text-align: left;
+}
+
+.reviews-title {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0px;
+}
+
+#reviews {
+  // margin-top: 3vw;
+}
+
+.review-content {
+  font-size: 16px;
+  font-weight: 100;
+  font-style: italic;
+}
+
+#reviews i {
+  color: $green;
+  width: 3px;
+  height: 3px;
+  padding: 7px;
+}
+
+
+.provider-show-insta-logo {
+  text-align: center;
+  font-size: 5vh;
+  align-items: baseline;
+  i {
+    background: -webkit-radial-gradient(33% 100% circle, #FED373 4%, #F15245 30%, #D92E7F 62%, #9B36B7 85%, #515ECF);
+    background: radial-gradient(circle at 33% 100%, #FED373 4%, #F15245 30%, #D92E7F 62%, #9B36B7 85%, #515ECF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.provider-show-instagram {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  // align-content: space-around;
+  // width: 100vw;
+  padding: 0vw 7vw;
+  // padding-top: ;
+  img {
+    width: 35vw;
+    height: 35vw;
+    object-fit: cover;
+    margin-bottom: 8vw;
+  }
+}
+

@@ -9,17 +9,16 @@
     <h1 class="index-title" id="search-index-heading">Explore our providers:</h1>
   <% end %>
 
-
-
-  <div class="map"> <%= render "shared/map" %></div>
+  <%= render "shared/map"%>
 
   <div class="index-cards">
     <% @providers.each do |provider| %>
-      <%= link_to provider_path(provider) do %>
         <div class="provider-card-images" style="background-image: url('<%= image_path("https://images.unsplash.com/photo-1481152508843-1ec796b30a8b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80") %>');">
+          <%= render 'photocarousel', photos: provider.photos %>
           <%#= image_tag("https://images.unsplash.com/photo-1481152508843-1ec796b30a8b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80") %>
           <%#= cl_image_tag url=() %>
         </div>
+        <%= link_to provider_path(provider) do %>
         <div class="provider-cards">
           <div class="provider-card-info">
             <div class="provider-card-title-line">
@@ -49,13 +48,16 @@
             </div>
             <div class="provider-card-btm-line">
               <div class="provider-card-rating">
-
-                <% provider.rating.times do %>
-                  <i class="fas fa-star"></i>
-                <% end %>
-                <% empty_hearts = 5 - provider.rating %>
-                <% empty_hearts.times do %>
-                  <i class="far fa-star"></i>
+                <% if provider.reviews.count != 0 %>
+                  <% provider.rating_number.times do %>
+                    <i class="fas fa-star"></i>
+                  <% end %>
+                  <% empty_hearts = 5 - provider.rating %>
+                  <% empty_hearts.times do %>
+                    <i class="far fa-star"></i>
+                  <% end %>
+                <% else %>
+                  <i>No reviews yet</i>
                 <% end %>
               </div>
 
@@ -63,7 +65,12 @@
               <div class="provider-card-location">
                 <% distance = provider.distance_to(@my_location).round(2) %>
                 <p>
-                  <i class="fas fa-walking"></i> <%= distance %>km
+                  <% if distance > 3.01 %>
+                    <i class="fas fa-car"></i> <i class="fas fa-subway"></i> <%= distance %>km
+                  <% else %>
+                    <i class="fas fa-walking"></i> <%= distance %>km
+                  <% end %>
+                  <%# raise %>
                 </p>
               </div>
             </div>

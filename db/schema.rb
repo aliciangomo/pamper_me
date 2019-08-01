@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_30_102734) do
+ActiveRecord::Schema.define(version: 2019_07_31_100847) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,12 +18,13 @@ ActiveRecord::Schema.define(version: 2019_07_30_102734) do
   create_table "bookings", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "treatment_id"
-    t.integer "price"
     t.date "date"
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "payment_type"
+    t.integer "amount_cents", default: 0, null: false
+    t.jsonb "payment"
     t.index ["treatment_id"], name: "index_bookings_on_treatment_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
@@ -52,14 +53,25 @@ ActiveRecord::Schema.define(version: 2019_07_30_102734) do
     t.index ["user_id"], name: "index_providers_on_user_id"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "provider_id"
+    t.text "content"
+    t.integer "rating"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["provider_id"], name: "index_reviews_on_provider_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
   create_table "treatments", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.bigint "provider_id"
-    t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "category"
+    t.integer "price_cents", default: 0, null: false
     t.index ["provider_id"], name: "index_treatments_on_provider_id"
   end
 
@@ -89,5 +101,7 @@ ActiveRecord::Schema.define(version: 2019_07_30_102734) do
   add_foreign_key "bookings", "users"
   add_foreign_key "photos", "providers"
   add_foreign_key "providers", "users"
+  add_foreign_key "reviews", "providers"
+  add_foreign_key "reviews", "users"
   add_foreign_key "treatments", "providers"
 end

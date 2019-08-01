@@ -6,6 +6,12 @@ class BookingsController < ApplicationController
   def show
     @booking = Booking.find(params[:id])
     @treatment = Treatment.find(params[:treatment_id])
+
+    provider =current_user.provider
+
+    @provider_phone_number = PhoneNumberLinkFormaterService.new(@booking.treatment.provider.phone_number).call
+    @user_phone_number = PhoneNumberLinkFormaterService.new(@booking.user.phone_number).call
+
   end
 
   def edit
@@ -32,9 +38,7 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking = Booking.find(params[:id])
-    if current_user.provider.nil?
-      @booking.status = 3
-    end
+    current_user.provider.nil? ? @booking.status = 3 :
     if @booking.save!
       redirect_to dashboard_path
     else
@@ -61,7 +65,7 @@ class BookingsController < ApplicationController
     @booking.treatment = Treatment.find(params[:booking][:treatment_id])
     # @provider = @treatment.provider
     @booking.user = current_user
-    @booking.price = @booking.treatment.price
+    @booking.amount_cents = @booking.treatment.price_cents
     @booking.status = 4
     @booking.date = Date.tomorrow
     if @booking.save!
@@ -77,6 +81,5 @@ class BookingsController < ApplicationController
 
   def strong_params
     params.require(:booking).permit(:treatment_id, :date, :price, :status, :user_id, :payment_type)
-
   end
 end

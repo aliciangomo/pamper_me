@@ -4,6 +4,10 @@ function refreshCollapsibles(bookingId) {
   const pending = document.querySelector(".pending");
 
   const booking = pending.querySelector(`#booking-${bookingId}`);
+  const pendingButtons = booking.querySelector(".pending-version");
+  pendingButtons.classList.add('d-none');
+  const confirmedButtons = booking.querySelector(".confirmed-version");
+  confirmedButtons.classList.remove('d-none');
 
   const pendingCount = pending.querySelector('.number')
   pendingCount.innerText = parseInt(pendingCount.innerText, 10) - 1
@@ -18,10 +22,8 @@ function refreshCollapsibles(bookingId) {
 
   booking.style.display = "none";
 
-  const confirmedButtons = booking.querySelector(".confirmed-version");
-  confirmedButtons.classList.remove('d-none');
-  const pendingButtons = booking.querySelector(".pending-version");
-  pendingButtons.classList.add('d-none');
+
+
 };
 
 refreshCollapsibles(<%= @booking.id %>)

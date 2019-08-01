@@ -6,8 +6,11 @@
   <% if current_user.provider.nil? %>
 
   <div class="booking-review-intro">
+
     <div class="booking-review-name-description">
+      <div class="booking-review-title"> <%= link_to '<i class="fas fa-chevron-left"></i>'.html_safe, dashboard_path %>
       <p class="name">Booking Details</p>
+      </div>
       <p class="statement">You have made a booking as follows:</p>
     </div>
   <!-- <div class="booking-review-avatar">
@@ -32,13 +35,14 @@
       <p>On <strong><%= date.strftime('%A %B %d, %Y') %></strong> at <strong>13:00</strong></p>
     </li>
     <li>
-      <p>The total for your booking is <strong>€<%= @booking.price %></strong></p>
+      <p>The total for your booking is <strong><%= humanized_money_with_symbol(@booking.amount) %></strong></p>
     </li>
     <li>
       <p><%= @treatment.provider.user.first_name %> awaits you at <strong><%= @treatment.provider.location %></strong></p>
     </li>
     <li>
-      <p>The total for your booking is <strong>€<%= @booking.price %></strong></p>
+      <p>Payment status: <% if @booking.status == 4 %><strong> Pending payment</strong></p> <% else %> <strong> Paid </strong>
+      <% end %>
     </li>
   </ul>
 </div>
@@ -46,9 +50,10 @@
 
 <div class="provider-show-icons">
   <div class="provider-show-contact">
-    <a href="<%= @phone_number %>"><i class="fab fa-whatsapp"></i></a>
+    <a href="<%= @provider_phone_number %>"><i class="fab fa-whatsapp"></i></a>
   </div>
-  <div class="provider-show-contact">
+  <%# raise %>
+  <div class="provider-show-location-tag" onclick="window.mapsSelector(<%= @treatment.provider.latitude %>, <%= @treatment.provider.longitude %>)">
     <i class="fas fa-map-marker-alt"></i>
   </div>
   <div class="provider-show-contact">
@@ -67,7 +72,9 @@
 <% else %>
 <div class="booking-review-intro">
   <div class="booking-review-name-description">
+    <div class="booking-review-title"> <%= link_to '<i class="fas fa-chevron-left"></i>'.html_safe, dashboard_path %>
     <p class="name">Booking Details</p>
+    </div>
     <p class="statement">Review <%= @booking.user.first_name %>'s booking with you:</p>
   </div>
   <div class="booking-review-avatar">
@@ -91,10 +98,11 @@
       <p>On <strong><%= date.strftime('%A %B %d, %Y') %></strong> at <strong>13:00</strong></p>
     </li>
     <li>
-      <p>The total for this booking is <strong>€<%= @booking.price %></strong></p>
+      <p>The total for this booking is <strong><%= humanized_money_with_symbol@booking.amount %></strong></p>
     </li>
     <li>
-      <p>Payment status: <strong>paid</strong></p>
+      <p>Payment status: <% if @booking.status == 4 %><strong> Pending payment</strong></p> <% else %> <strong> Paid </strong>
+      <% end %>
     </li>
   </ul>
 </div>
@@ -102,11 +110,12 @@
 <hr>
 <div class="provider-show-icons">
   <div class="provider-show-contact">
-    <a href="<%= @phone_number %>"><i class="fab fa-whatsapp"></i></a>
+    <a href="<%= @user_phone_number %>"><i class="fab fa-whatsapp"></i></a>
   </div>
   <div class="provider-show-contact">
     <i class="far fa-edit"></i><%#= link_to '<i class="far fa-edit"></i>'.html_safe, edit_treatment_booking_path(@booking.treatment, @booking) %>
   </div>
+  <%# raise %>
   <div class="provider-show-contact">
     <%= link_to '<i class="fas fa-times"></i>'.html_safe, treatment_booking_path(@booking.treatment, @booking),
     method: 'delete',
@@ -116,4 +125,3 @@
 <hr>
 <% end %>
 
-</div>

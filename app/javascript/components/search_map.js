@@ -1,21 +1,26 @@
-const renderMap = () => {
+const renderMap = (mapbox) => {
 
-const map = document.querySelector('.map');
-if (map) {
- map.classList.add('d-none');
+  const map = document.querySelector('.map');
 
-  const providers = document.querySelector('.index-cards');
+  if (map) {
+    map.classList.add('d-none');
 
-  const marker = document.querySelector('.provider-index-map');
+    const providers = document.querySelector('.index-cards');
 
-  marker.addEventListener("click", (event) => {
+    const marker = document.querySelector('.provider-index-map');
 
-  map.classList.toggle('d-none');
+    marker.addEventListener("click", (event) => {
+      const canvas = document.querySelector('.mapboxgl-canvas');
+      console.log("Hiya")
+      providers.classList.toggle('d-none');
 
-});
+      map.classList.toggle('d-none');
+
+      mapbox.resize();
+
+
+    })
+  }
 }
-
-};
-
 
 export {renderMap};

@@ -14,13 +14,13 @@ puts "Creating Users"
 user1 = User.create!(first_name: "Jacob", last_name: "Morton", email: "Jacob@gmail.com", password: "123456", avatar: "https://i.imgur.com/Os8fIHX.jpg", phone_number: "+34646850358")
 # user1.save!
 puts "User 1 - Seeded ✅"
-user2 = User.create!(first_name: "Adam", last_name: "McCallister", email: "Adam@gmail.com", password: "123456", avatar: "https://i.imgur.com/5FXWDB5.jpg", phone_number: "+34646850358")
+user2 = User.create!(first_name: "Jon", last_name: "Doe", email: "jon@gmail.com", password: "123456", avatar: "https://i.imgur.com/pQRW7MK.jpg", phone_number: "+34646850358")
 # user2.save!
 puts "User 2 - Seeded ✅"
 user3 = User.create!(first_name: "Alicia", last_name: "Ngomo", email: "Alicia@gmail.com", password: "123456", avatar: "https://i.imgur.com/BtlB7uq.jpg", phone_number: "+34646850358")
 # user3.save!
 puts "User 3 - Seeded ✅"
-user4 = User.create!(first_name: "Jon", last_name: "Doe", email: "Jon@gmail.com", password: "123456", avatar: "https://i.imgur.com/0S6nwOD.jpg", phone_number: "+34646850358")
+user4 = User.create!(first_name: "Adam", last_name: "McCallister", email: "adam@gmail.com", password: "123456", avatar: "https://i.imgur.com/5FXWDB5.jpg", phone_number: "+34646850358")
 user4.save!
 puts "User 4 - Seeded ✅"
 user5 = User.create!(first_name: "Sam", last_name: "Barrett", email: "Sam@gmail.com", password: "123456", avatar: "https://i.imgur.com/jLJpsR6.jpg", phone_number: "+34646850358")
@@ -64,7 +64,7 @@ puts "Provider 2 Seeded ✅"
 
 provider3 = Provider.create!(location: "Calle de Valverde, 44, 28004 Madrid",
   photo: "",
-  description: "Great hair stylist in Madrid. #{description_lorem}",
+  description: "Great hair stylist in Madrid. I love working with travelling clients. I speak Spanish, English and French. My style is a mix of old-school chic with some of the newer avant-garde trends. Book with me and you wont be disappointed!",
   statement: "I do hair, with love and care!",
   rating: 4,
   phone_number: "+34646850358",
@@ -204,13 +204,35 @@ treatment14 = Treatment.create!(name: "1 hour full-body",
 puts "Treatment 14 Seeded! ✅"
 
 treatment15 = Treatment.create!(name: "Up-do",
-  description: "Impress with my famous up-do hair style",
+  description: "Impress at occassions with my famous up-do hair style",
   provider: provider6,
   price_cents: 10000,
   category: "Hair")
 puts "Treatment 15 Seeded! ✅"
+
+treatment16 = Treatment.create!(name: "Balayage highlights",
+  description: "Get that summer look with a gradient highlighting",
+  provider: provider3,
+  price_cents: 15000,
+  category: "Hair")
+puts "Treatment 16 Seeded! ✅"
 puts "All Treatments Seeded ✅"
 
+treatment17 = Treatment.create!(name: "Wash and blowdry",
+  description: "A regular hair care that will leave you renewed",
+  provider: provider3,
+  price_cents: 7500,
+  category: "Hair")
+puts "Treatment 17 Seeded! ✅"
+
+treatment18 = Treatment.create!(name: "Up-do",
+  description: "Impress at occassions with my famous up-do hair style",
+  provider: provider3,
+  price_cents: 10000,
+  category: "Hair")
+puts "Treatment 18 Seeded! ✅"
+
+puts "All Treatments Seeded ✅"
 
 
 
@@ -340,6 +362,7 @@ booking18 = Booking.create!(user: user4,
   date: "2019-07-28",
   status: 1)
 puts "Booking 18 Seeded ✅"
+
 puts "All Bookings Seeded ✅"
 
 puts "📸 📷 Creating Images 📷 📸"
@@ -600,13 +623,13 @@ puts "Review 5 Seeded ✅"
 
 review6 = Review.create!(user: user4,
   provider: provider3,
-  content: "I would go back in a heartbit ",
+  content: "I would go back in a heartbit. I was looking for something that suited my style but with some new touches and Alicia totally got it! ",
   rating: 5)
 puts "Review 6 Seeded ✅"
 
 review7 = Review.create!(user: user8,
   provider: provider4,
-  content: "I wanted something different and she totally understood what I needed",
+  content: "I wanted something different and Alicia totally understood what I needed",
   rating: 4)
 puts "Review 7 Seeded ✅"
 
@@ -616,18 +639,35 @@ review8 = Review.create!(user: user4,
   rating: 4)
 puts "Review 8 Seeded ✅"
 
-review9 = Review.create!(user: user2,
-  provider: provider5,
-  content: "Amazing! I have never had abs like this! :)",
+review9 = Review.create!(user: user8,
+  provider: provider3,
+  content: "Alicia got exactly the color I was looking for",
   rating: 4)
 puts "Review 9 Seeded ✅"
 
-review10 = Review.create!(user: user6,
-  provider: provider5,
-  content: "I absolutely love the way Kyle makes training something fun and easy while achieving results",
+review10 = Review.create!(user: user5,
+  provider: provider3,
+  content: "I tried her for my wedding hair do and it was fantastic. Everyone congratulated me on my hair! ",
   rating: 5)
 puts "Review 10 Seeded ✅"
 
+review11 = Review.create!(user: user2,
+  provider: provider5,
+  content: "Amazing! I have never had abs like this! :)",
+  rating: 4)
+puts "Review 11 Seeded ✅"
+
+review12 = Review.create!(user: user6,
+  provider: provider5,
+  content: "I absolutely love the way Kyle makes training something fun and easy while achieving results",
+  rating: 5)
+puts "Review 12 Seeded ✅"
+
+review13 = Review.create!(user: user6,
+  provider: provider3,
+  content: "Alicia is so easy to communicate with and so good with hair :)",
+  rating: 5)
+puts "Review 13 Seeded ✅"
 
 puts "🎊 🎉 Congratulations, database succesfully seeded! 🎉 🎊"
 
